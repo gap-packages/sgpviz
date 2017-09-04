@@ -1,0 +1,4 @@
+0.998 -> ??
+update drawdclasses.gi 
+(IdentityTransformation(tlen) to IdentityTransformation)
+(if String(el)[6] = '.' then  to  if el = [] then)
