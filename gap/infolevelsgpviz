@@ -1,0 +1,9 @@
+infosgpviz := function(n)
+  
+    SetInfoLevel(InfoSgpViz, n);
+     
+    Print("Info Level for InfoSgpViz is set to ",n, "\n");
+end;
+
+
+SetInfoLevel(InfoSgpViz, 1);
