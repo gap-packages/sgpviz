@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <!-- $Id: basics.xml,v 0.998  Exp $ -->
+  <Chapter>
+    <Heading>
+      Introduction
+    </Heading>
+
+The aim of this package is to turn 
+<Package> GAP </Package> more user-friendly, at least for semigroup theorists.
+It requires the usage of external programs as is the case of 
+<C>graphviz</C> <Cite Key="KoutsofiosNorth:2002"/>, a software for drawing graphs developed at AT
+    <Alt Only="LaTeX">
+      \&#38;
+    </Alt>
+    <Alt Not="LaTeX">
+      <Alt Only="HTML">
+        &#38;amp;
+      </Alt>
+      <Alt Not="HTML">
+        &#38;
+      </Alt>
+    </Alt>
+    T Labs, that can be obtained at
+    <URL>http://www.graphviz.org/</URL>.
+It is used not only to draw right Cayley graphs of finite semigroups and Sch{\"u}zenberger graphs of finite inverse semigroups but also to visualize in the usual way the egg-box picture of a D-classe of a finite semigroup. 
+
+<Alt Only="LaTeX">
+\ \\
+\ \\
+    </Alt>
+<Alt Only="HTML">
+&lt;br&gt;&lt;br&gt;
+</Alt>
+<B>Important note</B>: The version of <C>graphviz</C> to install should be
+greater or equal to 1.16.
+<Alt Only="LaTeX">
+\ \\
+\ \\
+    </Alt>
+<Alt Only="HTML">
+&lt;br&gt;&lt;br&gt;
+</Alt>
+
+Tcl/Tk should also be available in order to run the graphical interfaces
+(XAutomaton and XSemigroup)
+used to specify automata and semigroups.
+
+  </Chapter>

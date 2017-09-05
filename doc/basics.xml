@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+  <!-- $Id: basics.xml,v 0.998  Exp $ -->
+  <Chapter>
+    <Heading>Basics</Heading>
+We give some examples of semigroups to be used later. We also describe some basic functions
+that are not directly available from <Package>GAP</Package>, but are useful
+for the purposes of this package.
+    <Section>
+      <Heading>Examples </Heading>These are some examples of semigroups that will be   used through this manual
+      <Example>
+gap&gt; f := FreeMonoid("a","b"); 
+&lt;free monoid on the generators [ a, b ]&gt; 
+gap&gt; a := GeneratorsOfMonoid( f )[   1 ];; 
+gap&gt; b := GeneratorsOfMonoid( f )[ 2 ];; 
+gap&gt; r:=[[a^3,a^2],   
+&gt; [a^2*b,a^2], 
+&gt; [b*a^2,a^2], 
+&gt; [b^2,a^2], 
+&gt; [a*b*a,a], 
+&gt; [b*a*b,b] ]; 
+[ [ a^3, a^2 ], [ a^2*b, a^2 ], [ b*a^2, a^2 ], [ b^2, a^2 ], [ a*b*a, a ], 
+[ b*a*b, b ] ] 
+gap&gt; b21:= f/r; 
+&lt;fp semigroup on the generators [&lt;identity ... &gt;, a, b ]&gt; </Example>
+      <Example>
+gap&gt; f := FreeSemigroup("a","b"); 
+&lt;free semigroup on the generators [ a, b ]&gt;   
+gap&gt; a := GeneratorsOfSemigroup( f )[ 1 ];; 
+gap&gt; b :=   GeneratorsOfSemigroup( f )[ 2 ];; 
+gap&gt; r:=[[a^3,a^2], 
+&gt; [a^2*b,a^2],   
+&gt; [b*a^2,a^2], 
+&gt; [b^2,a^2], 
+&gt; [a*b*a,a], 
+&gt; [b*a*b,b] ]; 
+[ [ a^3, a^2 ], [ a^2*b, a^2 ], [ b*a^2, a^2 ], [ b^2, a^2 ], [ a*b*a, a ], 
+[ b*a*b, b ] ] 
+gap&gt; b2:= f/r; 
+&lt;fp semigroup on the generators [ a, b ]&gt; </Example>
+
+     <Example>
+gap&gt; g0:=Transformation([4,1,2,4]);;
+gap&gt; g1:=Transformation([1,3,4,4]);;
+gap&gt; g2:=Transformation([2,4,3,4]);;
+gap&gt; poi3:= Monoid(g0,g1,g2);
+&lt;monoid with 3 generators&gt;
+     </Example>
+
+    </Section>
+
+    <Section>
+      <Heading>Some attributes</Heading>
+These functions are semigroup attributes that get stored once computed.
+      <ManSection>
+        <Attr Arg="M" Name="HasCommutingIdempotents" />
+        <Description>Tests whether the idempotents of the semigroup
+          <Arg>M </Arg>commute. </Description>
+      </ManSection>
+      <ManSection>
+        <Attr Arg="S" Name="IsInverseSemigroup" />
+        <Description>Tests whether a finite semigroup
+          <Arg>S </Arg>is inverse.       It is well-known that it suffices to test whether the idempotents of
+          <Arg>S </Arg>commute and
+          <Arg>S </Arg>is regular. The function
+          <Code>IsRegularSemigroup </Code>is part of
+          <Package>GAP</Package>. </Description>
+      </ManSection>
+    </Section>
+
+    <Section>
+      <Heading>Some basic functions</Heading>
+      <ManSection>
+        <Func Arg="L" Name="PartialTransformation" />
+        <Description>A partial transformation is a partial function of a set of integers of 
+the form  &obrace;1, ..., n&cbrace;. It is given by means of the list of images <Arg>L</Arg>. When 
+an element has no image, we write 0. 
+Returns a full transformation on a set with one more element that acts like 
+a zero.</Description>
+      </ManSection>
+
+      <Example>
+gap&gt; PartialTransformation([2,0,4,0]);
+Transformation( [ 2, 5, 4, 5, 5 ] )
+      </Example>
+
+      <ManSection>
+        <Func Arg="L" Name="ReduceNumberOfGenerators" />
+        <Description>Given a subset <Arg>L</Arg> of the generators
+of a semigroup, returns a list of generators of the same semigroup but
+possibly with less elements than <Arg>L</Arg>.</Description>
+      </ManSection>
+
+
+      <ManSection>
+        <Func Arg="S,L" Name="SemigroupFactorization" />
+        <Description><Arg>L</Arg> is an element (or list of elements) of the semigroup <Arg>S</Arg>.
+Returns a minimal factorization on the generators of <Arg>S</Arg> of the
+element(s) of <Arg>L</Arg>. Works only for transformation semigroups.</Description>
+      </ManSection>
+        <Example><![CDATA[
+gap> el1 := Transformation( [ 2, 3, 4, 4 ] );;
+gap> el2 := Transformation( [ 2, 4, 3, 4 ] );;
+gap> f1 := SemigroupFactorization(poi3,el1);
+[ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ] ]
+gap> f1[1][1] * f1[1][2] = el1;
+true
+gap> SemigroupFactorization(poi3,[el1,el2]);
+[ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ],
+  [ Transformation( [ 2, 4, 3, 4 ] ) ] ]
+]]></Example>
+
+
+
+    <ManSection>
+        <Func Arg="mat" Name="GrahamBlocks" />
+        <Description><Arg>mat</Arg> is a matrix as displayed by 
+<C>DisplayEggBoxOfDClass(D);</C> of a regular D-class <C>D</C>.
+This function outputs a list <C>[gmat, phi]</C> where <C>gmat</C> is
+<Arg>mat</Arg> in Graham's blocks form and <C>phi</C> maps H-classes
+of <C>gmat</C> to the corresponding ones of <Arg>mat</Arg>, i.e.,
+<C>phi[i][j] = [i',j']</C> where <C>mat[i'][j'] = gmat[i][j]</C>.
+If the argument to this function is not a matrix corresponding to
+a regular D-class, the function may abort in error.
+      </Description>
+      </ManSection>
+        <Example><![CDATA[
+gap> p1 := PartialTransformation([6,2,0,0,2,6,0,0,10,10,0,0]);;
+gap> p2 := PartialTransformation([0,0,1,5,0,0,5,9,0,0,9,1]);;
+gap> p3 := PartialTransformation([0,0,3,3,0,0,7,7,0,0,11,11]);;
+gap> p4 := PartialTransformation([4,4,0,0,8,8,0,0,12,12,0,0]);;
+gap> css3:=Semigroup(p1,p2,p3,p4);
+<semigroup with 4 generators>
+gap> el := Elements(css3)[8];;
+gap> D := GreensDClassOfElement(css3, el);;
+gap> IsRegularDClass(D);
+true
+gap> DisplayEggBoxOfDClass(D);
+[ [  1,  0,  1,  0 ],
+  [  0,  1,  0,  1 ],
+  [  0,  1,  0,  1 ],
+  [  1,  0,  1,  0 ] ]
+gap> mat := [ [  1,  0,  1,  0 ],
+>   [  0,  1,  0,  1 ],
+>   [  0,  1,  0,  1 ],
+>   [  1,  0,  1,  0 ] ];;
+gap> res := GrahamBlocks(mat);;
+gap> PrintArray(res[1]);
+[ [  1,  1,  0,  0 ],
+  [  1,  1,  0,  0 ],
+  [  0,  0,  1,  1 ],
+  [  0,  0,  1,  1 ] ]
+gap> PrintArray(res[2]);
+[ [  [ 1, 1 ],  [ 1, 3 ],  [ 1, 2 ],  [ 1, 4 ] ],
+  [  [ 4, 1 ],  [ 4, 3 ],  [ 4, 2 ],  [ 4, 4 ] ],
+  [  [ 2, 1 ],  [ 2, 3 ],  [ 2, 2 ],  [ 2, 4 ] ],
+  [  [ 3, 1 ],  [ 3, 3 ],  [ 3, 2 ],  [ 3, 4 ] ] ]
+]]></Example>
+
+
+    </Section>
+
+    <Section>
+      <Heading>Cayley graphs</Heading>
+      <ManSection>
+        <Func Arg="S" Name="RightCayleyGraphAsAutomaton" />
+        <Description>Computes the right Cayley graph of a finite monoid or semigroup <Arg>S</Arg>. It uses the 
+<Package>GAP</Package> 
+buit-in function <Code>CayleyGraphSemigroup</Code> to compute the Cayley Graph 
+and returns it as an automaton without initial nor final states.
+(In this automaton state <C>i</C> represents the element <C>Elements(S)[i]</C>.)
+ The <Package>Automata</Package> package is used to this effect.
+          </Description>
+      </ManSection>
+
+      <Example>
+gap&gt; rcg := RightCayleyGraphAsAutomaton(b21);
+&lt; deterministic automaton on 2 letters with 6 states &gt;
+gap&gt; Display(rcg);
+   |  1  2  3  4  5  6
+-----------------------
+ a |  2  4  6  4  2  4
+ b |  3  5  4  4  4  3
+Initial state:   [ ]
+Accepting state: [ ]
+      </Example>
+
+      <ManSection>
+        <Func Arg="S" Name="RightCayleyGraphMonoidAsAutomaton" />
+        <Description>This function is a synonym of 
+<Ref Func="RightCayleyGraphAsAutomaton" />.
+          </Description>
+      </ManSection>
+
+      
+      
+    </Section>
+
+  </Chapter>

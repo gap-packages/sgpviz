@@ -1,0 +1,65 @@
+<?xml version="0.999" encoding="UTF-8"?>
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd">
+
+<Book Name="SgpViz">
+
+<TitlePage>
+  <Title>Semigroup visualization</Title>
+  <Version>( Version
+<#Include SYSTEM "../version">
+ )
+  </Version>
+  <Author> Manuel Delgado
+    <Email>mdelgado@fc.up.pt</Email>
+    <Homepage>http://www.fc.up.pt/cmup/mdelgado</Homepage>
+  </Author>
+  <Author> José João Morais
+    <Email>josejoao@fc.up.pt</Email>
+  </Author>
+  <Copyright> &copyright; 2005 by Manuel Delgado and José João Morais <P/>
+              We adopt the copyright regulations of &GAP; as detailed in the
+              copyright notice in the &GAP; manual. </Copyright>
+
+<Colophon>
+
+Bug reports, suggestions and comments are, of course, welcome. Please use the
+email address <Email>mdelgado@fc.up.pt</Email> or  <Email>josejoao@fc.up.pt</Email>
+to this effect.
+
+</Colophon>
+
+<Acknowledgements>
+
+The first author aknowledges
+financial support of FCT, through the <E>Centro
+de Matemática da Universidade do Porto</E>.
+<P/>
+The second author acknowledges financial support of FCT and the POCTI program
+through a scholarship given by <E>Centro de Matemática da Universidade do Porto</E>.
+<P/>
+Both authors acknowledge
+Jorge Almeida, Vítor H. Fernandes and Pedro Silva
+for many helpfull discussions and comments.
+</Acknowledgements>
+
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<#Include SYSTEM "introduction.xml">
+<#Include SYSTEM "basics.xml">
+<#Include SYSTEM "drawings.xml">
+<#Include SYSTEM "xsemigroup.xml">
+
+</Body>
+
+<Bibliography Databases="SgpViz" />
+
+<TheIndex/>
+
+</Book>
+
+<!-- ==================================================================== -->

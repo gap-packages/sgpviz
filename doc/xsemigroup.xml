@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+  <!-- $Id: schutzenberger.xml,v 0.998  Exp $ -->
+  <Chapter>
+    <Heading>User friendly ways to give semigroups and automata</Heading>
+This chapter describes two Tcl/Tk graphical interfaces that can be used to
+define and edit semigroups and automata. 
+
+
+<Section>
+      <Heading> 
+Finite automata 
+      </Heading>
+      <ManSection>
+        <Func Arg="[A]" Name="XAutomaton" />
+        <Description>
+The function <C> Xautomaton </C> without arguments opens a new window where
+an automaton may be specified. A finite automaton (which may then be edited)
+may be given as argument.  
+        </Description>
+      </ManSection>
+      <Example><![CDATA[
+gap> XAutomaton();
+      ]]></Example>
+It opens a window like the following:
+    <P />
+    <Alt Only="LaTeX">
+\ \\
+\ \\
+Due to problems with scaling and displaying images, they
+will be available only in HTML format.
+\ \\
+\ \\
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xaut.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+<C> Var </C> is the &GAP; name of the automaton, <C> States </C> is the
+number of states, <C> Alphabet </C> represents the alphabet and may be given
+through a positive integer (in this case the alphabet is understood to be <C>
+a,b,c,... </C>) or through a string whose symbols, in order, being the letters
+of the alphabet. The numbers corresponding to the initial 
+and accepting states are placed in the respective boxes. The automaton may be
+specified to be deterministic, non deterministic or with epsilon
+transitions. After pressing the <B> transition matrix </B> button the window
+gets larger and the
+transition matrix of the automaton may be given.
+The <E>i</E>th row of the matrix describes the action of the
+<E>i</E>th letter on the states.
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xautoma.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+A non deterministic automaton may be given as follows:
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUT.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+<P/>
+By pressing the button <B> Ok </B> the &GAP; shell aquires the aspect shown
+in the following picture and the automaton <C> ndAUT </C> may be used to do
+computations. Some computations such as getting a rational expression
+representing the language of the automaton, the (complete) minimal automaton
+representing the same language or the transition semigroup of the automaton,
+may be done directly after pressing the <B> Functions</B> button.
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUTok.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+<P/>
+By pressing the button <B> View </B> an image representing the automaton is
+displayed in a new window.
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/ndAutImage.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+An automaton with epsilon transitions may be given as follows shown in the
+following picture. The last letter of the alphabet is always considered to be
+the <M> \epsilon</M>. In the images it is represented by <M>\@</M>.
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/EpsTrAut.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+<P/>
+A new window with an image representing the automaton may be obtained by pressing the button <B> View </B>.
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/EpsTrAutImage.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+<P/>
+In the next example it is given an argument to the function <C>XAutomaton</C>.
+      <Example><![CDATA[
+gap> A := RandomAutomaton("det",2,2);
+< deterministic automaton on 2 letters with 2 states >
+gap> XAutomaton(A);
+      ]]></Example>
+It opens a window like the following:
+    <P />
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xautgiven.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+     </Section>
+    <Section>
+    <Heading> Finite semigroups </Heading>
+The most common ways to give a semigroup to are through generators and
+relations, a set of (partial) transformations as generating set and as
+syntactic semigroups of automata or rational languages. 
+      <ManSection>
+        <Func Arg="[S]" Name="XSemigroup" />
+        <Description>
+The function <C> XSemigroup </C> without arguments opens a new window where
+a semigroup (or monoid) may be specified. A finite semigroup (which may then be edited) may be given as argument.  
+        </Description>
+      </ManSection>
+      <Example><![CDATA[
+gap> XSemigroup();
+      ]]></Example>
+It opens a window like the following:
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xsgp.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+where one may choose how to give the semigroup. 
+
+    <Subsection>
+      <Heading> 
+Semigroups given through generators and relations 
+      </Heading>
+In the window opened by <C>XSemigroup</C>, by pressing the button
+<B>Proceed</B> the window should enlarge and have the following aspect. 
+(If the window does not enlarge automatically, use the mouse to do it.) 
+
+    <P />
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb211.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+<C> GAP variable </C> is the &GAP; name of the semigroup. One has then to specify the
+number of generators, the number of relations (which does not to be exact)
+and whether one wants to produce a monoid or a semigroup.
+Pressing the <B>Proceed</B> button one gets:
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb212.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+     <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+
+When giving the relations, the usual abbreviations "0" and "1" may be used.
+<P/>
+Pressing the <B>Done</B> button would output the following to the shell where <Package>GAP</Package>
+is running:
+    </Alt>
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+
+
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/gapb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+   <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+
+<P/>
+The menu button <B>Functions</B> has the following commands:
+&#60;br&#62;&#60;center&#62;
+&#60;img src=&#34;images/funcsind.gif&#34;&#62;
+&#60;img src=&#34;images/funcsmenu.gif&#34;&#62;
+&#60;/center&#62;&#60;br&#62;
+
+The interface allows to add and remove  &GAP; functions to the menu. When
+adding a function, the name of the function should be provided.
+(In its current version, it works only with functions that have
+as only argument a semigroup.)
+
+<P/>
+
+By pressing the menu button <B>Functions</B> and selecting "Draw Schutzenberger Graphs" would
+pop up the following window:
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/ShuzenbergerGraphb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+    <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+By pressing the menu button <B>Functions</B> and selecting "Draw Cayley Graph" would
+pop up the following window:
+
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/CayleyGraphb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+     <Alt Only="LaTeX">
+    </Alt>
+    <Alt Only="HTML">
+By pressing the menu button <B>Functions</B> and selecting "Draw D-Classes" would
+pop up the following window:
+
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/DClassesb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+     </Subsection>
+
+     <Subsection>
+      <Heading> 
+Semigroups given by partial transformations
+      </Heading>
+
+<Code>XSemigroup(poi3);</Code> would pop up the following window, where everything should be clear:
+
+<Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/Xsemigroup1.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+
+    </Subsection>
+
+
+    <Subsection>
+      <Heading> 
+Syntatic semigroups
+      </Heading>
+
+<Code>XSemigroup();</Code> would pop up the following window, where we would select "Syntatic semigroup",
+press the <B>Proceed</B> button and then choose either to give a "Rational expression" or an "Automaton"
+by pressing one of those buttons:
+
+<Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/Xsemigroup2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+If "Rational expression" is chosen, a new window pops up where the expression can be specified:
+<Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/regexp.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+After pressing the <B>Ok</B> button, notice that the menu button <B>Functions</B>
+appears on the main window (lower right corner) meaning that <Package>GAP</Package>
+already recognizes the given semigroup:
+<Alt Only="HTML">
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/regexp2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+    </Alt>
+
+
+    </Subsection>
+
+
+
+    </Section>
+
+  </Chapter>
