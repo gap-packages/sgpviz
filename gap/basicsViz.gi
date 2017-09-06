@@ -180,8 +180,7 @@ InstallGlobalFunction(DotForDrawingRightCayleyGraph, function(M)
     l2 := [];
     array := [];
     s := [];
-    arr := List( au, x -> List( x, String ) );
-    max := Maximum( List( arr, x -> Maximum( List(x,Length) ) ) );
+##    max := Maximum( List( arr, x -> Maximum( List(x,Length) ) ) );
 
     for i in [1 .. aut!.states] do
         for j in [1 .. aut!.alphabet] do
@@ -200,7 +199,8 @@ InstallGlobalFunction(DotForDrawingRightCayleyGraph, function(M)
             CloseStream(xout);
         od;
     od;
-    #siegen: in the folowing, "AppendTo(name," was replaced by "Append(dotstring,"
+      arr := List( array, x -> List( x, String ) );
+  #siegen: in the folowing, "AppendTo(name," was replaced by "Append(dotstring,"
     dotstring :=  "digraph  CayleyGraph {\n";
     for l  in [ 1 .. Length( arr ) ]  do
         for k  in [ 1 .. Length( arr[ l ] ) ]  do
@@ -218,14 +218,14 @@ InstallGlobalFunction(DotForDrawingRightCayleyGraph, function(M)
     pos_idempotents := Set(List(Idempotents(M), e -> Position(Elements(M), e)));
     for k in [1..aut!.states] do
         if k = pos_id then
-            Append(dotstring, k, " [shape=circle, style=filled, fillcolor=deepskyblue];","\n");
+            Append(dotstring, Concatenation(String(k), " [shape=circle, style=filled, fillcolor=deepskyblue];","\n"));
         elif k in pos_idempotents then
-            Append(dotstring, k, " [shape=circle, style=filled, fillcolor=lightcoral];","\n");
+            Append(dotstring, Concatenation(String(k), " [shape=circle, style=filled, fillcolor=lightcoral];","\n"));
         else
-            Append(dotstring, k, " [shape=circle];","\n");
+            Append(dotstring, Concatenation(String(k), " [shape=circle];","\n"));
         fi;
     od;
-    Append(dotstring,"}","\n");
+    Append(dotstring,"}\n");
     return dotstring;
     
     
