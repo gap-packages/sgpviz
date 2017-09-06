@@ -1,37 +1,60 @@
-<?xml version="0.999" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd">
 
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+    [<!ENTITY SgpViz "<Alt Not='Text'><URL
+   Text='SgpViz'>https://gap-packages.github.io/sgpviz/</URL></Alt><Alt Only='Text'><Package>SgpViz</Package></Alt>">
+<!ENTITY Viz "<Alt Not='Text'><URL
+   Text='Viz'>https://bitbucket.org/zen154115/viz</URL></Alt><Alt Only='Text'><Package>Viz</Package></Alt>">
+<!-- Reading PKGVERSIONDATA chunk from the PackageInfo.g file -->
+   <#Include Label="PKGVERSIONDATA">
+<!-- the label "PKGVERSIONDATA" is contained in the "PackageInfo.g" file -->
+]>
 <Book Name="SgpViz">
 
 <TitlePage>
-  <Title>Semigroup visualization</Title>
-  <Version>( Version
-<#Include SYSTEM "../version">
- )
-  </Version>
+    <Title>&SgpViz;</Title>
+    <Subtitle>A &GAP; package for semigroup visualization</Subtitle>
+    <Version>Version &VERSION;</Version>
+    <Date>&RELEASEDATE;</Date>
+
   <Author> Manuel Delgado
     <Email>mdelgado@fc.up.pt</Email>
     <Homepage>http://www.fc.up.pt/cmup/mdelgado</Homepage>
   </Author>
   <Author> José João Morais
-    <Email>josejoao@fc.up.pt</Email>
   </Author>
-  <Copyright> &copyright; 2005 by Manuel Delgado and José João Morais <P/>
-              We adopt the copyright regulations of &GAP; as detailed in the
-              copyright notice in the &GAP; manual. </Copyright>
+  <Copyright>
+    <Index>License</Index>
+    &copyright; 2005 by Manuel Delgado and José João Morais <P/>
+      <Alt Only="LaTeX">\noindent</Alt> &SgpViz; package is free software; 
+      you can redistribute it and/or modify it under the terms of the 
+      <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
+      as published by the Free Software Foundation; either version 2 of the
+      License, or (at your option) any later version. For details, see the file 'GPL' included in the package or see the FSF's own site.
+    </Copyright>
 
 <Colophon>
-
+      This manual describes the &GAP; package &SgpViz; version
+      &VERSION; for visualizing finite semigroups.<P/>
+      <P/>
+      Since Version 0.998 (released in 2008), the package is maintained by the first author.
+      <P/>
+      The present package is supersede by the &GAP; package <E>semigroups</E>, by James Mitchel, in what concerns some aspects of semigroup visualization. We strongly suggest the usage of that package, unless you find useful specific tools available in &SgpViz; but not in <E>semigroups</E>. 
+<P/>
 Bug reports, suggestions and comments are, of course, welcome. Please use the
-email address <Email>mdelgado@fc.up.pt</Email> or  <Email>josejoao@fc.up.pt</Email>
-to this effect.
+email address <Email>mdelgado@fc.up.pt</Email> to this effect.
+<P/>
+
+If you have benefited from the use of the &SgpViz; &GAP; package in your research, please cite it in addition to &GAP; itself, following the scheme proposed in
+<URL>http://www.gap-system.org/Contacts/cite.html</URL>.
 
 </Colophon>
 
 <Acknowledgements>
 
-The first author aknowledges
+The first author acknowledges
 financial support of FCT, through the <E>Centro
 de Matemática da Universidade do Porto</E>.
 <P/>
@@ -40,7 +63,18 @@ through a scholarship given by <E>Centro de Matemática da Universidade do Porto
 <P/>
 Both authors acknowledge
 Jorge Almeida, Vítor H. Fernandes and Pedro Silva
-for many helpfull discussions and comments.
+for many helpful discussions and comments.
+<P/>
+<P/>
+<B>Concerning maintenance:</B>
+<P/>
+<P/> The maintainer wants to acknowledge partial support by:
+<P/> FCT - Fundação para a Ciência e a Tecnologia under the project PTDC/MAT/65481/2006
+<P/> <E>Centro de Matemática da Universidade do Porto</E> (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT project PEst-C/MAT/UI0144/2011.
+<P/>
+CMUP (UID/MAT/00144/2013), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.
+<P/>
+Furthermore, the maintainer wants to thank the organizers of <C>GAPDays</C> in their several editions, as well as several people (for advices, giving feedback, etc). Among them I would like to refer: Max Horn, James Mitchel, Alfredo Costa and Teresa Melo.
 </Acknowledgements>
 
 </TitlePage>

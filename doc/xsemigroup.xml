@@ -25,15 +25,12 @@ gap> XAutomaton();
 It opens a window like the following:
     <P />
     <Alt Only="LaTeX">
-\ \\
-\ \\
-Due to problems with scaling and displaying images, they
-will be available only in HTML format.
-\ \\
-\ \\
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xaut.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xaut.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xaut.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 <C> Var </C> is the &GAP; name of the automaton, <C> States </C> is the
 number of states, <C> Alphabet </C> represents the alphabet and may be given
@@ -48,15 +45,21 @@ transition matrix of the automaton may be given.
 The <E>i</E>th row of the matrix describes the action of the
 <E>i</E>th letter on the states.
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xautoma.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xautoma.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xautoma.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 A non deterministic automaton may be given as follows:
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xndAUT.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUT.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUT.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 <P/>
 By pressing the button <B> Ok </B> the &GAP; shell aquires the aspect shown
@@ -66,32 +69,44 @@ representing the language of the automaton, the (complete) minimal automaton
 representing the same language or the transition semigroup of the automaton,
 may be done directly after pressing the <B> Functions</B> button.
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xndAUTok.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUTok.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUTok.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 <P/>
 By pressing the button <B> View </B> an image representing the automaton is
 displayed in a new window.
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/ndAutImage.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/ndAutImage.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/ndAutImage.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 An automaton with epsilon transitions may be given as follows shown in the
 following picture. The last letter of the alphabet is always considered to be
-the <M> \epsilon</M>. In the images it is represented by <M>\@</M>.
+the <M> \epsilon</M>. In the images it is represented by @.
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/EpsTrAut.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/EpsTrAut.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/EpsTrAut.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 <P/>
 A new window with an image representing the automaton may be obtained by pressing the button <B> View </B>.
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/EpsTrAutImage.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/EpsTrAutImage.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/EpsTrAutImage.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
 <P/>
@@ -104,9 +119,12 @@ gap> XAutomaton(A);
 It opens a window like the following:
     <P />
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xautgiven.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xautgiven.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xautgiven.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
      </Section>
@@ -127,9 +145,12 @@ gap> XSemigroup();
       ]]></Example>
 It opens a window like the following:
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xsgp.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xsgp.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xsgp.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 where one may choose how to give the semigroup. 
 
@@ -143,6 +164,9 @@ In the window opened by <C>XSemigroup</C>, by pressing the button
 
     <P />
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xb211.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb211.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
@@ -152,15 +176,21 @@ number of generators, the number of relations (which does not to be exact)
 and whether one wants to produce a monoid or a semigroup.
 Pressing the <B>Proceed</B> button one gets:
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xb212.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb212.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
      <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/xb21.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
 
 When giving the relations, the usual abbreviations "0" and "1" may be used.
 <P/>
@@ -168,21 +198,41 @@ Pressing the <B>Done</B> button would output the following to the shell where <P
 is running:
     </Alt>
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/gapb21.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
-
-
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/gapb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/gapb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
-   <Alt Only="LaTeX">
+    <Alt Only="LaTeX">
+<P/>
+The menu button <B>Functions</B> has the following commands:
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/funcsind.png}
+        \includegraphics[width=0.4\textwidth]{images/funcsmenu.png}
+        \end{center}
+
+The interface allows to add and remove  &GAP; functions to the menu. When
+adding a function, the name of the function should be provided.
+(In its current version, it works only with functions that have
+as only argument a semigroup.)
+
+<P/>
+
+By pressing the menu button <B>Functions</B> and selecting "Draw Schutzenberger Graphs" would
+pop up the following window:
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/ShuzenbergerGraphb21.png}
+        \end{center}
     </Alt>
+
     <Alt Only="HTML">
-
 <P/>
 The menu button <B>Functions</B> has the following commands:
 &#60;br&#62;&#60;center&#62;
-&#60;img src=&#34;images/funcsind.gif&#34;&#62;
-&#60;img src=&#34;images/funcsmenu.gif&#34;&#62;
+&#60;img src=&#34;images/funcsind.png&#34;&#62;
+&#60;img src=&#34;images/funcsmenu.png&#34;&#62;
 &#60;/center&#62;&#60;br&#62;
 
 The interface allows to add and remove  &GAP; functions to the menu. When
@@ -194,25 +244,31 @@ as only argument a semigroup.)
 
 By pressing the menu button <B>Functions</B> and selecting "Draw Schutzenberger Graphs" would
 pop up the following window:
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/ShuzenbergerGraphb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/ShuzenbergerGraphb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/CayleyGraphb21.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
 By pressing the menu button <B>Functions</B> and selecting "Draw Cayley Graph" would
 pop up the following window:
 
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/CayleyGraphb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/CayleyGraphb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
      <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/DClassesb21.png}
+        \end{center}
     </Alt>
     <Alt Only="HTML">
 By pressing the menu button <B>Functions</B> and selecting "Draw D-Classes" would
 pop up the following window:
 
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/DClassesb21.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/DClassesb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
      </Subsection>
 
@@ -223,6 +279,11 @@ Semigroups given by partial transformations
 
 <Code>XSemigroup(poi3);</Code> would pop up the following window, where everything should be clear:
 
+     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/Xsemigroup1.png}
+        \end{center}
+    </Alt>
 <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/Xsemigroup1.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
@@ -240,11 +301,21 @@ Syntatic semigroups
 press the <B>Proceed</B> button and then choose either to give a "Rational expression" or an "Automaton"
 by pressing one of those buttons:
 
+     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/Xsemigroup2.png}
+        \end{center}
+    </Alt>
 <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/Xsemigroup2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
 If "Rational expression" is chosen, a new window pops up where the expression can be specified:
+     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/regexp.png}
+        \end{center}
+    </Alt>
 <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/regexp.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
@@ -252,6 +323,11 @@ If "Rational expression" is chosen, a new window pops up where the expression ca
 After pressing the <B>Ok</B> button, notice that the menu button <B>Functions</B>
 appears on the main window (lower right corner) meaning that <Package>GAP</Package>
 already recognizes the given semigroup:
+     <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/regexp2.png}
+        \end{center}
+    </Alt>
 <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/regexp2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
