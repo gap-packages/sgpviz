@@ -1,0 +1,7 @@
+proc Elements {var} {
+invokeDone
+set obj [".type$var.up.frame.right.l0.entry" get]
+puts "Elements($obj);"
+puts "end"   
+}
+
