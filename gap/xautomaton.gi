@@ -31,9 +31,14 @@ InstallGlobalFunction(XAutomaton, function(arg)
                 break;
             else
                 Print(s);
-                result := READ_COMMAND( InputTextString(s) , true );
-                if not result = SuPeRfail then
-                    View(result);
+                result := READ_COMMAND_REAL( InputTextString(s) , true );
+                if result[1] = true then
+                  if IsBound(result[2]) then
+                    View(result[2]);
+                  fi;
+                # result := READ_COMMAND( InputTextString(s) , true );
+                # if not result = SuPeRfail then
+                #     View(result);
                     Print("\n");
                 fi;
                 PrintTo(otu, "gap> ");
