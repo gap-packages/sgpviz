@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
   <!-- $Id: drawings.xml,v 0.998  Exp $ -->
   <Chapter>
     <Heading>
@@ -24,7 +24,7 @@ This last optional argument may also be the integer <C>2</C> and in this case
 the elements will appear as integers, where <C>i</C> represents the element <C>Elements(S)[i]</C>.
         </Description>
       </ManSection>
-      <Example>
+      <Example><![CDATA[
 gap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]));
 gap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),1);
 gap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),
@@ -34,7 +34,7 @@ gap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),
  [Transformation( [ 2, 4, 3, 4 ] )],1);
 gap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]), 
  [Transformation( [ 2, 4, 3, 4 ] )],"Dclass",1);
-      </Example>
+      ]]></Example>
   This is the image produced by the first command in the previous example:    
       <Alt Only="LaTeX">
         \begin{center}
@@ -81,12 +81,12 @@ This last optional argument may also be the integer <C>2</C> and in this case
 the elements will appear as integers, where <C>i</C> represents the element <C>Elements(S)[i]</C>.
         </Description>
       </ManSection>
-      <Example>
+      <Example><![CDATA[
 gap&#62; DrawDClasses(poi3,"DClasses");
 gap&#62; DrawDClasses(poi3, [Transformation( [ 2, 3, 4, 4 ] ),
   Transformation( [ 2, 4, 3, 4 ] )],
   [Transformation( [ 2, 4, 3, 4 ] )],1);
-      </Example>
+      ]]></Example>
 
 This is the image produced by the first command in the previous example:
       <Alt Only="LaTeX">

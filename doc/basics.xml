@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
   <!-- $Id: basics.xml,v 0.998  Exp $ -->
   <Chapter>
@@ -8,44 +8,30 @@ that are not directly available from <Package>GAP</Package>, but are useful
 for the purposes of this package.
     <Section>
       <Heading>Examples </Heading>These are some examples of semigroups that will be   used through this manual
-      <Example>
-gap&gt; f := FreeMonoid("a","b"); 
-&lt;free monoid on the generators [ a, b ]&gt; 
-gap&gt; a := GeneratorsOfMonoid( f )[   1 ];; 
-gap&gt; b := GeneratorsOfMonoid( f )[ 2 ];; 
-gap&gt; r:=[[a^3,a^2],   
-&gt; [a^2*b,a^2], 
-&gt; [b*a^2,a^2], 
-&gt; [b^2,a^2], 
-&gt; [a*b*a,a], 
-&gt; [b*a*b,b] ]; 
+      <Example><![CDATA[
+gap> f := FreeMonoid("a","b");
+<free monoid on the generators [ a, b ]>
+gap> a := GeneratorsOfMonoid( f )[   1 ];;
+gap> b := GeneratorsOfMonoid( f )[ 2 ];;
+gap> r:=[[a^3,a^2],
+> [a^2*b,a^2],
+> [b*a^2,a^2],
+> [b^2,a^2],
+> [a*b*a,a],
+> [b*a*b,b] ];
 [ [ a^3, a^2 ], [ a^2*b, a^2 ], [ b*a^2, a^2 ], [ b^2, a^2 ], [ a*b*a, a ], 
-[ b*a*b, b ] ] 
-gap&gt; b21:= f/r; 
-&lt;fp semigroup on the generators [&lt;identity ... &gt;, a, b ]&gt; </Example>
-      <Example>
-gap&gt; f := FreeSemigroup("a","b"); 
-&lt;free semigroup on the generators [ a, b ]&gt;   
-gap&gt; a := GeneratorsOfSemigroup( f )[ 1 ];; 
-gap&gt; b :=   GeneratorsOfSemigroup( f )[ 2 ];; 
-gap&gt; r:=[[a^3,a^2], 
-&gt; [a^2*b,a^2],   
-&gt; [b*a^2,a^2], 
-&gt; [b^2,a^2], 
-&gt; [a*b*a,a], 
-&gt; [b*a*b,b] ]; 
-[ [ a^3, a^2 ], [ a^2*b, a^2 ], [ b*a^2, a^2 ], [ b^2, a^2 ], [ a*b*a, a ], 
-[ b*a*b, b ] ] 
-gap&gt; b2:= f/r; 
-&lt;fp semigroup on the generators [ a, b ]&gt; </Example>
+  [ b*a*b, b ] ]
+gap> b21:= f/r;
+<fp monoid on the generators [ a, b ]>
+      ]]></Example>
 
-     <Example>
-gap&gt; g0:=Transformation([4,1,2,4]);;
-gap&gt; g1:=Transformation([1,3,4,4]);;
-gap&gt; g2:=Transformation([2,4,3,4]);;
-gap&gt; poi3:= Monoid(g0,g1,g2);
-&lt;monoid with 3 generators&gt;
-     </Example>
+     <Example><![CDATA[
+gap> g0:=Transformation([4,1,2,4]);;
+gap> g1:=Transformation([1,3,4,4]);;
+gap> g2:=Transformation([2,4,3,4]);;
+gap> poi3:= Monoid(g0,g1,g2);
+<monoid with 3 generators>
+     ]]></Example>
 
     </Section>
 
@@ -73,16 +59,16 @@ These functions are semigroup attributes that get stored once computed.
       <ManSection>
         <Func Arg="L" Name="PartialTransformation" />
         <Description>A partial transformation is a partial function of a set of integers of 
-the form  &obrace;1, ..., n&cbrace;. It is given by means of the list of images <Arg>L</Arg>. When 
+the form  <M>\{1,\dots, n\}</M>. It is given by means of the list of images <Arg>L</Arg>. When 
 an element has no image, we write 0. 
 Returns a full transformation on a set with one more element that acts like 
 a zero.</Description>
       </ManSection>
 
-      <Example>
-gap&gt; PartialTransformation([2,0,4,0]);
+      <Example><![CDATA[
+gap> PartialTransformation([2,0,4,0]);
 Transformation( [ 2, 5, 4, 5, 5 ] )
-      </Example>
+      ]]></Example>
 
       <ManSection>
         <Func Arg="L" Name="ReduceNumberOfGenerators" />
@@ -124,22 +110,23 @@ If the argument to this function is not a matrix corresponding to
 a regular D-class, the function may abort in error.
       </Description>
       </ManSection>
-        <Example><![CDATA[
+      <Example><![CDATA[
 gap> p1 := PartialTransformation([6,2,0,0,2,6,0,0,10,10,0,0]);;
 gap> p2 := PartialTransformation([0,0,1,5,0,0,5,9,0,0,9,1]);;
 gap> p3 := PartialTransformation([0,0,3,3,0,0,7,7,0,0,11,11]);;
 gap> p4 := PartialTransformation([4,4,0,0,8,8,0,0,12,12,0,0]);;
 gap> css3:=Semigroup(p1,p2,p3,p4);
-<semigroup with 4 generators>
+<transformation semigroup of degree 13 with 4 generators>
 gap> el := Elements(css3)[8];;
 gap> D := GreensDClassOfElement(css3, el);;
 gap> IsRegularDClass(D);
 true
 gap> DisplayEggBoxOfDClass(D);
-[ [  1,  0,  1,  0 ],
-  [  0,  1,  0,  1 ],
-  [  0,  1,  0,  1 ],
-  [  1,  0,  1,  0 ] ]
+[ [  1,  1,  0,  0 ],
+  [  1,  1,  0,  0 ],
+  [  0,  0,  1,  1 ],
+  [  0,  0,  1,  1 ] ]
+gap> DisplayEggBoxOfDClass(D);
 gap> mat := [ [  1,  0,  1,  0 ],
 >   [  0,  1,  0,  1 ],
 >   [  0,  1,  0,  1 ],
@@ -156,14 +143,16 @@ gap> PrintArray(res[2]);
   [  [ 2, 1 ],  [ 2, 3 ],  [ 2, 2 ],  [ 2, 4 ] ],
   [  [ 3, 1 ],  [ 3, 3 ],  [ 3, 2 ],  [ 3, 4 ] ] ]
 ]]></Example>
-
-
+      <!--
+     <Example><![CDATA[
+  ]]</Example>
+   -->
     </Section>
 
     <Section>
       <Heading>Cayley graphs</Heading>
       <ManSection>
-        <Func Arg="S" Name="RightCayleyGraphAsAutomaton" />
+        <Func Arg="S" Name="RightCayleyGraphAsAutomaton"></Func>
         <Description>Computes the right Cayley graph of a finite monoid or semigroup <Arg>S</Arg>. It uses the 
 <Package>GAP</Package> 
 buit-in function <Code>CayleyGraphSemigroup</Code> to compute the Cayley Graph 
@@ -173,22 +162,22 @@ and returns it as an automaton without initial nor final states.
           </Description>
       </ManSection>
 
-      <Example>
-gap&gt; rcg := RightCayleyGraphAsAutomaton(b21);
-&lt; deterministic automaton on 2 letters with 6 states &gt;
-gap&gt; Display(rcg);
+      <Example><![CDATA[
+gap> rcg := RightCayleyGraphAsAutomaton(b21);
+< deterministic automaton on 2 letters with 6 states >
+gap> Display(rcg);
    |  1  2  3  4  5  6
 -----------------------
  a |  2  4  6  4  2  4
  b |  3  5  4  4  4  3
 Initial state:   [ ]
 Accepting state: [ ]
-      </Example>
+      ]]></Example>
 
       <ManSection>
         <Func Arg="S" Name="RightCayleyGraphMonoidAsAutomaton" />
         <Description>This function is a synonym of 
-<Ref Func="RightCayleyGraphAsAutomaton" />.
+<Ref Func="RightCayleyGraphAsAutomaton"/>.
           </Description>
       </ManSection>
 

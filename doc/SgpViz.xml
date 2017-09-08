@@ -86,7 +86,7 @@ Furthermore, the maintainer wants to thank the organizers of <C>GAPDays</C> in t
 <#Include SYSTEM "introduction.xml">
 <#Include SYSTEM "basics.xml">
 <#Include SYSTEM "drawings.xml">
-<#Include SYSTEM "xsemigroup.xml">
+<!-- <#Include SYSTEM "xsemigroup.xml"> -->
 
 </Body>
 
