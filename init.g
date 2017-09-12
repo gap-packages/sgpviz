@@ -4,7 +4,7 @@
 #W                                    Jose Morais    <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: init.g,v 0.998 $
+#H  @(#)$Id: init.g,v 0.999 $
 ##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##
@@ -12,13 +12,14 @@
 ##
 #R  Read the actual code.
 ##
-ReadPackage( "sgpviz", "gap/basicsViz.gd" );
-ReadPackage( "sgpviz", "gap/grahamblocks.gd" );
-ReadPackage( "sgpviz", "gap/drawdclasses.gd" );
-ReadPackage( "sgpviz", "gap/semigroupfactorization.gd" );
-ReadPackage( "sgpviz", "gap/schutzenberger-graphs.gd" );
-ReadPackage( "sgpviz", "gap/sgpviz-display.gd" );
-ReadPackage( "sgpviz", "gap/xautomaton.gd" );
-ReadPackage( "sgpviz", "gap/xsemigroup.gd" );
+ReadPackage( "sgpviz/gap/basicsViz.gd" );
+ReadPackage( "sgpviz/gap/grahamblocks.gd" );
+ReadPackage( "sgpviz/gap/drawdclasses.gd" );
+ReadPackage( "sgpviz/gap/semigroupfactorization.gd" );
+ReadPackage( "sgpviz/gap/schutzenberger-graphs.gd" );
+ReadPackage( "sgpviz/gap/sgpviz-display.gd" );
+ReadPackage( "sgpviz/gap/xautomaton.gd" );
+ReadPackage( "sgpviz/gap/xsemigroup.gd" );
+ReadPackage( "sgpviz/gap/sv_utils.gd");
 
 #E  init.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
