@@ -11,7 +11,7 @@ for the purposes of this package.
       <Example><![CDATA[
 gap> f := FreeMonoid("a","b");
 <free monoid on the generators [ a, b ]>
-gap> a := GeneratorsOfMonoid( f )[   1 ];;
+gap> a := GeneratorsOfMonoid( f )[ 1 ];;
 gap> b := GeneratorsOfMonoid( f )[ 2 ];;
 gap> r:=[[a^3,a^2],
 > [a^2*b,a^2],
@@ -126,7 +126,6 @@ gap> DisplayEggBoxOfDClass(D);
   [  1,  1,  0,  0 ],
   [  0,  0,  1,  1 ],
   [  0,  0,  1,  1 ] ]
-gap> DisplayEggBoxOfDClass(D);
 gap> mat := [ [  1,  0,  1,  0 ],
 >   [  0,  1,  0,  1 ],
 >   [  0,  1,  0,  1 ],

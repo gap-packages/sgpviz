@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
   <!-- $Id: basics.xml,v 0.998  Exp $ -->
   <Chapter>
     <Heading>
@@ -8,7 +8,7 @@
 The aim of this package is to turn 
 <Package> GAP </Package> more user-friendly, at least for semigroup theorists.
 It requires the usage of external programs as is the case of 
-<C>graphviz</C> <Cite Key="KoutsofiosNorth:2002"/>, a software for drawing graphs developed at AT
+<C>graphviz</C> <Cite Key="KoutsofiosNorth:2002"/>, a software for drawing graphs developed at AT 
     <Alt Only="LaTeX">
       \&#38;
     </Alt>
@@ -22,7 +22,7 @@ It requires the usage of external programs as is the case of
     </Alt>
     T Labs, that can be obtained at
     <URL>http://www.graphviz.org/</URL>.
-It is used not only to draw right Cayley graphs of finite semigroups and Sch{\"u}zenberger graphs of finite inverse semigroups but also to visualize in the usual way the egg-box picture of a D-classe of a finite semigroup. 
+It is used not only to draw right Cayley graphs of finite semigroups and Schüzenberger graphs of finite inverse semigroups but also to visualize in the usual way the egg-box picture of a D-classe of a finite semigroup. 
 
 <Alt Only="LaTeX">
 \ \\

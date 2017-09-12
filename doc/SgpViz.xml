@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE Book SYSTEM "gapdoc.dtd">
-
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
     [<!ENTITY SgpViz "<Alt Not='Text'><URL
    Text='SgpViz'>https://gap-packages.github.io/sgpviz/</URL></Alt><Alt Only='Text'><Package>SgpViz</Package></Alt>">
@@ -11,6 +9,9 @@
    <#Include Label="PKGVERSIONDATA">
 <!-- the label "PKGVERSIONDATA" is contained in the "PackageInfo.g" file -->
 ]>
+
+<!-- Documentation to the SgpViz package. -->
+
 <Book Name="SgpViz">
 
 <TitlePage>
@@ -74,7 +75,7 @@ for many helpful discussions and comments.
 <P/>
 CMUP (UID/MAT/00144/2013), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.
 <P/>
-Furthermore, the maintainer wants to thank the organizers of <C>GAPDays</C> in their several editions, as well as several people (for advices, giving feedback, etc). Among them I would like to refer: Max Horn, James Mitchel, Alfredo Costa and Teresa Melo.
+Furthermore, the maintainer wants to thank the organizers of <C>GAPDays</C> in their several editions, as well as several people (for advices, giving feedback, etc). Among them I would like to refer: Max Horn, James Mitchel, Jan Philipp Wächter, João Araújo, Alfredo Costa and Teresa Melo.
 </Acknowledgements>
 
 </TitlePage>
@@ -86,7 +87,7 @@ Furthermore, the maintainer wants to thank the organizers of <C>GAPDays</C> in t
 <#Include SYSTEM "introduction.xml">
 <#Include SYSTEM "basics.xml">
 <#Include SYSTEM "drawings.xml">
-<!-- <#Include SYSTEM "xsemigroup.xml"> -->
+<#Include SYSTEM "xsemigroup.xml">
 
 </Body>
 

@@ -42,8 +42,7 @@ gap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),
         \end{center}
       </Alt>
       <Alt Only="HTML">
-      &#60;br&#62;&#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclass1.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
-&#60;br&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclass1.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 This is the image produced by the fourth command in the previous example:
       <Alt Only="LaTeX">
@@ -52,8 +51,7 @@ This is the image produced by the fourth command in the previous example:
         \end{center}
       </Alt>
 <Alt Only="HTML">
-      &#60;br&#62;&#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclass2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
-&#60;br&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclass2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 This is the image produced by the last command in the previous example:
       <Alt Only="LaTeX">
@@ -62,8 +60,7 @@ This is the image produced by the last command in the previous example:
         \end{center}
       </Alt>
 <Alt Only="HTML">
-      &#60;br&#62;&#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclass3.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
-&#60;br&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclass3.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
 
@@ -95,8 +92,7 @@ This is the image produced by the first command in the previous example:
         \end{center}
       </Alt>
       <Alt Only="HTML">
-      &#60;br&#62;&#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclasses1.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
-&#60;br&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclasses1.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
       </Alt>
 
 This is the image produced by the second command in the previous example:
@@ -106,8 +102,7 @@ This is the image produced by the second command in the previous example:
         \end{center}
       </Alt>
       <Alt Only="HTML">
-      &#60;br&#62;&#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclasses2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
-&#60;br&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/dclasses2.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
     </Section>
@@ -136,7 +131,7 @@ colored in "light blue" and all other idempotents are colored in "light coral"):
         \end{center}
       </Alt>
 <Alt Only="HTML">
-      &#60;br&#62;&#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/cgb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/cgb21.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
     </Section>
@@ -160,7 +155,7 @@ the following:
       </Alt>
 
     <Alt Only="HTML">
-      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/schutzenberger.gif&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/schutzenberger.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 
 
