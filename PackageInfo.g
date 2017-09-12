@@ -1,102 +1,95 @@
 #############################################################################
 ##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
-##
+##  PackageInfo.g for the package `SgpViz'                    Manuel Delgado
+##  
 
 SetPackageInfo( rec(
 
-PackageName := "GitHubPagesForGAP",
+PackageName := "SgpViz",
+Subtitle := "A package for semigroup visualization",
+Version := "0.999",
+Date := "12/09/2017",
+#Version := "0.999 dev",
+#Date := "> 12/09/2017",
 
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.2",
-Date := "04/02/2017", # dd/mm/yyyy format
-
+##  Information about authors and maintainers.
 Persons := [
-  rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
+ rec(
+    LastName      := "Delgado",
+    FirstNames    := "Manuel",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "AG Algebra\n",
-                       "Mathematisches Institut\n",
-                       "Justus-Liebig-Universität Gießen\n",
-                       "Arndtstraße 2\n",
-                       "35392 Gießen\n",
-                       "Germany" ),
-    Place         := "Gießen",
-    Institution   := "Justus-Liebig-Universität Gießen"
+    Email         := "mdelgado@fc.up.pt",
+    WWWHome       := "http://www.fc.up.pt/cmup/mdelgado/",
+    PostalAddress := Concatenation( [
+                   "Departamento de Matemática - Faculdade de Ciências\n",
+                   "Porto\n",
+                   "Portugal" ] ),
+    Place         := "Porto",
+    Institution   := "Faculdade de Ciências"
   ),
-
   rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
+    LastName      := "Morais",
+    FirstNames    := "Jose",
     IsAuthor      := true,
     IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
-
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
-    IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
+    PostalAddress := "No address known"
+  )
 ],
+                   
+Status := "deposited",       
 
-Status := "other",
-
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
-
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
+SourceRepository := rec(
+  Type := "git",
+  URL := "https://github.com/gap-packages/sgpviz"
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := "https://gap-packages.github.io/sgpviz",
+README_URL      := Concatenation( ~.PackageWWWHome, "/README" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/", ~.PackageName, "-", ~.Version ),
+ArchiveFormats := ".tar.gz",
+                   
 AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
+   "The <span class=\"pkgname\">SgpViz</span> package, is a package with some visualization features for finite semigroups.",
 
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
+  BookName  := "SgpViz",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
+  LongTitle := "SgpViz, a GAP package for semigroup visualization",
 ),
-
-# The following dependencies are fake and for testing / demo purposes
+                   
 Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  GAP := ">=4.4",
+  NeededOtherPackages := [["Automata", ">= 1.11"]],
+  SuggestedOtherPackages := [],
+  ExternalConditions := [["Evince","http://www.gnome.org/projects/evince/"],["Graphviz","http://www.graphviz.org/"]]
+                      
 ),
-
+                  
 AvailabilityTest := ReturnTrue,
-
-Keywords := ["GitHub Pages", "GAP"]
-
-));
+ BannerString := Concatenation(
+  "----------------------------------------------------------------\n",
+  "Loading  SgpViz ", ~.Version, "(semigroup visualization)\n",
+#  "by ", ~.Persons[1].FirstNames, " ", ~.Persons[1].LastName,
+#        " (", ~.Persons[1].WWWHome, ")\n",
+#  "   ", ~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,"\n",
+#        " (", ~.Persons[2].WWWHome, ")\n",
+#  "   ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
+#        " (", ~.Persons[3].WWWHome, ")\n",
+  "For help, type: ?SgpViz: \n",
+  "----------------------------------------------------------------\n" ),
+                  
+TestFile := "tst/testall.tst",
+                   
+Keywords := ["Semigroup", "D-Class", "Schutzenberger graphs", "Cayley graphs"]
+  
+                    ));
+                
 
 

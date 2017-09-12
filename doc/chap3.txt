@@ -1,0 +1,236 @@
+  
+  [1X3 [33X[0;0YDrawings of semigroups[133X[101X
+  
+  [33X[0;0YThere  are  some  pictures  that  may  give  a  lot  of  information about a
+  semigroup.  This  is  the  case of the egg-box picture of the D-classes, the
+  right  Cayley  graph  of  a finite monoid and the Schutzenberger graphs of a
+  finite inverse monoid.[133X
+  
+  
+  [1X3.1 [33X[0;0YDrawing the D-class of an element of a semigroup[133X[101X
+  
+  [1X3.1-1 DrawDClassOfElement[101X
+  
+  [29X[2XDrawDClassOfElement[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThis  function  takes  as arguments a semigroup followed by a transformation
+  which  is  the  element  whose D-class will be drawn. Optionally we can then
+  specify  n  lists of elements and the elements of each list will be drawn in
+  different  colours. Finally, we may specify a string name the file that will
+  be  used to write the drawing of the class (in PostScript format) and if the
+  last   argument   is  the  integer  [10X1[110X  then  the  elements  will  appear  as
+  transformations,  otherwise  they will appear as words. The idempotents will
+  be marked with a * before them.[133X
+  
+  [33X[0;0YThis  last  optional argument may also be the integer [10X2[110X and in this case the
+  elements   will   appear   as  integers,  where  [10Xi[110X  represents  the  element
+  [10XElements(S)[i][110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]));[128X[104X
+    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),1);[128X[104X
+    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),[128X[104X
+    [4X[28X [Transformation( [ 2, 3, 4, 4 ] )],1);[128X[104X
+    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),[128X[104X
+    [4X[28X [Transformation( [ 2, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] )],[128X[104X
+    [4X[28X [Transformation( [ 2, 4, 3, 4 ] )],1);[128X[104X
+    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]), [128X[104X
+    [4X[28X [Transformation( [ 2, 4, 3, 4 ] )],"Dclass",1);[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThis  is  the  image  produced by the first command in the previous example:
+  This  is  the  image produced by the fourth command in the previous example:
+  This is the image produced by the last command in the previous example:[133X
+  
+  
+  [1X3.2 [33X[0;0YDrawing the D-classes of a semigroup[133X[101X
+  
+  [1X3.2-1 DrawDClasses[101X
+  
+  [29X[2XDrawDClasses[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThis function is similar to the previous one, except that this one draws all
+  the  D-classes  of  the semigroup given as the first argument. It then takes
+  optionally  n  lists of elements and the elements of each list will be drawn
+  in  different  colours.  It also accepts a string specifying the name of the
+  file  in which the drawing will be written and the last, optional, argument,
+  the  integer  [10X1[110X,  to specify whether the elements will appear as words or as
+  transformations  as in the previous function. The idempotents will be marked
+  with a * before them.[133X
+  
+  [33X[0;0YThis  last  optional argument may also be the integer [10X2[110X and in this case the
+  elements   will   appear   as  integers,  where  [10Xi[110X  represents  the  element
+  [10XElements(S)[i][110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28Xgap&#62; DrawDClasses(poi3,"DClasses");[128X[104X
+    [4X[28Xgap&#62; DrawDClasses(poi3, [Transformation( [ 2, 3, 4, 4 ] ),[128X[104X
+    [4X[28X  Transformation( [ 2, 4, 3, 4 ] )],[128X[104X
+    [4X[28X  [Transformation( [ 2, 4, 3, 4 ] )],1);[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThis  is  the  image  produced by the first command in the previous example:
+  This is the image produced by the second command in the previous example:[133X
+  
+  
+  [1X3.3 [33X[0;0YCayley graphs[133X[101X
+  
+  [1X3.3-1 DrawRightCayleyGraph[101X
+  
+  [29X[2XDrawRightCayleyGraph[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YDraws the right Cayley graph of a finite monoid or semigroup [3XS[103X.[133X
+  
+  [1X3.3-2 DrawCayleyGraph[101X
+  
+  [29X[2XDrawCayleyGraph[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YThis function is a synonym of [2XDrawRightCayleyGraph[102X ([14X3.3-1[114X).[133X
+  
+  [33X[0;0YFor  example,  the command [10XDrawCayleyGraph(b21);[110X would produce the following
+  image  (where  state  [10Xi[110X  represents  the element [10XElements(S)[i][110X, the neutral
+  element  is colored in "light blue" and all other idempotents are colored in
+  "light coral"):[133X
+  
+  
+  [1X3.4 [33X[0;0YSchutzenberger graphs[133X[101X
+  
+  [1X3.4-1 DrawSchutzenbergerGraphs[101X
+  
+  [29X[2XDrawSchutzenbergerGraphs[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YDraws the Schutzenberger graphs of the inverse semigroup [3XS[103X.[133X
+  
+  [33X[0;0YFor example, [10XDrawSchutzenbergerGraphs(poi3);[110X would produce the following:[133X
+  
+  
+  [1X3.5 [33X[0;0YDrawings output formats[133X[101X
+  
+  [33X[0;0YBy  default,  when  a  drawing  is  requested, it is outputted in PostScript
+  format.    Since    [10Xgraphviz[110X    allows    other    output    formats    (see
+  [7Xhttp://www.graphviz.org/doc/info/output.html[107X),   it   is  possible  to  also
+  request a drawing in a format other than PostScript.[133X
+  
+  [1X3.5-1 DrawingsListOfExtraFormats[101X
+  
+  [29X[2XDrawingsListOfExtraFormats[102X[32X global variable
+  
+  [33X[0;0YThis  is  a  global  variable  which  holds  the  valid output formats for a
+  drawing.  It  currently  has  the  value: [10X["dia", "fig", "gd", "gd2", "gif",
+  "hpgl", "jpg", "mif", "mp", "pcl", "pic", "plain", "plain-ext", "png", "ps",
+  "ps2",    "svg",    "svgz",    "vrml",    "vtx",    "wbmp",   "none"][110X   (see
+  [7Xhttp://www.graphviz.org/doc/info/output.html[107X for their description).[133X
+  
+  [1X3.5-2 DrawingsExtraFormat[101X
+  
+  [29X[2XDrawingsExtraFormat[102X[32X global variable
+  
+  [33X[0;0YThis  is  a  global variable which holds the alternative output format for a
+  drawing. By default its value is [10X"none"[110X which indicates that just PostScript
+  will be used as the output format.[133X
+  
+  [33X[0;0YIf  its  value  becomes  one of those in [2XDrawingsListOfExtraFormats[102X ([14X3.5-1[114X),
+  then  besides  the  PostScript  file,  it will also be created a file in the
+  alternative format.[133X
+  
+  [33X[0;0YTo change this variable's value, please use [2XSetDrawingsExtraFormat[102X ([14X3.5-3[114X).[133X
+  
+  [1X3.5-3 SetDrawingsExtraFormat[101X
+  
+  [29X[2XSetDrawingsExtraFormat[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0YThis function is used to set the value of [2XDrawingsExtraFormat[102X ([14X3.5-2[114X) to the
+  format [3Xf[103X which is one of [2XDrawingsListOfExtraFormats[102X ([14X3.5-1[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraFormat;[127X[104X
+    [4X[28X"none"[128X[104X
+    [4X[25Xgap>[125X [27XSetDrawingsExtraFormat("jpg");[127X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraFormat;[127X[104X
+    [4X[28X"jpg"[128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDrawRightCayleyGraph(poi3);[127X[104X
+    [4X[28XDisplaying file: /tmp/tmp.tpJqvI/cayleygraph.dot.ps[128X[104X
+    [4X[28XThe extra output format file: /tmp/tmp.tpJqvI/cayleygraph.dot.jpg[128X[104X
+    [4X[28Xhas also been created.[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X3.6 [33X[0;0YDrawings extra graph attributes[133X[101X
+  
+  [33X[0;0YThe  functions  described in this subsection are intended to give the user a
+  finer  control  over  the  final  drawing.  They  allow  to define the graph
+  attributes  described in [7Xhttp://graphviz.org/doc/info/attrs.html[107X. (Note that
+  only  graph  attributes  are  allowed  to  be  defined,  not  edge  nor node
+  attributes are supported yet.)[133X
+  
+  [1X3.6-1 DrawingsExtraGraphAttributes[101X
+  
+  [29X[2XDrawingsExtraGraphAttributes[102X[32X global variable
+  
+  [33X[0;0YThis  is  a  global  variable  which  holds a list of strings, each of which
+  defines  a [13Xdot[113X graph attribute. This variable is [13Xnot[113X intended to be modified
+  by  the  user  directly, but can be used to check which extra attributes are
+  currently     defined.     To     set    the    attributes,    please    use
+  [2XSetDrawingsExtraGraphAttributes[102X   ([14X3.6-2[114X).  If  [10XDrawingsExtraGraphAttributes[110X
+  holds  the  value  [10X"none"[110X  then  the  default [13Xdot[113X settings will be used. Use
+  [2XClearDrawingsExtraGraphAttributes[102X ([14X3.6-3[114X) to set it to [10X"none"[110X.[133X
+  
+  [1X3.6-2 SetDrawingsExtraGraphAttributes[101X
+  
+  [29X[2XSetDrawingsExtraGraphAttributes[102X( [3XL[103X ) [32X function
+  
+  [33X[0;0YThis  is  the  function  to  define  the  drawing's  graph  attributes  (see
+  [7Xhttp://graphviz.org/doc/info/attrs.html[107X for a list and explanation of them).
+  the  argument  [3XL[103X  is  a  list  of strings, each of which defines a [13Xdot[113X graph
+  attribute.  For example, if we wanted to define the graph size to be 7x9 (in
+  inches), we would call [10XSetDrawingsExtraGraphAttributes(["size=7,9"]);[110X.[133X
+  
+  [33X[0;0YIf  we  also wanted to define the graph to be displayed in landscape mode we
+  would  call [10XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);[110X. If,
+  in  addition  we  wanted  to define the background color to be, for example,
+  pink,    we    would    call    [10XSetDrawingsExtraGraphAttributes(["size=7,9",
+  "rotate=90", "bgcolor=pink"]);[110X.[133X
+  
+  [33X[0;0YAfter  defining  the attributes, any command that creates a drawing will use
+  the  last  defined  attributes. To set them back to the defaults, please use
+  [2XClearDrawingsExtraGraphAttributes[102X ([14X3.6-3[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
+    [4X[28X"none"[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XSetDrawingsExtraGraphAttributes(["size=7,9"]);[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
+    [4X[28X[ "size=7,9" ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
+    [4X[28X[ "size=7,9", "rotate=90" ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90", "bgcolor=pink"]);[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
+    [4X[28X[ "size=7,9", "rotate=90", "bgcolor=pink" ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XClearDrawingsExtraGraphAttributes();[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
+    [4X[28X"none"[128X[104X
+  [4X[32X[104X
+  
+  [1X3.6-3 ClearDrawingsExtraGraphAttributes[101X
+  
+  [29X[2XClearDrawingsExtraGraphAttributes[102X(  ) [32X function
+  
+  [33X[0;0YThis function sets the graph drawing attributes back to [13Xdot[113X's defaults.[133X
+  

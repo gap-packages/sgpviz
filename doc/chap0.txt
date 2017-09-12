@@ -1,1 +1,138 @@
-Placeholder
+  
+  
+                                     [1X[5XSgpViz[105X[101X
+  
+  
+                   [1XA [5XGAP[105X package for semigroup visualization[101X
+  
+  
+                                  Version 1.0
+  
+  
+                                  2 June 2015
+  
+  
+                                 Manuel Delgado
+  
+                                José João Morais
+  
+  
+  
+  Manuel Delgado
+      Email:    [7Xmailto:mdelgado@fc.up.pt[107X
+      Homepage: [7Xhttp://www.fc.up.pt/cmup/mdelgado[107X
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2005 by Manuel Delgado and José João Morais[133X
+  
+  [33X[0;0Y[5XSgpViz[105X  package  is  free software; you can redistribute it and/or modify it
+  under     the     terms     of    the    GNU    General    Public    License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.  For details, see the file 'GPL' included in the package or see the
+  FSF's own site.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YThe  first  author acknowledges financial support of FCT, through the [13XCentro
+  de Matemática da Universidade do Porto[113X.[133X
+  
+  [33X[0;0YThe  second  author  acknowledges  financial  support  of  FCT and the POCTI
+  program  through a scholarship given by [13XCentro de Matemática da Universidade
+  do Porto[113X.[133X
+  
+  [33X[0;0YBoth  authors  acknowledge Jorge Almeida, Vítor H. Fernandes and Pedro Silva
+  for many helpful discussions and comments.[133X
+  
+  [33X[0;0Y[12XConcerning maintenance:[112X[133X
+  
+  [33X[0;0YThe maintainer wants to acknowledge partial support by:[133X
+  
+  [33X[0;0YFCT   -   Fundação   para  a  Ciência  e  a  Tecnologia  under  the  project
+  PTDC/MAT/65481/2006[133X
+  
+  [33X[0;0Y[13XCentro de Matemática da Universidade do Porto[113X (CMUP), funded by the European
+  Regional   Development  Fund  through  the  programme  COMPETE  and  by  the
+  Portuguese Government through the FCT project PEst-C/MAT/UI0144/2011.[133X
+  
+  [33X[0;0YCMUP  (UID/MAT/00144/2013),  which is funded by FCT (Portugal) with national
+  (MEC)  and  European  structural funds through the programs FEDER, under the
+  partnership agreement PT2020.[133X
+  
+  [33X[0;0YFurthermore,  the  maintainer  wants  to  thank the organizers of [10XGAPDays[110X in
+  their  several  editions,  as  well  as  several people (for advices, giving
+  feedback,  etc).  Among them I would like to refer: Max Horn, James Mitchel,
+  Jan Philipp Wächter, João Araújo, Alfredo Costa and Teresa Melo.[133X
+  
+  
+  -------------------------------------------------------
+  [1XColophon[101X
+  [33X[0;0YThis  manual  describes  the  [5XGAP[105X package [5XSgpViz[105X version 1.0 for visualizing
+  finite semigroups.[133X
+  
+  [33X[0;0YSince  Version  0.998  (released  in 2008), the package is maintained by the
+  first author.[133X
+  
+  [33X[0;0YThe  present  package  is  supersede by the [5XGAP[105X package [13Xsemigroups[113X, by James
+  Mitchel,  in  what  concerns  some  aspects  of  semigroup visualization. We
+  strongly  suggest the usage of that package, unless you find useful specific
+  tools available in [5XSgpViz[105X but not in [13Xsemigroups[113X.[133X
+  
+  [33X[0;0YBug  reports,  suggestions  and comments are, of course, welcome. Please use
+  the email address [7Xmailto:mdelgado@fc.up.pt[107X to this effect.[133X
+  
+  [33X[0;0YIf  you  have  benefited  from  the  use  of  the [5XSgpViz[105X [5XGAP[105X package in your
+  research,  please  cite  it  in addition to [5XGAP[105X itself, following the scheme
+  proposed in [7Xhttp://www.gap-system.org/Contacts/cite.html[107X.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (SgpViz)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+  2 [33X[0;0YBasics[133X
+    2.1 [33X[0;0YExamples[133X
+    2.2 [33X[0;0YSome attributes[133X
+      2.2-1 HasCommutingIdempotents
+      2.2-2 IsInverseSemigroup
+    2.3 [33X[0;0YSome basic functions[133X
+      2.3-1 PartialTransformation
+      2.3-2 ReduceNumberOfGenerators
+      2.3-3 SemigroupFactorization
+      2.3-4 GrahamBlocks
+    2.4 [33X[0;0YCayley graphs[133X
+      2.4-1 RightCayleyGraphAsAutomaton
+      2.4-2 RightCayleyGraphMonoidAsAutomaton
+  3 [33X[0;0YDrawings of semigroups[133X
+    3.1 [33X[0;0YDrawing the D-class of an element of a semigroup[133X
+      3.1-1 DrawDClassOfElement
+    3.2 [33X[0;0YDrawing the D-classes of a semigroup[133X
+      3.2-1 DrawDClasses
+    3.3 [33X[0;0YCayley graphs[133X
+      3.3-1 DrawRightCayleyGraph
+      3.3-2 DrawCayleyGraph
+    3.4 [33X[0;0YSchutzenberger graphs[133X
+      3.4-1 DrawSchutzenbergerGraphs
+    3.5 [33X[0;0YDrawings output formats[133X
+      3.5-1 DrawingsListOfExtraFormats
+      3.5-2 DrawingsExtraFormat
+      3.5-3 SetDrawingsExtraFormat
+    3.6 [33X[0;0YDrawings extra graph attributes[133X
+      3.6-1 DrawingsExtraGraphAttributes
+      3.6-2 SetDrawingsExtraGraphAttributes
+      3.6-3 ClearDrawingsExtraGraphAttributes
+  4 [33X[0;0YUser friendly ways to give semigroups and automata[133X
+    4.1 [33X[0;0YFinite automata[133X
+      4.1-1 XAutomaton
+    4.2 [33X[0;0YFinite semigroups[133X
+      4.2-1 XSemigroup
+      4.2-2 [33X[0;0YSemigroups given through generators and relations[133X
+      4.2-3 [33X[0;0YSemigroups given by partial transformations[133X
+      4.2-4 [33X[0;0YSyntatic semigroups[133X
+  
+  
+  [32X
