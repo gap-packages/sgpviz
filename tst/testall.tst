@@ -39,6 +39,82 @@ true
 # Examples from the manual
 # (These examples use at least a funtion from each file)
 
+gap> f := FreeMonoid("a","b");
+<free monoid on the generators [ a, b ]>
+gap> a := GeneratorsOfMonoid( f )[ 1 ];;
+gap> b := GeneratorsOfMonoid( f )[ 2 ];;
+gap> r:=[[a^3,a^2],
+> [a^2*b,a^2],
+> [b*a^2,a^2],
+> [b^2,a^2],
+> [a*b*a,a],
+> [b*a*b,b] ];
+[ [ a^3, a^2 ], [ a^2*b, a^2 ], [ b*a^2, a^2 ], [ b^2, a^2 ], [ a*b*a, a ], 
+  [ b*a*b, b ] ]
+gap> b21:= f/r;
+<fp monoid on the generators [ a, b ]>
+
+gap> g0:=Transformation([4,1,2,4]);;
+gap> g1:=Transformation([1,3,4,4]);;
+gap> g2:=Transformation([2,4,3,4]);;
+gap> poi3:= Monoid(g0,g1,g2);
+<transformation monoid of degree 4 with 3 generators>
+
+gap> PartialTransformation([2,0,4,0]);
+Transformation( [ 2, 5, 4, 5, 5 ] )
+
+gap> el1 := Transformation( [ 2, 3, 4, 4 ] );;
+gap> el2 := Transformation( [ 2, 4, 3, 4 ] );;
+gap> f1 := SemigroupFactorization(poi3,el1);
+[ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ] ]
+gap> f1[1][1] * f1[1][2] = el1;
+true
+gap> SemigroupFactorization(poi3,[el1,el2]);
+[ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ], 
+  [ Transformation( [ 2, 4, 3, 4 ] ) ] ]
+
+gap> p1 := PartialTransformation([6,2,0,0,2,6,0,0,10,10,0,0]);;
+gap> p2 := PartialTransformation([0,0,1,5,0,0,5,9,0,0,9,1]);;
+gap> p3 := PartialTransformation([0,0,3,3,0,0,7,7,0,0,11,11]);;
+gap> p4 := PartialTransformation([4,4,0,0,8,8,0,0,12,12,0,0]);;
+gap> css3:=Semigroup(p1,p2,p3,p4);
+<transformation semigroup of degree 13 with 4 generators>
+gap> el := Elements(css3)[8];;
+gap> D := GreensDClassOfElement(css3, el);;
+gap> IsRegularDClass(D);
+true
+gap> DisplayEggBoxOfDClass(D);
+[ [  1,  1,  0,  0 ],
+  [  1,  1,  0,  0 ],
+  [  0,  0,  1,  1 ],
+  [  0,  0,  1,  1 ] ]
+gap> mat := [ [  1,  0,  1,  0 ],
+>   [  0,  1,  0,  1 ],
+>   [  0,  1,  0,  1 ],
+>   [  1,  0,  1,  0 ] ];;
+gap> res := GrahamBlocks(mat);;
+gap> PrintArray(res[1]);
+[ [  1,  1,  0,  0 ],
+  [  1,  1,  0,  0 ],
+  [  0,  0,  1,  1 ],
+  [  0,  0,  1,  1 ] ]
+gap> PrintArray(res[2]);
+[ [  [ 1, 1 ],  [ 1, 3 ],  [ 1, 2 ],  [ 1, 4 ] ],
+  [  [ 4, 1 ],  [ 4, 3 ],  [ 4, 2 ],  [ 4, 4 ] ],
+  [  [ 2, 1 ],  [ 2, 3 ],  [ 2, 2 ],  [ 2, 4 ] ],
+  [  [ 3, 1 ],  [ 3, 3 ],  [ 3, 2 ],  [ 3, 4 ] ] ]
+
+gap> rcg := RightCayleyGraphAsAutomaton(b21);
+< deterministic automaton on 2 letters with 6 states >
+gap> Display(rcg);
+   |  1  2  3  4  5  6  
+-----------------------
+ a |  2  4  6  4  2  4  
+ b |  3  5  4  4  4  3  
+Initial state:   [  ]
+Accepting state: [  ]
+
+
 gap> STOP_TEST( "testall.tst", 10000 );
 ## The first argument of STOP_TEST should be the name of the test file.
 ## The number is a proportionality factor that is used to output a 
