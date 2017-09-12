@@ -68,7 +68,8 @@ InstallGlobalFunction(XSemigroup, function(arg)
                 gens := GeneratorsOfSemigroup(S);
             fi;
             leng := Length(gens);
-            dg := DegreeOfTransformation(gens[1]);
+##            dg := DegreeOfTransformation(gens[1]);
+            dg := DegreeOfTransformationSemigroup(S);
 
             # Check if the transitions are partial
             list := List(gens, g -> ImageListOfTransformation(g));
