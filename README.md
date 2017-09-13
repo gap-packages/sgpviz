@@ -8,54 +8,42 @@ This is release 0.999 of  the package `SgpViz'.
 
 The features of this package include
 
-         - drawing the D-Classes of a semigroup and the
-	   D-Class of an element of a semigroup;
-	 - computing a minimal factorization of an element
-	   of semigroup in the generators;
-         - drawing the Schutzenberger graphs of an inverse
-	   semigroup;
-         - computing the right Cayley graph of a semigroup;
-         - a Tcl/Tk interface to specify a semigroup;
+- drawing the D-Classes of a semigroup and the D-Class of an element of a semigroup;
+- drawing the Schutzenberger graphs of an inverse semigroup;
+- a Tcl/Tk interface to specify a semigroup;
 
 There is a manual in the sub-directory 'doc' written using the GAP package
-gapdoc which describes the available functions in detail. The dvi, pdf, html
+gapdoc which describes the available functions in detail. The pdf, html
 versions of the manual are also available there.
 
+The maintainer of the package is Manuel Delgado <mdelgado@fc.up.pt>.
 
-If you have used this package, please let us know by sending
-us an email.  If you  have found important features missing or if there is a
-bug, we would appreciate it very much if you send us an email.
-
-Manuel Delgado   <mdelgado@fc.up.pt>
-José Morais	 <josejoao@fc.up.pt>
+In many aspects the present package was superseeded by the package "semigroups" by James Mitchel. I encourage you to use it. While there are some features not covered by the "semigroups" package, an effort will be made for keeping SgpViz working.
+If you  have found important features missing or if there is a bug, I would appreciate it very much if you send me an email.
 
 Contents
 --------
-With this version you should have obtained the following files and
-directories:
-
-        README          this file
-
-	EXAMPLES	some examples
-
-        doc             the manual
-    
-        gap             the GAP code
-
-        init.g          the file that initializes this package
-
-        read.g          the file that reads in the package     
-
-	PackageInfo.g	information file for automatic processing
-
-	version		the version number   
+With this version you should have obtained the following files and directories:
+| File/directory | Description |
+|:-----|:------|
+|README |   this file|
+|EXAMPLES|	some examples|
+|CHANGES|	changelog|
+|LICENSE|	Licensing information|
+|doc  |	the manual|
+|gap  |the GAP code|
+|tst  |	a test file|
+|init.g| the file that initializes this package|
+|read.g |         		the file that reads in the package|
+|PackageInfo.g	| information file for automatic processing|
+|version	|the version number|
 
 Usage
 -----
 The package shall be distributed with the main GAP archive. In this case, in
 order to use it you just have to start GAP and type
 
-      LoadPackage( "intpic" );
+      LoadPackage( "sgpviz" );
 
 ------------------------------
 ------------------------------
@@ -95,7 +83,7 @@ This package needs the package `Automata' (http://www.gap-system.org/~gap/Packag
 
 You may have to start GAP with the -l option, for instance,
 
-gap -l "/usr/local/lib/gap4r4"
+gap -l "/usr/local/lib/gap4r8"
 
 Then try the following
 
@@ -108,20 +96,23 @@ Good luck!
 If you use a LINUX system, you may have to, in order to save typing, write
 aliases: 
 
-in the file `.bashrc' (or something equivalent, maybe with another syntax): 
+in the file `.bash_aliases' (or something equivalent, maybe with another syntax): 
 
 alias gap='gap -l "/usr/local/lib/gap4r8;"'
 
-and in the file `.gaprc'
+and in the file `.gap/gaprc'
 
 LoadPackage( "sgpviz" ); 
 
+In order to have automatic visualisations and not just to produce the dot code to be visualised bý any other means, GraphViz (http://www.graphviz.org/) should be installed.
 
-
-GraphViz (http://www.graphviz.org/)
-should be installed.
-
-Tcl/Tk should also be installed.
+In order to be able to use a GUI to give automata or semigroups, Tcl/Tk should also be installed.
 
 ----------
 In other systems, there are equivalent ways to do the same.
+
+SgpViz is free software you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version. For details, see the file 'GPL' in the
+'etc' directory of the GAP distribution or see the FSF's own site.
