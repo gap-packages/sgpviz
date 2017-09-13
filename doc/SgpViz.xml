@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-    [<!ENTITY SgpViz "<Alt Not='Text'><URL
-   Text='SgpViz'>https://gap-packages.github.io/sgpviz/</URL></Alt><Alt Only='Text'><Package>SgpViz</Package></Alt>">
-<!ENTITY Viz "<Alt Not='Text'><URL
-   Text='Viz'>https://bitbucket.org/zen154115/viz</URL></Alt><Alt Only='Text'><Package>Viz</Package></Alt>">
-<!-- Reading PKGVERSIONDATA chunk from the PackageInfo.g file -->
-   <#Include Label="PKGVERSIONDATA">
-<!-- the label "PKGVERSIONDATA" is contained in the "PackageInfo.g" file -->
-]>
+[<!ENTITY SgpViz "<Alt Not='Text'><URL
+   Text='SgpViz'>https://gap-packages.github.io/sgpviz/</URL></Alt><Alt Only='Text'><Package>SgpViz</Package></Alt>">]
+>
 
 <!-- Documentation to the SgpViz package. -->
 
@@ -17,9 +12,8 @@
 <TitlePage>
     <Title>&SgpViz;</Title>
     <Subtitle>A &GAP; package for semigroup visualization</Subtitle>
-    <Version>Version &VERSION;</Version>
-    <Date>&RELEASEDATE;</Date>
-
+  <Version> Version <#Include SYSTEM "../version">
+  </Version>
   <Author> Manuel Delgado
     <Email>mdelgado@fc.up.pt</Email>
     <Homepage>http://www.fc.up.pt/cmup/mdelgado</Homepage>
@@ -35,10 +29,8 @@
       as published by the Free Software Foundation; either version 2 of the
       License, or (at your option) any later version. For details, see the file 'GPL' included in the package or see the FSF's own site.
     </Copyright>
-
 <Colophon>
-      This manual describes the &GAP; package &SgpViz; version
-      &VERSION; for visualizing finite semigroups.<P/>
+      This manual describes the &GAP; package &SgpViz;, Version <#Include SYSTEM "../version">, for visualizing finite semigroups.<P/>
       <P/>
       Since Version 0.998 (released in 2008), the package is maintained by the first author.
       <P/>
