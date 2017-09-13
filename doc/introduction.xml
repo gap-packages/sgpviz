@@ -22,7 +22,7 @@ It requires the usage of external programs as is the case of
     </Alt>
     T Labs, that can be obtained at
     <URL>http://www.graphviz.org/</URL>.
-It is used not only to draw right Cayley graphs of finite semigroups and Schüzenberger graphs of finite inverse semigroups but also to visualize in the usual way the egg-box picture of a D-classe of a finite semigroup. 
+It is used not only to draw right Cayley graphs of finite semigroups and Schüzenberger graphs of finite inverse semigroups but also to visualise in the usual way the egg-box picture of a D-classe of a finite semigroup. 
 
 <Alt Only="LaTeX">
 \ \\
@@ -31,7 +31,7 @@ It is used not only to draw right Cayley graphs of finite semigroups and Schüze
 <Alt Only="HTML">
 &lt;br&gt;&lt;br&gt;
 </Alt>
-<B>Important note</B>: The version of <C>graphviz</C> to install should be
+<B>Important note</B>: The version of <C>graphviz</C> to install must be
 greater or equal to 1.16.
 <Alt Only="LaTeX">
 \ \\
@@ -42,7 +42,25 @@ greater or equal to 1.16.
 </Alt>
 
 Tcl/Tk should also be available in order to run the graphical interfaces
-(XAutomaton and XSemigroup)
+  <P/>
+XAutomaton and XSemigroup
+  <Br/>
 used to specify automata and semigroups.
+<P/>
+<Alt Only="LaTeX">
+\ \\
+\ \\
+    </Alt>
+<Alt Only="HTML">
+&lt;br&gt;&lt;br&gt;
+</Alt>
+<B>Warning</B>: the use of XAutomaton and XSemigroup is intended only for simple examples. After its use one may have to start another GAP session.
+<Alt Only="LaTeX">
+\ \\
+\ \\
+    </Alt>
+<Alt Only="HTML">
+&lt;br&gt;&lt;br&gt;
+</Alt>
 
   </Chapter>

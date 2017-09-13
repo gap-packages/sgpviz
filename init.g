@@ -4,7 +4,7 @@
 #W                                    Jose Morais    <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: init.g,v 0.999 $
+#H  @(#)$Id: init.g,v 0.999.1 $
 ##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##

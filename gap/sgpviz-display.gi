@@ -38,7 +38,9 @@ InstallGlobalFunction(DrawDClassOfElement, function(arg)
   local  dotstr; 
   
   #  dotstr := DotForDrawingDClassOfElement(arg[1],arg[2]);
-  dotstr := CallFuncList(DotForDrawingDClassOfElement,arg);
+  #dotstr := CallFuncList(DotForDrawingDClassOfElement,arg));
+  #for compatibility with previous versions:
+  dotstr := CallFuncList(DotForDrawingDClassOfElement,Filtered(arg, a -> not IsString(a)));
   
   SV_Splash(dotstr);
 end);
@@ -53,7 +55,7 @@ InstallGlobalFunction(DrawDClasses, function(arg)
   local  dotstr; 
   
  # dotstr := DotForDrawingRightCayleyGraph(arg);
-  dotstr := CallFuncList(DotForDrawingDClasses,arg);
+  dotstr := CallFuncList(DotForDrawingDClasses,Filtered(arg, a -> not IsString(a)));
   SV_Splash(dotstr);
 end);
 

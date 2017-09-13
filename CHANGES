@@ -1,4 +1,10 @@
-0.998 -> ??
-update drawdclasses.gi 
+0.998 -> 0.999.1
+-Removed the SuperFail (thanks Max H.)
+-drawings are now produced in two steps: first the dot code (that is accessible to the user) and then the display
+-added a test file
+-fix the code brocken by the change of IdentityTransformation in the GAP system
+-updating the manual to be processed using makedoc, besides minor corresctions
+-creating a GitHub repository
+-update drawdclasses.gi 
 (IdentityTransformation(tlen) to IdentityTransformation)
 (if String(el)[6] = '.' then  to  if el = [] then)

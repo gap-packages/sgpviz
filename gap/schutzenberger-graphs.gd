@@ -3,7 +3,7 @@
 #W  schutzenberger-graphs.gd            Manuel Delgado <mdelgado@fc.up.pt>
 #W                                      Jose Morais    <josejoao@fc.up.pt>
 ##
-#H  @(#)$Id: schutzenberger-graphs.gd,v 0.998 $
+#H  @(#)$Id: schutzenberger-graphs.gd,v 0.999 $
 ##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##
