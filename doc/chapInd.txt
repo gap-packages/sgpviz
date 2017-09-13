@@ -3,6 +3,9 @@
   [1XIndex[101X
   
   [2XClearDrawingsExtraGraphAttributes[102X 3.6-3 
+  [2XDotForDrawingDClasses[102X 3.2-2 
+  [2XDotForDrawingDClassOfElement[102X 3.1-2 
+  [2XDotForDrawingRightCayleyGraph[102X 3.3-3 
   [2XDrawCayleyGraph[102X 3.3-2 
   [2XDrawDClasses[102X 3.2-1 
   [2XDrawDClassOfElement[102X 3.1-1 

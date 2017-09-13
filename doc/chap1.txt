@@ -6,9 +6,14 @@
   case of [10Xgraphviz[110X [DEG+02], a software for drawing graphs developed at AT & T
   Labs,  that can be obtained at [7Xhttp://www.graphviz.org/[107X. It is used not only
   to draw right Cayley graphs of finite semigroups and Schüzenberger graphs of
-  finite inverse semigroups but also to visualize in the usual way the egg-box
+  finite inverse semigroups but also to visualise in the usual way the egg-box
   picture  of a D-classe of a finite semigroup. [12XImportant note[112X: The version of
-  [10Xgraphviz[110X  to  install should be greater or equal to 1.16. Tcl/Tk should also
-  be  available  in  order  to  run  the  graphical interfaces (XAutomaton and
-  XSemigroup) used to specify automata and semigroups.[133X
+  [10Xgraphviz[110X  to install must be greater or equal to 1.16. Tcl/Tk should also be
+  available in order to run the graphical interfaces[133X
+  
+  [33X[0;0YXAutomaton and XSemigroup[133X
+  [33X[0;0Yused to specify automata and semigroups.[133X
+  
+  [33X[0;0Y[12XWarning[112X:  the  use  of XAutomaton and XSemigroup is intended only for simple
+  examples. After its use one may have to start another GAP session.[133X
   

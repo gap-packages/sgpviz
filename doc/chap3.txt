@@ -3,7 +3,7 @@
   
   [33X[0;0YThere  are  some  pictures  that  may  give  a  lot  of  information about a
   semigroup.  This  is  the  case of the egg-box picture of the D-classes, the
-  right  Cayley  graph  of  a finite monoid and the Schutzenberger graphs of a
+  right  Cayley  graph  of  a finite monoid and the Schützenberger graphs of a
   finite inverse monoid.[133X
   
   
@@ -13,11 +13,11 @@
   
   [29X[2XDrawDClassOfElement[102X( [3Xarg[103X ) [32X function
   
-  [33X[0;0YThis  function  takes  as arguments a semigroup followed by a transformation
-  which  is  the  element  whose D-class will be drawn. Optionally we can then
-  specify  n  lists of elements and the elements of each list will be drawn in
-  different  colours. Finally, we may specify a string name the file that will
-  be  used to write the drawing of the class (in PostScript format) and if the
+  [33X[0;0YThis  function  uses [2XDotForDrawingDClassOfElement[102X ([14X3.1-2[114X) to compute the dot
+  code  to  produce  the image that is then displayed. It takes as arguments a
+  semigroup  followed  by  a transformation which is the element whose D-class
+  will  be  drawn.  Optionally we can then specify n lists of elements and the
+  elements  of  each  list will be drawn in different colours. Finally, if the
   last   argument   is  the  integer  [10X1[110X  then  the  elements  will  appear  as
   transformations,  otherwise  they will appear as words. The idempotents will
   be marked with a * before them.[133X
@@ -27,14 +27,14 @@
   [10XElements(S)[i][110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]));[128X[104X
-    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),1);[128X[104X
-    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),[128X[104X
+    [4X[25Xgap>[125X [27XDrawDClassOfElement(poi3, Transformation([1,4,3,4]));[127X[104X
+    [4X[25Xgap>[125X [27XDrawDClassOfElement(poi3, Transformation([1,4,3,4]),1);[127X[104X
+    [4X[25Xgap>[125X [27XDrawDClassOfElement(poi3, Transformation([1,4,3,4]),[127X[104X
     [4X[28X [Transformation( [ 2, 3, 4, 4 ] )],1);[128X[104X
-    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]),[128X[104X
+    [4X[25Xgap>[125X [27XDrawDClassOfElement(poi3, Transformation([1,4,3,4]),[127X[104X
     [4X[28X [Transformation( [ 2, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] )],[128X[104X
     [4X[28X [Transformation( [ 2, 4, 3, 4 ] )],1);[128X[104X
-    [4X[28Xgap&#62; DrawDClassOfElement(poi3, Transformation([1,4,3,4]), [128X[104X
+    [4X[25Xgap>[125X [27XDrawDClassOfElement(poi3, Transformation([1,4,3,4]), [127X[104X
     [4X[28X [Transformation( [ 2, 4, 3, 4 ] )],"Dclass",1);[128X[104X
     [4X[28X      [128X[104X
   [4X[32X[104X
@@ -42,6 +42,74 @@
   [33X[0;0YThis  is  the  image  produced by the first command in the previous example:
   This  is  the  image produced by the fourth command in the previous example:
   This is the image produced by the last command in the previous example:[133X
+  
+  [1X3.1-2 DotForDrawingDClassOfElement[101X
+  
+  [29X[2XDotForDrawingDClassOfElement[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThis  function  computes  the dot code that can be used to produce a drawing
+  for  the D-class of an element of a semigroup. This can be done by using the
+  function  [2XDrawDClassOfElement[102X ([14X3.1-1[114X) (if the system is properly configured)
+  or  by  the  user in some independent way. The arguments and options are the
+  same than those of [2XDrawDClassOfElement[102X ([14X3.1-1[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> DotForDrawingDClassOfElement(poi3,Transformation([1,4,3,4]));[128X[104X
+    [4X[28X"digraph  DClassOfElement {\ngraph [center=yes,ordering=out];\nnode [shape=pla\[128X[104X
+    [4X[28Xintext];\nedge [color=cornflowerblue,arrowhead=none];\n1 [label=<\n<TABLE BORD\[128X[104X
+    [4X[28XER=\"0\" CELLBORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" PORT=\"1\">\n<TR\[128X[104X
+    [4X[28X><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"\[128X[104X
+    [4X[28X0\">*abc</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR\[128X[104X
+    [4X[28X><TD BGCOLOR=\"white\" BORDER=\"0\">a</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"\[128X[104X
+    [4X[28X><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"0\">ab</TD></TR>\[128X[104X
+    [4X[28X\n</TABLE></TD></TR>\n<TR><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BG\[128X[104X
+    [4X[28XCOLOR=\"white\" BORDER=\"0\">bc</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"><TABL\[128X[104X
+    [4X[28XE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"0\">*bca</TD></TR>\n</T\[128X[104X
+    [4X[28XABLE></TD><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" \[128X[104X
+    [4X[28XBORDER=\"0\">b</TD></TR>\n</TABLE></TD></TR>\n<TR><TD BORDER=\"0\"><TABLE CELL\[128X[104X
+    [4X[28XSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"0\">c</TD></TR>\n</TABLE></TD\[128X[104X
+    [4X[28X><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"\[128X[104X
+    [4X[28X0\">ca</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><\[128X[104X
+    [4X[28XTD BGCOLOR=\"white\" BORDER=\"0\">*cab</TD></TR>\n</TABLE></TD></TR>\n</TABLE>\[128X[104X
+    [4X[28X>];\n}\n"[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YBy  using  Print  (or PrinTo, if one wants to print to a file) the string is
+  displayed as follows:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XPrint(last);[127X[104X
+    [4X[28Xdigraph  DClassOfElement {[128X[104X
+    [4X[28Xgraph [center=yes,ordering=out];[128X[104X
+    [4X[28Xnode [shape=plaintext];[128X[104X
+    [4X[28Xedge [color=cornflowerblue,arrowhead=none];[128X[104X
+    [4X[28X1 [label=<[128X[104X
+    [4X[28X<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0" PORT="1">[128X[104X
+    [4X[28X<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">*\[128X[104X
+    [4X[28Xabc</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\[128X[104X
+    [4X[28XDER="0">a</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\[128X[104X
+    [4X[28XDER="0">ab</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD></TR>[128X[104X
+    [4X[28X<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">b\[128X[104X
+    [4X[28Xc</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\[128X[104X
+    [4X[28XDER="0">*bca</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\[128X[104X
+    [4X[28XDER="0">b</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD></TR>[128X[104X
+    [4X[28X<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">c\[128X[104X
+    [4X[28X</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\[128X[104X
+    [4X[28XDER="0">ca</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\[128X[104X
+    [4X[28XDER="0">*cab</TD></TR>[128X[104X
+    [4X[28X</TABLE></TD></TR>[128X[104X
+    [4X[28X</TABLE>>];[128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
   
   
   [1X3.2 [33X[0;0YDrawing the D-classes of a semigroup[133X[101X
@@ -53,19 +121,20 @@
   [33X[0;0YThis function is similar to the previous one, except that this one draws all
   the  D-classes  of  the semigroup given as the first argument. It then takes
   optionally  n  lists of elements and the elements of each list will be drawn
-  in  different  colours.  It also accepts a string specifying the name of the
-  file  in which the drawing will be written and the last, optional, argument,
-  the  integer  [10X1[110X,  to specify whether the elements will appear as words or as
+  in  different colours. It also accepts, as an optional argument, the integer
+  [10X1[110X,   to   specify   whether   the  elements  will  appear  as  words  or  as
   transformations  as in the previous function. The idempotents will be marked
   with a * before them.[133X
+  
+  [33X[0;0YThe dot code is computed by [2XDotForDrawingDClasses[102X ([14X3.2-2[114X).[133X
   
   [33X[0;0YThis  last  optional argument may also be the integer [10X2[110X and in this case the
   elements   will   appear   as  integers,  where  [10Xi[110X  represents  the  element
   [10XElements(S)[i][110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28Xgap&#62; DrawDClasses(poi3,"DClasses");[128X[104X
-    [4X[28Xgap&#62; DrawDClasses(poi3, [Transformation( [ 2, 3, 4, 4 ] ),[128X[104X
+    [4X[25Xgap>[125X [27XDrawDClasses(poi3);[127X[104X
+    [4X[25Xgap>[125X [27XDrawDClasses(poi3, [Transformation( [ 2, 3, 4, 4 ] ),[127X[104X
     [4X[28X  Transformation( [ 2, 4, 3, 4 ] )],[128X[104X
     [4X[28X  [Transformation( [ 2, 4, 3, 4 ] )],1);[128X[104X
     [4X[28X      [128X[104X
@@ -73,6 +142,32 @@
   
   [33X[0;0YThis  is  the  image  produced by the first command in the previous example:
   This is the image produced by the second command in the previous example:[133X
+  
+  [1X3.2-2 DotForDrawingDClasses[101X
+  
+  [29X[2XDotForDrawingDClasses[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThis  function  computes  the dot code that can be used to produce a drawing
+  for  the D-class of an element of a semigroup. This can be done by using the
+  function  [2XDrawDClasses[102X  ([14X3.2-1[114X) (if the system is properly configured) or by
+  the  user  in  some  independent way. The arguments and options are the same
+  than those of [2XDrawDClasses[102X ([14X3.2-1[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XPrint(DotForDrawingDClasses(poi3));[127X[104X
+    [4X[28Xdigraph  DClasses {[128X[104X
+    [4X[28Xgraph [center=yes,ordering=out];[128X[104X
+    [4X[28Xnode [shape=plaintext];[128X[104X
+    [4X[28Xedge [color=cornflowerblue,arrowhead=none];[128X[104X
+    [4X[28X## ... many more lines ...[128X[104X
+    [4X[28X</TABLE></TD></TR>[128X[104X
+    [4X[28X</TABLE>>];[128X[104X
+    [4X[28X4:4 -> 3:3;[128X[104X
+    [4X[28X3:3 -> 2:2;[128X[104X
+    [4X[28X2:2 -> 1:1;[128X[104X
+    [4X[28X}[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
   
   
   [1X3.3 [33X[0;0YCayley graphs[133X[101X
@@ -91,27 +186,34 @@
   
   [33X[0;0YFor  example,  the command [10XDrawCayleyGraph(b21);[110X would produce the following
   image  (where  state  [10Xi[110X  represents  the element [10XElements(S)[i][110X, the neutral
-  element  is colored in "light blue" and all other idempotents are colored in
-  "light coral"):[133X
+  element  is  coloured in "light blue" and all other idempotents are coloured
+  in "light coral"):[133X
+  
+  [1X3.3-3 DotForDrawingRightCayleyGraph[101X
+  
+  [29X[2XDotForDrawingRightCayleyGraph[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YThis  function  computes  the dot code that is used by the previous function
+  and can also be used by the reader in some independent way.[133X
   
   
-  [1X3.4 [33X[0;0YSchutzenberger graphs[133X[101X
+  [1X3.4 [33X[0;0YSchützenberger graphs[133X[101X
   
   [1X3.4-1 DrawSchutzenbergerGraphs[101X
   
   [29X[2XDrawSchutzenbergerGraphs[102X( [3XS[103X ) [32X function
   
-  [33X[0;0YDraws the Schutzenberger graphs of the inverse semigroup [3XS[103X.[133X
+  [33X[0;0YDraws the Schützenberger graphs of the inverse semigroup [3XS[103X.[133X
   
   [33X[0;0YFor example, [10XDrawSchutzenbergerGraphs(poi3);[110X would produce the following:[133X
   
   
   [1X3.5 [33X[0;0YDrawings output formats[133X[101X
   
-  [33X[0;0YBy  default,  when  a  drawing  is  requested, it is outputted in PostScript
-  format.    Since    [10Xgraphviz[110X    allows    other    output    formats    (see
+  [33X[0;0YBy  default,  when  a  drawing  is requested, it is outputted in pdf format.
+  Since      [10Xgraphviz[110X      allows      other      output      formats     (see
   [7Xhttp://www.graphviz.org/doc/info/output.html[107X),   it   is  possible  to  also
-  request a drawing in a format other than PostScript.[133X
+  request a drawing in a format other than pdf.[133X
   
   [1X3.5-1 DrawingsListOfExtraFormats[101X
   
@@ -128,12 +230,12 @@
   [29X[2XDrawingsExtraFormat[102X[32X global variable
   
   [33X[0;0YThis  is  a  global variable which holds the alternative output format for a
-  drawing. By default its value is [10X"none"[110X which indicates that just PostScript
-  will be used as the output format.[133X
+  drawing.  By  default its value is [10X"none"[110X which indicates that just pdf will
+  be used as the output format.[133X
   
   [33X[0;0YIf  its  value  becomes  one of those in [2XDrawingsListOfExtraFormats[102X ([14X3.5-1[114X),
-  then  besides  the  PostScript  file,  it will also be created a file in the
-  alternative format.[133X
+  then besides the pdf file, it will also be created a file in the alternative
+  format.[133X
   
   [33X[0;0YTo change this variable's value, please use [2XSetDrawingsExtraFormat[102X ([14X3.5-3[114X).[133X
   
@@ -191,7 +293,7 @@
   
   [33X[0;0YIf  we  also wanted to define the graph to be displayed in landscape mode we
   would  call [10XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);[110X. If,
-  in  addition  we  wanted  to define the background color to be, for example,
+  in  addition  we  wanted to define the background colour to be, for example,
   pink,    we    would    call    [10XSetDrawingsExtraGraphAttributes(["size=7,9",
   "rotate=90", "bgcolor=pink"]);[110X.[133X
   

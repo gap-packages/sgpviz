@@ -3,13 +3,10 @@
                                      [1X[5XSgpViz[105X[101X
   
   
-                   [1XA [5XGAP[105X package for semigroup visualization[101X
+                   [1XA [5XGAP[105X package for semigroup visualisation[101X
   
   
-                                  Version 1.0
-  
-  
-                                  2 June 2015
+                                Version 0.999.1
   
   
                                  Manuel Delgado
@@ -61,24 +58,24 @@
   (MEC)  and  European  structural funds through the programs FEDER, under the
   partnership agreement PT2020.[133X
   
-  [33X[0;0YFurthermore,  the  maintainer  wants  to  thank the organizers of [10XGAPDays[110X in
-  their  several  editions,  as  well  as  several people (for advices, giving
+  [33X[0;0YFurthermore,  the  maintainer  wants  to  thank the organisers of [10XGAPDays[110X in
+  their  several  editions,  as  well  as  several people (for advises, giving
   feedback,  etc).  Among them I would like to refer: Max Horn, James Mitchel,
   Jan Philipp Wächter, João Araújo, Alfredo Costa and Teresa Melo.[133X
   
   
   -------------------------------------------------------
   [1XColophon[101X
-  [33X[0;0YThis  manual  describes  the  [5XGAP[105X package [5XSgpViz[105X version 1.0 for visualizing
-  finite semigroups.[133X
+  [33X[0;0YThis   manual  describes  the  [5XGAP[105X  package  [5XSgpViz[105X,  Version  0.999.1,  for
+  visualising finite semigroups.[133X
   
   [33X[0;0YSince  Version  0.998  (released  in 2008), the package is maintained by the
   first author.[133X
   
   [33X[0;0YThe  present  package  is  supersede by the [5XGAP[105X package [13Xsemigroups[113X, by James
-  Mitchel,  in  what  concerns  some  aspects  of  semigroup visualization. We
-  strongly  suggest the usage of that package, unless you find useful specific
-  tools available in [5XSgpViz[105X but not in [13Xsemigroups[113X.[133X
+  Mitchel,  in  what  concerns  some  aspects  of  semigroup visualisation. We
+  strongly  recommend  the  usage  of  that  package,  unless  you find useful
+  specific tools available in [5XSgpViz[105X but not in [13Xsemigroups[113X.[133X
   
   [33X[0;0YBug  reports,  suggestions  and comments are, of course, welcome. Please use
   the email address [7Xmailto:mdelgado@fc.up.pt[107X to this effect.[133X
@@ -110,12 +107,15 @@
   3 [33X[0;0YDrawings of semigroups[133X
     3.1 [33X[0;0YDrawing the D-class of an element of a semigroup[133X
       3.1-1 DrawDClassOfElement
+      3.1-2 DotForDrawingDClassOfElement
     3.2 [33X[0;0YDrawing the D-classes of a semigroup[133X
       3.2-1 DrawDClasses
+      3.2-2 DotForDrawingDClasses
     3.3 [33X[0;0YCayley graphs[133X
       3.3-1 DrawRightCayleyGraph
       3.3-2 DrawCayleyGraph
-    3.4 [33X[0;0YSchutzenberger graphs[133X
+      3.3-3 DotForDrawingRightCayleyGraph
+    3.4 [33X[0;0YSchützenberger graphs[133X
       3.4-1 DrawSchutzenbergerGraphs
     3.5 [33X[0;0YDrawings output formats[133X
       3.5-1 DrawingsListOfExtraFormats
