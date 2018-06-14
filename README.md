@@ -24,9 +24,10 @@ If you  have found important features missing or if there is a bug, I would appr
 Contents
 --------
 With this version you should have obtained the following files and directories:
+
 | File/directory | Description |
 |:-----|:------|
-|README |   this file|
+|README.md|   this file|
 |EXAMPLES|	some examples|
 |CHANGES|	changelog|
 |LICENSE|	Licensing information|
