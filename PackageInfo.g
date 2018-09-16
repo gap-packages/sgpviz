@@ -85,7 +85,7 @@ AvailabilityTest := ReturnTrue,
   "For help, type: ?SgpViz: \n",
   "----------------------------------------------------------------\n" ),
                   
-TestFile := "tst/testall.tst",
+TestFile := "tst/testall.g",
                    
 Keywords := ["Semigroup", "D-Class", "Schutzenberger graphs", "Cayley graphs"]
   
