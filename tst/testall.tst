@@ -21,7 +21,7 @@ gap> START_TEST("SgpViz package: testall.tst");
 
 # Note that you may use comments in the test file
 # and also separate parts of the test by empty lines
-
+#
 # First load the package without banner (the banner must be suppressed to 
 # avoid reporting discrepancies in the case when the package is already 
 # loaded)
@@ -29,16 +29,14 @@ gap> LoadPackage("sgpviz",false);
 true
 
 # Check that the data are consistent  
-
+#
 #############################################################################
 # Some more elaborated tests
-
-
+#
 #############################################################################
 #############################################################################
 # Examples from the manual
-# (These examples use at least a funtion from each file)
-
+# (These examples use at least a function from each file)
 gap> f := FreeMonoid("a","b");
 <free monoid on the generators [ a, b ]>
 gap> a := GeneratorsOfMonoid( f )[ 1 ];;
@@ -54,15 +52,18 @@ gap> r:=[[a^3,a^2],
 gap> b21:= f/r;
 <fp monoid on the generators [ a, b ]>
 
+#
 gap> g0:=Transformation([4,1,2,4]);;
 gap> g1:=Transformation([1,3,4,4]);;
 gap> g2:=Transformation([2,4,3,4]);;
 gap> poi3:= Monoid(g0,g1,g2);
 <transformation monoid of degree 4 with 3 generators>
 
+#
 gap> PartialTransformation([2,0,4,0]);
 Transformation( [ 2, 5, 4, 5, 5 ] )
 
+#
 gap> el1 := Transformation( [ 2, 3, 4, 4 ] );;
 gap> el2 := Transformation( [ 2, 4, 3, 4 ] );;
 gap> f1 := SemigroupFactorization(poi3,el1);
@@ -73,6 +74,7 @@ gap> SemigroupFactorization(poi3,[el1,el2]);
 [ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ], 
   [ Transformation( [ 2, 4, 3, 4 ] ) ] ]
 
+#
 gap> p1 := PartialTransformation([6,2,0,0,2,6,0,0,10,10,0,0]);;
 gap> p2 := PartialTransformation([0,0,1,5,0,0,5,9,0,0,9,1]);;
 gap> p3 := PartialTransformation([0,0,3,3,0,0,7,7,0,0,11,11]);;
@@ -104,6 +106,7 @@ gap> PrintArray(res[2]);
   [  [ 2, 1 ],  [ 2, 3 ],  [ 2, 2 ],  [ 2, 4 ] ],
   [  [ 3, 1 ],  [ 3, 3 ],  [ 3, 2 ],  [ 3, 4 ] ] ]
 
+#
 gap> rcg := RightCayleyGraphAsAutomaton(b21);
 < deterministic automaton on 2 letters with 6 states >
 gap> Display(rcg);
@@ -114,15 +117,5 @@ gap> Display(rcg);
 Initial state:   [  ]
 Accepting state: [  ]
 
-
-gap> STOP_TEST( "testall.tst", 10000 );
-## The first argument of STOP_TEST should be the name of the test file.
-## The number is a proportionality factor that is used to output a 
-## "GAPstone" speed ranking after the file has been completely processed.
-## For the files provided with the distribution this scaling is roughly 
-## equalized to yield the same numbers as produced by the test file 
-## tst/combinat.tst. For package tests, you may leave it unchnaged. 
-
-#############################################################################
-##
-#E
+#
+gap> STOP_TEST( "testall.tst" );
