@@ -70,7 +70,7 @@ or, if tar on your system does not understand the option z, by
 
 which will in each case unpack the code into a directory 'sgpviz'
 in the current directory. We assume that the current directory is the
-directory /usr/local/lib/gap4r8/pkg/.
+directory /usr/local/lib/gap-4.x.x/pkg/.
 
 Installation
 ------------
@@ -84,7 +84,7 @@ This package needs the package `Automata' (http://www.gap-system.org/~gap/Packag
 
 You may have to start GAP with the -l option, for instance,
 
-gap -l "/usr/local/lib/gap4r8"
+gap -l "/usr/local/lib/gap-4.x.x"
 
 Then try the following
 
@@ -99,13 +99,13 @@ aliases:
 
 in the file `.bash_aliases' (or something equivalent, maybe with another syntax): 
 
-alias gap='gap -l "/usr/local/lib/gap4r8;"'
+alias gap='gap -l "/usr/local/lib/gap-4.x.x;"'
 
 and in the file `.gap/gaprc'
 
 LoadPackage( "sgpviz" ); 
 
-In order to have automatic visualisations and not just to produce the dot code to be visualised bý any other means, GraphViz (http://www.graphviz.org/) should be installed.
+In order to have automatic visualisations and not just to produce the dot code to be visualised by any other means, GraphViz (http://www.graphviz.org/) should be installed.
 
 In order to be able to use a GUI to give automata or semigroups, Tcl/Tk should also be installed.
 
