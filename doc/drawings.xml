@@ -236,145 +236,72 @@ the following:
 <P />
       <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.45\textwidth]{images/schutzenberger.png}
+        \includegraphics[width=0.45\textwidth]{images/schutzenberger.pdf}
         \end{center}
       </Alt>
 
     <Alt Only="HTML">
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/schutzenberger.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
-
-
-    </Section>
-
-
-    <Section Label="Drawings_output_formats">
-       <Heading>Drawings output formats</Heading>
-
-       By default, when a drawing is requested, it is outputted in pdf format.
-       Since <C>graphviz</C> allows other output formats (see <URL>http://www.graphviz.org/doc/info/output.html</URL>), it is possible to also request a drawing in a format other than pdf.
-       
-       <ManSection>
-        <Var Name="DrawingsListOfExtraFormats" />
-	<Description>
-	This is a global variable which holds the valid output formats for a drawing. It currently has the value: <C>["dia", "fig", "gd", "gd2", "gif", "hpgl", "jpg", "mif", "mp", "pcl", "pic", "plain", "plain-ext", "png", "ps", "ps2", "svg", "svgz", "vrml", "vtx", "wbmp", "none"]</C> (see <URL>http://www.graphviz.org/doc/info/output.html</URL> for their description).
-	</Description>
-      </ManSection>
-
-
       <ManSection>
-        <Var Name="DrawingsExtraFormat" />
-	<Description>
-	This is a global variable which holds the alternative output format for a drawing.
-	By default its value is <C>"none"</C> which indicates that just pdf will be used
-	as the output format.
-	<P/>
-	If its value becomes one of those in <Ref Var="DrawingsListOfExtraFormats" />, then
-	besides the pdf file, it will also be created a file in the alternative format.
-	<P/>
-	To change this variable's value, please use <Ref Func="SetDrawingsExtraFormat" />.
-	</Description>
+        <Func Arg="arg" Name="DotForDrawingSchutzenbergerGraphs" />
+        <Description>
+	  This function computes the dot code that can be used to produce a drawing for the Schutzenberger Graphs of an inverse semigroup. This can be done by using the function <Ref Func="DrawSchutzenbergerGraphs" /> (if the system is properly configured) or by the user in some independent way. The argument is an inverse semigroup.
+        </Description>
       </ManSection>
-
-
-      <ManSection>
-        <Func Arg="f" Name="SetDrawingsExtraFormat" />
-	<Description>
-	This function is used to set the value of <Ref Var="DrawingsExtraFormat" /> to the
-format <A>f</A> which is one of <Ref Var="DrawingsListOfExtraFormats" />.
-<Example><![CDATA[
-gap> DrawingsExtraFormat;
-"none"
-gap> SetDrawingsExtraFormat("jpg");
-gap> DrawingsExtraFormat;
-"jpg"
-
-gap> DrawRightCayleyGraph(poi3);
-Displaying file: /tmp/tmp.tpJqvI/cayleygraph.dot.ps
-The extra output format file: /tmp/tmp.tpJqvI/cayleygraph.dot.jpg
-has also been created.
-
+      <Example><![CDATA[
+gap> DotForDrawingSchutzenbergerGraphs(poi3);
+"digraph  SchutzenbergerGraphs{\ncompound=true;\nsubgraph cluster4{\n1 [shape=\
+circle];\n}\nsubgraph cluster3{\n2 -> 4 [label=\"a\",color=red];\n3 -> 2 [labe\
+l=\"c\",color=green];\n4 -> 3 [label=\"b\",color=blue];\n2 [shape=circle];\n3 \
+[shape=circle];\n4 [shape=circle];\n}\nsubgraph cluster2{\n5 -> 5 [label=\"b\"\
+,color=blue];\n5 -> 6 [label=\"c\",color=green];\n6 -> 5 [label=\"a\",color=re\
+d];\n6 -> 7 [label=\"c\",color=green];\n7 -> 7 [label=\"a\",color=red];\n7 -> \
+6 [label=\"b\",color=blue];\n5 [shape=circle];\n6 [shape=circle];\n7 [shape=ci\
+rcle];\n}\nsubgraph cluster1{\n8 -> 8 [label=\"a\",color=red];\n8 -> 8 [label=\
+\"b\",color=blue];\n8 -> 8 [label=\"c\",color=green];\n8 [shape=circle];\n}\n1\
+ -> 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];\n2 -> 5 [lhead=clu\
+ster2,ltail=cluster3,color=cornflowerblue];\n5 -> 8 [lhead=cluster1,ltail=clus\
+ter2,color=cornflowerblue];\n}\n"
+      ]]></Example>
+      By using Print (or PrinTo, if one wants to print to a file) the string is displayed as follows:
+      <Example><![CDATA[
+gap> Print(last);
+digraph  SchutzenbergerGraphs{
+compound=true;
+subgraph cluster4{
+1 [shape=circle];
+}
+subgraph cluster3{
+2 -> 4 [label="a",color=red];
+3 -> 2 [label="c",color=green];
+4 -> 3 [label="b",color=blue];
+2 [shape=circle];
+3 [shape=circle];
+4 [shape=circle];
+}
+subgraph cluster2{
+5 -> 5 [label="b",color=blue];
+5 -> 6 [label="c",color=green];
+6 -> 5 [label="a",color=red];
+6 -> 7 [label="c",color=green];
+7 -> 7 [label="a",color=red];
+7 -> 6 [label="b",color=blue];
+5 [shape=circle];
+6 [shape=circle];
+7 [shape=circle];
+}
+subgraph cluster1{
+8 -> 8 [label="a",color=red];
+8 -> 8 [label="b",color=blue];
+8 -> 8 [label="c",color=green];
+8 [shape=circle];
+}
+1 -> 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];
+2 -> 5 [lhead=cluster2,ltail=cluster3,color=cornflowerblue];
+5 -> 8 [lhead=cluster1,ltail=cluster2,color=cornflowerblue];
+}
 ]]></Example>
-	</Description>
-	
-      </ManSection>
-   </Section>
-
-
-      <Section Label="Drawings_extra_graph_attributes">
-            <Heading>Drawings extra graph attributes</Heading>
-	    The functions described in this subsection are intended to give the user a finer control
-	    over the final drawing.
-	    They allow to define the graph attributes described in <URL>http://graphviz.org/doc/info/attrs.html</URL>.
-	    (Note that only graph attributes are allowed to be defined, not edge nor node attributes are supported yet.)
-
-	<ManSection>
-	  <Var Name="DrawingsExtraGraphAttributes" />
-	  <Description>
-	  This is a global variable which holds a list of strings, each of which defines a <E>dot</E> graph attribute.
-	  This variable is <E>not</E> intended to be modified by the user directly, but can be used to check
-	  which extra attributes are currently defined.
-	  To set the attributes, please use <Ref Func="SetDrawingsExtraGraphAttributes" />.
-	  If <C>DrawingsExtraGraphAttributes</C> holds the value <C>"none"</C> then the default <E>dot</E> settings will be used.
-	  Use <Ref Func="ClearDrawingsExtraGraphAttributes" /> to set it to <C>"none"</C>.
-	  </Description>
-	</ManSection>
-
-
-	<ManSection>
-	  <Func Arg="L" Name="SetDrawingsExtraGraphAttributes" />
-	  <Description>
-	  This is the function to define the drawing's graph attributes (see <URL>http://graphviz.org/doc/info/attrs.html</URL>
-	  for a list and explanation of them).
-	  the argument <A>L</A> is a list of strings, each of which defines a <E>dot</E> graph attribute.
-	  For example, if we wanted to define the graph size to be 7x9 (in inches), we would call
-	  <C>SetDrawingsExtraGraphAttributes(["size=7,9"]);</C>.
-	  <P />
-	  If we also wanted to define the graph to be displayed in landscape mode we would call
-	  <C>SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);</C>.
-	  If, in addition we wanted to define the background colour to be, for example, pink, we would call
-	  <C>SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90", "bgcolor=pink"]);</C>.
-	  <P />
-	  After defining the attributes, any command that creates a drawing will use the last defined attributes.
-	  To set them back to the defaults, please use <Ref Func="ClearDrawingsExtraGraphAttributes" />.
-<Example><![CDATA[
-gap> DrawingsExtraGraphAttributes;
-"none"
-
-
-gap> SetDrawingsExtraGraphAttributes(["size=7,9"]);
-
-gap> DrawingsExtraGraphAttributes;
-[ "size=7,9" ]
-
-
-gap> SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);
-
-gap> DrawingsExtraGraphAttributes;
-[ "size=7,9", "rotate=90" ]
-
-
-gap> SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90", "bgcolor=pink"]);
-
-gap> DrawingsExtraGraphAttributes;
-[ "size=7,9", "rotate=90", "bgcolor=pink" ]
-
-
-gap> ClearDrawingsExtraGraphAttributes();
-
-gap> DrawingsExtraGraphAttributes;
-"none"
-]]></Example>
-	  </Description>
-	</ManSection>
-
-	<ManSection>
-	  <Func Arg="" Name="ClearDrawingsExtraGraphAttributes" />
-	  <Description>
-	  This function sets the graph drawing attributes back to <E>dot</E>'s defaults.
-	  </Description>
-	</ManSection>
-
 
     </Section>
 

@@ -3,23 +3,21 @@
 #W  schutzenberger-graphs.gi            Manuel Delgado <mdelgado@fc.up.pt>
 #W                                      Jose Morais    <josejoao@fc.up.pt>
 ##
-#H  @(#)$Id: schutzenberger-graphs.gi,v 0.998 $
 ##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##
 ##
 ###########################################################################
 ##
-#F  DrawSchutzenbergerGraphs(S)
+#F  DotForDrawingSchutzenbergerGraphs(S)
 ##
-##  Draws the Schutzenberger graphs of the semigroup <S>
+##  returns DOT code for the Schutzenberger graphs of the semigroup <S>
 ##
-InstallGlobalFunction(DrawSchutzenbergerGraphs, function(S)
-    local cg, dc, els, g, scc, graph_list, visited_dc, list,
-          c, e, d, a, i, h,
-          au, aut, l1, l2,  arr, array, colors, j, k, letters, max, name, aut2dc, dc2aut, dc2cnode, liga,
-          nome, R, l, s, t, gv, dot, tdir, x, y, z,
-          map, count, lend, box4, b5, b6, b7, fich, A, ix, dclasses, subAutomaton;
+InstallGlobalFunction(DotForDrawingSchutzenbergerGraphs, function(S)
+  local  subAutomaton, cg, dc, els, g, scc, graph_list, visited_dc, list, 
+         aut2dc, dc2aut, c, e, d, aut, lend, i, k, box4, j, b5, b7, count, 
+         map, dotstr, dc2cnode, x, ix, A, h, letters, au, colors, l2, array, 
+         s, arr, max, l, liga, y;
 
     subAutomaton := function ( A, S, I, F )
         local  i, M, N, s, a, q, l;
@@ -143,14 +141,14 @@ InstallGlobalFunction(DrawSchutzenbergerGraphs, function(S)
     count := 1;
     map := [];
     
-    tdir := CMUP__getTempDir();
-    gv := CMUP__getPsViewer();
-    dot := CMUP__getDotExecutable();
+#    tdir := CMUP__getTempDir();
+#    gv := CMUP__getPsViewer();
+#    dot := CMUP__getDotExecutable();
     
-    fich := "schutzenbergergraphs";
-    name := Filename(tdir, Concatenation(fich, ".dot"));
-    nome := "SchutzenbergerGraphs";
-    PrintTo(name, "digraph  ", nome, "{\ncompound=true;\n");
+#    fich := "schutzenbergergraphs";
+#    name := Filename(tdir, Concatenation(fich, ".dot"));
+#    nome := "SchutzenbergerGraphs";
+    dotstr:= "digraph  SchutzenbergerGraphs{\ncompound=true;\n";
     dc2cnode := [];
     for x in b5 do
         for ix in x do
@@ -162,7 +160,8 @@ InstallGlobalFunction(DrawSchutzenbergerGraphs, function(S)
 
             aut := A;
             dc2cnode[ix] := map[1];
-            AppendTo(name, "subgraph cluster", ix, "{\n");
+            Append(dotstr, Concatenation("subgraph cluster", String(ix)));
+            Append(dotstr, "{\n");
 
             letters := [];
             au := StructuralCopy(aut!.transitions);
@@ -237,24 +236,24 @@ InstallGlobalFunction(DrawSchutzenbergerGraphs, function(S)
 
             for l  in [ 1 .. Length( arr ) ]  do
                 for k  in [ 1 .. Length( arr[ l ] ) ]  do
-                    AppendTo(name,  String( arr[ l ][ k ]) );
+                    Append(dotstr,  String( arr[ l ][ k ]) );
                 od;
-                AppendTo(name,  "\n" );
+                Append(dotstr,  "\n" );
             od;
             for i in Difference(aut!.initial, aut!.accepting) do
-                AppendTo(name, map[i], " [shape=triangle];","\n");
+                Append(dotstr, Concatenation(String(map[i]), " [shape=triangle];\n"));
             od;
             for j in aut!.accepting do
                 if j in aut!.initial then
-                    AppendTo(name, map[j], " [shape=triangle,peripheries=2];","\n");
+                    Append(dotstr, Concatenation(String(map[j]), " [shape=triangle,peripheries=2];\n"));
                 else
-                    AppendTo(name, map[j], " [shape=doublecircle];","\n");
+                    Append(dotstr, Concatenation(String(map[j]), " [shape=doublecircle];\n"));
                 fi;
             od;
             for k in Difference([1..aut!.states],Concatenation(aut!.initial, aut!.accepting)) do
-                AppendTo(name, map[k], " [shape=circle];","\n");
+                Append(dotstr, Concatenation(String(map[k]), " [shape=circle];","\n"));
             od;
-            AppendTo(name,"}","\n");
+            Append(dotstr,"}\n");
             map := [];
         od;
     od;
@@ -270,10 +269,17 @@ InstallGlobalFunction(DrawSchutzenbergerGraphs, function(S)
         od;
     od;
     for x in liga do
-        AppendTo(name, dc2cnode[x[1]], " -> ", dc2cnode[x[2]], " [lhead=cluster", x[2], ",ltail=cluster", x[1], ",color=cornflowerblue];\n");
+      Append(dotstr, Concatenation(String(dc2cnode[x[1]]), " -> "));
+      
+      Append(dotstr, Concatenation(String(dc2cnode[x[2]]), " [lhead=cluster"));
+      
+        Append(dotstr, Concatenation(String(x[2]), ",ltail=cluster"));
+      Append(dotstr, Concatenation(String(x[1]), ",color=cornflowerblue];\n"));
     od;
 
-    AppendTo(name,"}","\n");
+    Append(dotstr,"}\n");
+    return dotstr;
+    
 
-    CMUP__executeDotAndViewer(tdir, dot, gv, Concatenation(fich, ".dot"));
+#    CMUP__executeDotAndViewer(tdir, dot, gv, Concatenation(fich, ".dot"));
 end);

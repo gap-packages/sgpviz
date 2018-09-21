@@ -33,3 +33,11 @@ DeclareGlobalFunction( "DrawDClassOfElement" );
 ##  Displays the D-Classes of the semigroup <S>
 ##
 DeclareGlobalFunction( "DrawDClasses" );
+#############################################################################
+###########################################################################
+##
+#F  DrawSchutzenbergerGraphs(S)
+##
+##  Displays the Schutzenberger graphs of the semigroup <S>
+##
+DeclareGlobalFunction( "DrawSchutzenbergerGraphs" );

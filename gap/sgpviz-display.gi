@@ -58,5 +58,18 @@ InstallGlobalFunction(DrawDClasses, function(arg)
   dotstr := CallFuncList(DotForDrawingDClasses,Filtered(arg, a -> not IsString(a)));
   SV_Splash(dotstr);
 end);
+#############################################################################
+###########################################################################
+##
+#F  DrawSchutzenbergerGraphs(S)
+##
+##  Displays the Schutzenberger graphs of the semigroup <S>
+##
+InstallGlobalFunction(DrawSchutzenbergerGraphs, function(S)
+  local  dotstr; 
+  
+  dotstr := DotForDrawingSchutzenbergerGraphs(S);
+  SV_Splash(dotstr);
+end);
 
 
