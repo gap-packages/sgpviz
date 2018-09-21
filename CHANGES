@@ -1,3 +1,6 @@
+0.999.1 -> 0.999.2
+Schutzenberger graphs are now produced in two steps, as the remaining drawings (see 0.998 -> 0.999.1)
+
 0.998 -> 0.999.1
 -Removed the SuperFail (thanks Max H.)
 -drawings are now produced in two steps: first the dot code (that is accessible to the user) and then the display
