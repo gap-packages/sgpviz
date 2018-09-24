@@ -17,3 +17,4 @@
 ##  element(s) of <L>
 ##
 DeclareGlobalFunction( "SemigroupFactorization" );
+DeclareGlobalFunction( "SemigroupFactorizationOLD" );

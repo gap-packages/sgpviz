@@ -84,6 +84,9 @@ end);
 ## buit-in function CayleyGraphSemigroup to compute the Cayley Graph 
 ## and returns it as an automaton without initial and final states.
 ##
+## Warning: since the GAP function "CayleyGraphSemigroup" behaves diferently acording to whether
+## the package "semigroups" is loaded or not, this function may have different (but equivalent)
+## results
 ##
 InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(M)
     local i, size, n, cg, one, table, tr, p;
@@ -91,16 +94,17 @@ InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(M)
     if not IsSemigroup(M) then
         Error("<M> must be a semigroup");
     fi;
-    if IsFpSemigroup(M) or IsFpMonoid(M) then
-        cg := CayleyGraphSemigroup(Range(IsomorphismTransformationSemigroup(M)));
-    else
+#    if IsFpSemigroup(M) or IsFpMonoid(M) then
+#        cg := CayleyGraphSemigroup(Range(IsomorphismTransformationSemigroup(M)));
+#    else
         cg := CayleyGraphSemigroup(M);
-    fi;
+#    fi;
     
     tr := ShallowCopy(TransposedMat(cg));
     
     size := Size(M);
     
+    ## removes the action of the identity (when present as a generator, as is always the case for monoids when using the "semigroups" package...  
     if First(tr, i-> i = [1..size]) <> fail then
          Unbind(tr[Position(tr,First(tr, i-> i = [1..size]))]);
          table := Compacted(tr);
@@ -108,15 +112,17 @@ InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(M)
         table := tr;
     fi;
     
-    if MultiplicativeNeutralElement(M) in GeneratorsOfSemigroup(M) then
-        n := Length(GeneratorsOfSemigroup(M))-1;
-    else
-        n := Length(GeneratorsOfSemigroup(M));
-    fi;
+    n := Length(table);
+    
+    # if MultiplicativeNeutralElement(M) in GeneratorsOfSemigroup(M) then
+    #     n := Length(GeneratorsOfSemigroup(M))-1;
+    # else
+    #     n := Length(GeneratorsOfSemigroup(M));
+    # fi;
   
-    if n <> Length(cg[1]) then
-        Print("WARNING: you are possibly using twice the same generator and this may cause problems...\n");
-    fi;
+    # if n <> Length(cg[1]) then
+    #     Print("WARNING: you are possibly using twice the same generator and this may cause problems...\n");
+    # fi;
     return Automaton("det", Size(M), n, table, [], []);
 end);
 

@@ -143,13 +143,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
               "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "violetred",
               "wheat", "yellow", "yellowgreen" ];
 
-  tlen := DegreeOfTransformationSemigroup(S);
-  #siegen    
-  # Print(tlen,"\n");
-  # tdir := CMUP__getTempDir();
-  # gv := CMUP__getPsViewer();
-  # dot := CMUP__getDotExecutable();
-
 
   elms__ := Elements(S);
   idemps__ := Idempotents(S);
@@ -191,6 +184,13 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   fi;
   #siegen
   #file := Filename(tdir, Concatenation(fich, ".dot"));
+  tlen := DegreeOfTransformationSemigroup(S);
+  #siegen    
+  # Print(tlen,"\n");
+  # tdir := CMUP__getTempDir();
+  # gv := CMUP__getPsViewer();
+  # dot := CMUP__getDotExecutable();
+
 
 
   ##  We will check if the transformations are partial or total
@@ -816,7 +816,8 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
   tlen := DegreeOfTransformationSemigroup(S);
 
   elms__ := Elements(S);
-  idemps__ := Idempotents(S);
+#  idemps__ := Idempotents(S);
+  idemps__ := Set(Idempotents(S));## Siegen: the semigroups package leads to a diferent order...
   T := false;                          # Display as transformations
   trans_list := [];                    # the list of lists of elements
   # to draw in colors given by

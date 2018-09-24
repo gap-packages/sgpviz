@@ -9,17 +9,46 @@
 ##
 ##
 ###########################################################################
+InstallGlobalFunction(SemigroupFactorization, function(sgp, elements)
+  local  gens, L, list, l, fact;
+  
+#  if IsMonoid(sgp) then
+#    gens := GeneratorsOfMonoid(sgp);
+#  elif IsSemigroup(sgp) then
+    gens := GeneratorsOfSemigroup(sgp);
+    #  fi;
+    
+    if IsList(elements) then
+      L := ShallowCopy(elements);
+    else
+      L := [elements];
+    fi;
+    
+    if First(L, l -> not l in Elements(sgp)) <> fail then
+      Error("only elements of the semigroup can be factirized");
+    fi;  
+    #the previous test is needed... otherwise "Factorization" does not work
+    list := [];
+    for l in L do
+      fact := Factorization(sgp, l);
+      Add(list,List(fact, g -> gens[g]));
+    od;
+    return list;
+end);
+
 #====================================================================
 #siegen(17/09/05): after adapting the code to use the function "factorization" of the "semigroups" package, this function is no longer needed
 #====================================================================
 
-InstallGlobalFunction(SemigroupFactorization, function(S, L)
-    local cg, els, gens, gens2, p1, path, fact, M, G, current, current2, el,
-          map, visited, els_len, L_vis, L_len, L_pos, p, gensx,
-          T, iso,
-          path2fact,
-          i, j, k, a, q, s, g, v;
-
+#InstallGlobalFunction(SemigroupFactorizationOLD, function(S, L)
+InstallGlobalFunction(SemigroupFactorizationOLD, function(sgp, list_or_element)
+  local  S, L, path2fact, iso, M, gens2, gensx, gens, el, els, els_len, cg, G, 
+         L_len, L_vis, L_pos, p, T, a, q, p1, visited, path, fact, i, 
+         current, current2, v;
+    
+  S := StructuralCopy(sgp);
+  L := ShallowCopy(list_or_element);
+  
 
     path2fact := function(p)
         local f, i, len;

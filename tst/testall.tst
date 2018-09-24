@@ -38,8 +38,7 @@ true
 # Examples from the manual
 # (These examples use at least a function from each file)
 #basics
-gap> f := FreeMonoid("a","b");
-<free monoid on the generators [ a, b ]>
+gap> f := FreeMonoid("a","b");;
 gap> a := GeneratorsOfMonoid( f )[ 1 ];;
 gap> b := GeneratorsOfMonoid( f )[ 2 ];;
 gap> r:=[[a^3,a^2],
