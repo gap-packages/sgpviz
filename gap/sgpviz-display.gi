@@ -12,7 +12,7 @@ InstallGlobalFunction(SV_Splash,
   opt := First(arg, IsRecord);
   dotstr := First(arg, IsString);
   
-    Splash(dotstr,opt);  
+    Splash_sv(dotstr,opt);  
 end);
 
 ###########################################################################

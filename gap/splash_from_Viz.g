@@ -23,8 +23,10 @@ if not IsBound(VizViewers) then
   fi;
 fi;
 
-if not IsBound(Splash) then 
-  BindGlobal("Splash",
+# if not IsBound(Splash) then 
+#  BindGlobal("Splash",
+if not IsBound(Splash_sv) then #to avoid conflicts with slightly modified "splash" copies in other packages
+  BindGlobal("Splash_sv",
   function(arg)
     local opt, dotstring, f, s, path, dir, tdir, file, viewer, tikz, filetype, i, 
           latexstring, command;
