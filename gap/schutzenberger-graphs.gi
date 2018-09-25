@@ -13,8 +13,8 @@
 ##
 ##  returns DOT code for the Schutzenberger graphs of the semigroup <S>
 ##
-InstallGlobalFunction(DotForDrawingSchutzenbergerGraphs, function(S)
-  local  subAutomaton, cg, dc, els, g, scc, graph_list, visited_dc, list, 
+InstallGlobalFunction(DotForDrawingSchutzenbergerGraphs, function(sgp)
+  local  subAutomaton, S, cg, dc, els, g, scc, graph_list, visited_dc, list, 
          aut2dc, dc2aut, c, e, d, aut, lend, i, k, box4, j, b5, b7, count, 
          map, dotstr, dc2cnode, x, ix, A, h, letters, au, colors, l2, array, 
          s, arr, max, l, liga, y;
@@ -66,17 +66,25 @@ InstallGlobalFunction(DotForDrawingSchutzenbergerGraphs, function(S)
     ##  End of subAutomaton()  --
 
 
-    if not IsSemigroup(S) then
+    if not IsSemigroup(sgp) then
         Error("The argument must be a semigroup");
     fi;
-    if not IsInverseSemigroup(S) then
+    if not IsInverseSemigroup(sgp) then
         Print("The argument is not an inverse semigroup\n");
         return;
     fi;
-    if not IsTransformation(AsList(S)[1]) then
+    if not IsTransformation(AsList(sgp)[1]) then
         Print("I will work with an isomorphic transformation semigroup instead\n");
-        S:= Range(IsomorphismTransformationSemigroup(S));
-    fi;
+        S:= Range(IsomorphismTransformationSemigroup(sgp));
+      fi;
+        # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+  if IsMonoid(sgp) then 
+    S := Monoid(GeneratorsOfMonoid(sgp));
+  elif IsSemigroup(sgp) then
+    S := Semigroup(GeneratorsOfSemigroup(sgp));
+  fi;  
+  
+      
     cg := RightCayleyGraphAsAutomaton(S);
     dc := GreensDClasses(S);
     els := Elements(S);

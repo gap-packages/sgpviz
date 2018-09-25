@@ -55,21 +55,21 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
         genslen,
         colors, color,
         #       fich,                       # the name of the dot file given as argument
-        gv, dot, tdir,
+#        gv, dot, tdir,
         alphabet,
-        idempots,                   # Idempotents of the semigroup
+#        idempots,                   # Idempotents of the semigroup
         idempots2,                  # ImageListOfTransformation of idempots
         T,                          # whether we're displaying as transformations
         T__,                        # To hold the value of last argument (may be 1 or 2 or none)
         # to either display the transformations as transformations
         # or as an integer (like in the right Cayley Graph).
         elms__,                     # The elements of S
-        idemps__,
+        idemps__,                   # Idempotents of the semigroup
         str, str1, str2,
         tlen,
         rows, cols, val,
         retels,
-        i, j, k, k2, p, m, c, ret, px,
+        i, j, k, k2, p, m, c, ret, px, map,
         powerizeWord;
 
 
@@ -109,19 +109,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   end;
   ##  End of powerizeWord()  --
 
-
-  if not IsBound(arg[1]) or not IsSemigroup(arg[1]) then
-    Error("The first argument must be a semigroup");
-  else
-    S := arg[1];
-  fi;
-
-  if not IsBound(arg[2]) or not IsTransformation(arg[2]) then
-    Error("The second argument must be an element of semigroup");
-  else
-    El := arg[2];
-  fi;
-
   # alphabet for displaying as words
   alphabet := "abcdefghijklmnopqrstuvwxyz";
 
@@ -143,9 +130,39 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
               "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "violetred",
               "wheat", "yellow", "yellowgreen" ];
 
+  if not (IsBound(arg[1]) and IsBound(arg[2])) then
+    Error("Two arguments must be given");
+  fi;
+  
+  # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+  if IsMonoid(arg[1]) then 
+    S := Monoid(GeneratorsOfMonoid(arg[1]));
+  elif IsSemigroup(arg[1]) then
+    S := Semigroup(GeneratorsOfSemigroup(arg[1]));
+  else
+    Error("The first argument must be a semigroup");
+  fi;  
+  
+  if not arg[2] in arg[1] then
+    Error("The second argument must be an element of the senigroup, which is given as first");
+  else
+    El := arg[2];
+  fi;
+  if not (IsTransformationMonoid(S) or IsTransformationSemigroup(S)) then
+    Print("I will work with an isomorphic transformation semigroup instead\n");
+    map := IsomorphismTransformationSemigroup(S);
+
+    S:= Range(map);
+    El := ImagesElm(map,El)[1];
+
+    S := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(S)));
+  fi;
+
+  tlen := DegreeOfTransformationSemigroup(S);
 
   elms__ := Elements(S);
   idemps__ := Idempotents(S);
+  idempots2 := List(idemps__, x -> ImageListOfTransformation(x,tlen));
 
   T := false;                          # Display as transformations
   trans_list := [];                    # the list of lists of elements
@@ -177,39 +194,16 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   od;
   len_trans_list := Length(trans_list);
 
-  if not (IsTransformationMonoid(S) or IsTransformationSemigroup(S)) then
-    Print("I will work with an isomorphic transformation semigroup instead\n");
-    S:= Range(IsomorphismTransformationSemigroup(S));
-    S := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(S)));
-  fi;
-  #siegen
-  #file := Filename(tdir, Concatenation(fich, ".dot"));
-  tlen := DegreeOfTransformationSemigroup(S);
-  #siegen    
-  # Print(tlen,"\n");
-  # tdir := CMUP__getTempDir();
-  # gv := CMUP__getPsViewer();
-  # dot := CMUP__getDotExecutable();
-
-
-
   ##  We will check if the transformations are partial or total
   generators := GeneratorsOfSemigroup(S);
   genslen := Length(generators);
-  ##tlen := DegreeOfTransformation(generators[1]);
-  ##tlen := DegreeOfTransformationSemigroup(S);
   generatorsx := [];
   for el in generators do
-    ###        if not el = IdentityTransformation(tlen) then
     if not el = IdentityTransformation then
       Add(generatorsx, el);
     fi;
   od;
   Sort(generatorsx);
-
-  idempots := Idempotents(S);
-  idempots2 := List(idempots, x -> ImageListOfTransformation(x,tlen));
-
 
   # Determine if transitions are partial
   # and determine the "zero" digit
@@ -227,15 +221,14 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
     retels := [Elements(dclasses[1]), SemigroupFactorization(S, Elements(dclasses[1])),[]];
   fi;
 
-  #siegen
-  # # write the preambule of the dot file
-  # PrintTo(file, "digraph  DClassOfElement {\ngraph [center=yes,ordering=out];\nnode [shape=plaintext];\nedge [color=cornflowerblue,arrowhead=none];\n");
   #initializing the dotstring
   dotstring := "digraph  DClassOfElement {\ngraph [center=yes,ordering=out];\nnode [shape=plaintext];\nedge [color=cornflowerblue,arrowhead=none];\n";
 
 
   # For each d-class write the dot record node
   for dc in dclasses do
+    Error("..");
+
     eggbox := EggBoxOfDClass(dc);
     rows := Length(eggbox);
     cols := Length(eggbox[1]);
@@ -282,6 +275,8 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
 
     if IsRegularDClass(dc) then
       ret := GrahamBlocks(idegg);
+      ##      Print(ret[1]);
+
       #            graham_eggbox := ret[1];
       phi := ret[2];
     fi;
@@ -435,7 +430,7 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
                 str1 := powerizeWord(str1);
                 retels[3][px] := str1;
               fi;
-              if el in idempots then
+              if el in idemps__ then
                 Add(bag2[i][j], Concatenation("*", str1));
               else
                 Add(bag2[i][j], str1);
@@ -534,7 +529,7 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
                 str1 := powerizeWord(str1);
                 retels[3][px] := str1;
               fi;
-              if el in idempots then
+              if el in idemps__ then
                 Add(bag2[i][j], Concatenation("*", str1));
               else
                 Add(bag2[i][j], str1);
@@ -731,16 +726,16 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
         genslen,
         colors, color,
         #siegen          fich,                       # the name of the dot file given as argument
-        gv, dot, tdir,
+ #       gv, dot, tdir,
         alphabet,
-        idempots,                   # Idempotents of the semigroup
+#        idempots,                   # Idempotents of the semigroup
         idempots2,                  # ImageListOfTransformation of idempots
         T,                          # whether we're displaying as transformations
         T__,                        # To hold the value of last argument (may be 1 or 2 or none)
         # to either display the transformations as transformations
         # or as an integer (like in the right Cayley Graph).
         elms__,                     # The elements of S
-        idemps__,
+        idemps__,                   # Idempotents of the semigroup
         str, str1, str2,
         tlen,
         rows, cols, val,
@@ -785,13 +780,6 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
   end;
   ##  End of powerizeWord()  --
 
-
-  if not IsBound(arg[1]) or not IsSemigroup(arg[1]) then
-    Error("The first argument must be a semigroup");
-  else
-    S := arg[1];
-  fi;
-
   # alphabet for displaying as words
   alphabet := "abcdefghijklmnopqrstuvwxyz";
 
@@ -812,12 +800,31 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
               "sandybrown", "seagreen", "skyblue", "slateblue", "slategrey",
               "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "violetred",
               "wheat", "yellow", "yellowgreen" ];
+  
+  
+  if not IsBound(arg[1]) or not IsSemigroup(arg[1]) then
+    Error("The first argument must be a semigroup");
+  fi;
+  # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+  if IsMonoid(arg[1]) then
+    S := Monoid(GeneratorsOfMonoid(arg[1]));
+  elif IsSemigroup(arg[1]) then
+    S := Semigroup(GeneratorsOfSemigroup(arg[1]));
+  fi;  
 
+
+  if not (IsTransformationMonoid(S) or IsTransformationSemigroup(S)) then
+    Print("I will work with an isomorphic transformation semigroup instead\n");
+    S:= Range(IsomorphismTransformationSemigroup(S));
+    S := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(S)));
+  fi;
+  
   tlen := DegreeOfTransformationSemigroup(S);
 
   elms__ := Elements(S);
-#  idemps__ := Idempotents(S);
-  idemps__ := Set(Idempotents(S));## Siegen: the semigroups package leads to a diferent order...
+  idemps__ := Idempotents(S);
+  idempots2 := List(idemps__, x -> ImageListOfTransformation(x,tlen));
+  
   T := false;                          # Display as transformations
   trans_list := [];                    # the list of lists of elements
   # to draw in colors given by
@@ -837,24 +844,11 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
   od;
   len_trans_list := Length(trans_list);
 
-  if not (IsTransformationMonoid(S) or IsTransformationSemigroup(S)) then
-    Print("I will work with an isomorphic transformation semigroup instead\n");
-    S:= Range(IsomorphismTransformationSemigroup(S));
-    S := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(S)));
-  fi;
-  idempots := Idempotents(S);
-  idempots2 := List(idempots, x -> ImageListOfTransformation(x,tlen));
-
   ##  We will check if the transformations are partial or total
   generators := GeneratorsOfSemigroup(S);
   genslen := Length(generators);
-  ##    tlen := DegreeOfTransformation(generators[1]);
-  ##    Error("..");
-
-  #tlen := DegreeOfTransformationSemigroup(S);
   generatorsx := [];
   for el in generators do
-    ###        if not el = IdentityTransformation(tlen) then
     if not el = IdentityTransformation then
       Add(generatorsx, el);
     fi;
@@ -930,6 +924,8 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
 
     if IsRegularDClass(dc) then
       ret := GrahamBlocks(idegg);
+  ##    Print(idegg,"\n",ret,"\n");
+      
       #            graham_eggbox := ret[1];
       phi := ret[2];
     fi;
@@ -1079,7 +1075,7 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
                 str1 := powerizeWord(str1);
                 retels[3][px] := str1;
               fi;
-              if el in idempots then
+              if el in idemps__ then
                 Add(bag2[i][j], Concatenation("*", str1));
               else
                 Add(bag2[i][j], str1);
@@ -1176,7 +1172,7 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
                 str1 := powerizeWord(str1);
                 retels[3][px] := str1;
               fi;
-              if el in idempots then
+              if el in idemps__ then
                 Add(bag2[i][j], Concatenation("*", str1));
               else
                 Add(bag2[i][j], str1);

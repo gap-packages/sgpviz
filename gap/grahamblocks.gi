@@ -3,8 +3,6 @@
 #W  grahamblocks.gi                     Manuel Delgado <mdelgado@fc.up.pt>
 #W                                      Jose Morais    <josejoao@fc.up.pt>
 ##
-#H  @(#)$Id: grahamblocks.gi,v 0.998 $
-##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##
 ##
@@ -91,7 +89,8 @@ InstallGlobalFunction(GrahamBlocks, function(mat_input)
     
     # =========== Main Code ============
     
-    mat := List(mat_input, line -> List(line, x -> x));
+    #    mat := List(mat_input, line -> List(line, x -> x));
+    mat := ShallowCopy(mat_input);
     grow := 1;
     gcol := 1;
     rows := Length(mat);

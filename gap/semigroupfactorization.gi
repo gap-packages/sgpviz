@@ -3,13 +3,20 @@
 #W  semigroupfactorization.gi           Manuel Delgado <mdelgado@fc.up.pt>
 #W                                      Jose Morais    <josejoao@fc.up.pt>
 ##
-#H  @(#)$Id: semigroupfactorization.gi,v 0.998 $
 ##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##
 ##
 ###########################################################################
-InstallGlobalFunction(SemigroupFactorization, function(sgp, elements)
+InstallGlobalFunction(SemigroupFactorization, function(S, elements)
+  local  semigroupFactorization_with_semigroups, 
+         semigroupFactorization_without_semigroups, sgp, old;
+  
+  # main function below...
+
+  ## local functions
+  
+  semigroupFactorization_with_semigroups := function()
   local  gens, L, list, l, fact;
   
 #  if IsMonoid(sgp) then
@@ -23,9 +30,10 @@ InstallGlobalFunction(SemigroupFactorization, function(sgp, elements)
     else
       L := [elements];
     fi;
+##   Error("..");
     
     if First(L, l -> not l in Elements(sgp)) <> fail then
-      Error("only elements of the semigroup can be factirized");
+      Error("only elements of the semigroup can be factorized");
     fi;  
     #the previous test is needed... otherwise "Factorization" does not work
     list := [];
@@ -34,20 +42,22 @@ InstallGlobalFunction(SemigroupFactorization, function(sgp, elements)
       Add(list,List(fact, g -> gens[g]));
     od;
     return list;
-end);
+#end);
+end;
 
 #====================================================================
 #siegen(17/09/05): after adapting the code to use the function "factorization" of the "semigroups" package, this function is no longer needed
 #====================================================================
 
 #InstallGlobalFunction(SemigroupFactorizationOLD, function(S, L)
-InstallGlobalFunction(SemigroupFactorizationOLD, function(sgp, list_or_element)
+#InstallGlobalFunction(SemigroupFactorizationOLD, function(sgp, list_or_element)
+semigroupFactorization_without_semigroups := function()
   local  S, L, path2fact, iso, M, gens2, gensx, gens, el, els, els_len, cg, G, 
          L_len, L_vis, L_pos, p, T, a, q, p1, visited, path, fact, i, 
          current, current2, v;
     
   S := StructuralCopy(sgp);
-  L := ShallowCopy(list_or_element);
+  L := ShallowCopy(elements);
   
 
     path2fact := function(p)
@@ -175,4 +185,26 @@ InstallGlobalFunction(SemigroupFactorizationOLD, function(sgp, list_or_element)
         fact[i] := path2fact(path[i]);
     od;
     return(List(L, x -> fact[Position(els, x)]));
+  end;  
+  
+  #main function
+    # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+  if IsMonoid(S) then 
+    sgp := Monoid(GeneratorsOfMonoid(S));
+  elif IsSemigroup(S) then
+    sgp := Semigroup(GeneratorsOfSemigroup(S));
+  else
+    Error("The first argument must be a semigroup");
+  fi;  
+
+  old := InfoLevel(InfoWarning); #to be removed (after a fix in the semigroups pkg)
+  SetInfoLevel(InfoWarning,0);#to be removed (after a fix in the semigroups pkg)
+    if TestPackageAvailability("semigroups") = true then
+    return semigroupFactorization_with_semigroups();
+  else
+    return semigroupFactorization_without_semigroups();
+  fi;
+  SetInfoLevel(InfoWarning,old);#to be removed (after a fix in the semigroups pkg)
+
+           
 end);

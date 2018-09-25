@@ -88,17 +88,23 @@ end);
 ## the package "semigroups" is loaded or not, this function may have different (but equivalent)
 ## results
 ##
-InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(M)
-    local i, size, n, cg, one, table, tr, p;
+InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(sgp)
+  local  M, cg, tr, size, table, n;
     
-    if not IsSemigroup(M) then
-        Error("<M> must be a semigroup");
+    if not IsSemigroup(sgp) then
+        Error("the argument must be a semigroup");
     fi;
-#    if IsFpSemigroup(M) or IsFpMonoid(M) then
-#        cg := CayleyGraphSemigroup(Range(IsomorphismTransformationSemigroup(M)));
-#    else
+        # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+  if IsMonoid(sgp) then 
+    M := Monoid(GeneratorsOfMonoid(sgp));
+  elif IsSemigroup(sgp) then
+    M := Semigroup(GeneratorsOfSemigroup(sgp));
+  fi;  
+   if IsFpSemigroup(M) or IsFpMonoid(M) then
+       cg := CayleyGraphSemigroup(Range(IsomorphismTransformationSemigroup(M)));
+   else
         cg := CayleyGraphSemigroup(M);
-#    fi;
+   fi;
     
     tr := ShallowCopy(TransposedMat(cg));
     
