@@ -94,14 +94,14 @@
 
 <h5>2.2-1 HasCommutingIdempotents</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasCommutingIdempotents</code>( <var class="Arg">M</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasCommutingIdempotents</code>( <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Tests whether the idempotents of the semigroup <var class="Arg">M </var>commute.</p>
 
 <p><a id="X83F1529479D56665" name="X83F1529479D56665"></a></p>
 
 <h5>2.2-2 IsInverseSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInverseSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInverseSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Tests whether a finite semigroup <var class="Arg">S </var>is inverse. It is well-known that it suffices to test whether the idempotents of <var class="Arg">S </var>commute and <var class="Arg">S </var>is regular. The function <code class="code">IsRegularSemigroup </code>is part of <strong class="pkg">GAP</strong>.</p>
 
 <p><a id="X78CA2A0D869C51DC" name="X78CA2A0D869C51DC"></a></p>
@@ -112,7 +112,7 @@
 
 <h5>2.3-1 PartialTransformation</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PartialTransformation</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PartialTransformation</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>A partial transformation is a partial function of a set of integers of the form <span class="SimpleMath">{1,dots, n}</span>. It is given by means of the list of images <var class="Arg">L</var>. When an element has no image, we write 0. Returns a full transformation on a set with one more element that acts like a zero.</p>
 
 
@@ -125,14 +125,14 @@ Transformation( [ 2, 5, 4, 5, 5 ] )
 
 <h5>2.3-2 ReduceNumberOfGenerators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReduceNumberOfGenerators</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReduceNumberOfGenerators</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Given a subset <var class="Arg">L</var> of the generators of a semigroup, returns a list of generators of the same semigroup but possibly with less elements than <var class="Arg">L</var>.</p>
 
 <p><a id="X7BBEBEE885D05208" name="X7BBEBEE885D05208"></a></p>
 
 <h5>2.3-3 SemigroupFactorization</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupFactorization</code>( <var class="Arg">S</var>, <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupFactorization</code>( <var class="Arg">S</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">L</var> is an element (or list of elements) of the semigroup <var class="Arg">S</var>. Returns a minimal factorization on the generators of <var class="Arg">S</var> of the element(s) of <var class="Arg">L</var>. Works only for transformation semigroups.</p>
 
 
@@ -152,7 +152,7 @@ true
 
 <h5>2.3-4 GrahamBlocks</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GrahamBlocks</code>( <var class="Arg">mat</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GrahamBlocks</code>( <var class="Arg">mat</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">mat</var> is a matrix as displayed by <code class="code">DisplayEggBoxOfDClass(D);</code> of a regular D-class <code class="code">D</code>. This function outputs a list <code class="code">[gmat, phi]</code> where <code class="code">gmat</code> is <var class="Arg">mat</var> in Graham's blocks form and <code class="code">phi</code> maps H-classes of <code class="code">gmat</code> to the corresponding ones of <var class="Arg">mat</var>, i.e., <code class="code">phi[i][j] = [i',j']</code> where <code class="code">mat[i'][j'] = gmat[i][j]</code>. If the argument to this function is not a matrix corresponding to a regular D-class, the function may abort in error.</p>
 
 
@@ -197,7 +197,7 @@ true
 
 <h5>2.4-1 RightCayleyGraphAsAutomaton</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RightCayleyGraphAsAutomaton</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RightCayleyGraphAsAutomaton</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Computes the right Cayley graph of a finite monoid or semigroup <var class="Arg">S</var>. It uses the <strong class="pkg">GAP</strong> buit-in function <code class="code">CayleyGraphSemigroup</code> to compute the Cayley Graph and returns it as an automaton without initial nor final states. (In this automaton state <code class="code">i</code> represents the element <code class="code">Elements(S)[i]</code>.) The <strong class="pkg">Automata</strong> package is used to this effect.</p>
 
 
@@ -217,7 +217,7 @@ Accepting state: [ ]
 
 <h5>2.4-2 RightCayleyGraphMonoidAsAutomaton</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RightCayleyGraphMonoidAsAutomaton</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RightCayleyGraphMonoidAsAutomaton</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function is a synonym of <code class="func">RightCayleyGraphAsAutomaton</code> (<a href="chap2.html#X822983CD7F01B5EA"><span class="RefLink">2.4-1</span></a>).</p>
 
 

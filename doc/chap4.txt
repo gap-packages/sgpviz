@@ -9,7 +9,7 @@
   
   [1X4.1-1 XAutomaton[101X
   
-  [29X[2XXAutomaton[102X( [[3XA[103X] ) [32X function
+  [33X[1;0Y[29X[2XXAutomaton[102X( [[3XA[103X] ) [32X function[133X
   
   [33X[0;0YThe  function  [10X  Xautomaton  [110X  without arguments opens a new window where an
   automaton  may  be  specified. A finite automaton (which may then be edited)
@@ -70,7 +70,7 @@
   
   [1X4.2-1 XSemigroup[101X
   
-  [29X[2XXSemigroup[102X( [[3XS[103X] ) [32X function
+  [33X[1;0Y[29X[2XXSemigroup[102X( [[3XS[103X] ) [32X function[133X
   
   [33X[0;0YThe  function  [10X  XSemigroup  [110X  without  arguments opens a new window where a
   semigroup  (or  monoid) may be specified. A finite semigroup (which may then

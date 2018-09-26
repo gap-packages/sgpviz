@@ -2,16 +2,13 @@
   
   [1XIndex[101X
   
-  [2XClearDrawingsExtraGraphAttributes[102X 3.6-3 
   [2XDotForDrawingDClasses[102X 3.2-2 
   [2XDotForDrawingDClassOfElement[102X 3.1-2 
   [2XDotForDrawingRightCayleyGraph[102X 3.3-3 
+  [2XDotForDrawingSchutzenbergerGraphs[102X 3.4-2 
   [2XDrawCayleyGraph[102X 3.3-2 
   [2XDrawDClasses[102X 3.2-1 
   [2XDrawDClassOfElement[102X 3.1-1 
-  [2XDrawingsExtraFormat[102X 3.5-2 
-  [2XDrawingsExtraGraphAttributes[102X 3.6-1 
-  [2XDrawingsListOfExtraFormats[102X 3.5-1 
   [2XDrawRightCayleyGraph[102X 3.3-1 
   [2XDrawSchutzenbergerGraphs[102X 3.4-1 
   [2XGrahamBlocks[102X 2.3-4 
@@ -23,8 +20,6 @@
   [2XRightCayleyGraphAsAutomaton[102X 2.4-1 
   [2XRightCayleyGraphMonoidAsAutomaton[102X 2.4-2 
   [2XSemigroupFactorization[102X 2.3-3 
-  [2XSetDrawingsExtraFormat[102X 3.5-3 
-  [2XSetDrawingsExtraGraphAttributes[102X 3.6-2 
   [2XXAutomaton[102X 4.1-1 
   [2XXSemigroup[102X 4.2-1 
   

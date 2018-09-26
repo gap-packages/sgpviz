@@ -53,20 +53,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B7B58B77EA25719">3.4-1 DrawSchutzenbergerGraphs</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7F5419527FFCD1DF">3.5 <span class="Heading">Drawings output formats</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X844AA65E815BCFDF">3.5-1 DrawingsListOfExtraFormats</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7CE046CE786F76D5">3.5-2 DrawingsExtraFormat</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X87B43746819C55F3">3.5-3 SetDrawingsExtraFormat</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X795DD98D86A1A441">3.6 <span class="Heading">Drawings extra graph attributes</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7A3895EB7C0573DD">3.6-1 DrawingsExtraGraphAttributes</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B652A9179C45291">3.6-2 SetDrawingsExtraGraphAttributes</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B915CC480D0ABF0">3.6-3 ClearDrawingsExtraGraphAttributes</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7884329D82F6C65B">3.4-2 DotForDrawingSchutzenbergerGraphs</a></span>
 </div></div>
 </div>
 
@@ -86,7 +73,7 @@
 
 <h5>3.1-1 DrawDClassOfElement</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawDClassOfElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawDClassOfElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function uses <code class="func">DotForDrawingDClassOfElement</code> (<a href="chap3.html#X78DC47A785011D84"><span class="RefLink">3.1-2</span></a>) to compute the dot code to produce the image that is then displayed. It takes as arguments a semigroup followed by a transformation which is the element whose D-class will be drawn. Optionally we can then specify n lists of elements and the elements of each list will be drawn in different colours. Finally, if the last argument is the integer <code class="code">1</code> then the elements will appear as transformations, otherwise they will appear as words. The idempotents will be marked with a * before them.</p>
 
 <p>This last optional argument may also be the integer <code class="code">2</code> and in this case the elements will appear as integers, where <code class="code">i</code> represents the element <code class="code">Elements(S)[i]</code>.</p>
@@ -110,7 +97,7 @@
 
 <h5>3.1-2 DotForDrawingDClassOfElement</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingDClassOfElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingDClassOfElement</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function computes the dot code that can be used to produce a drawing for the D-class of an element of a semigroup. This can be done by using the function <code class="func">DrawDClassOfElement</code> (<a href="chap3.html#X87448A11856B0F2D"><span class="RefLink">3.1-1</span></a>) (if the system is properly configured) or by the user in some independent way. The arguments and options are the same than those of <code class="func">DrawDClassOfElement</code> (<a href="chap3.html#X87448A11856B0F2D"><span class="RefLink">3.1-1</span></a>).</p>
 
 
@@ -181,7 +168,7 @@ DER="0"&gt;*cab&lt;/TD&gt;&lt;/TR&gt;
 
 <h5>3.2-1 DrawDClasses</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawDClasses</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawDClasses</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function is similar to the previous one, except that this one draws all the D-classes of the semigroup given as the first argument. It then takes optionally n lists of elements and the elements of each list will be drawn in different colours. It also accepts, as an optional argument, the integer <code class="code">1</code>, to specify whether the elements will appear as words or as transformations as in the previous function. The idempotents will be marked with a * before them.</p>
 
 <p>The dot code is computed by <code class="func">DotForDrawingDClasses</code> (<a href="chap3.html#X84B611718473E019"><span class="RefLink">3.2-2</span></a>).</p>
@@ -202,7 +189,7 @@ DER="0"&gt;*cab&lt;/TD&gt;&lt;/TR&gt;
 
 <h5>3.2-2 DotForDrawingDClasses</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingDClasses</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingDClasses</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function computes the dot code that can be used to produce a drawing for the D-class of an element of a semigroup. This can be done by using the function <code class="func">DrawDClasses</code> (<a href="chap3.html#X7BDBEDA37ADCAADE"><span class="RefLink">3.2-1</span></a>) (if the system is properly configured) or by the user in some independent way. The arguments and options are the same than those of <code class="func">DrawDClasses</code> (<a href="chap3.html#X7BDBEDA37ADCAADE"><span class="RefLink">3.2-1</span></a>).</p>
 
 
@@ -229,14 +216,14 @@ edge [color=cornflowerblue,arrowhead=none];
 
 <h5>3.3-1 DrawRightCayleyGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawRightCayleyGraph</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawRightCayleyGraph</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Draws the right Cayley graph of a finite monoid or semigroup <var class="Arg">S</var>.</p>
 
 <p><a id="X86798CC9823D1DB2" name="X86798CC9823D1DB2"></a></p>
 
 <h5>3.3-2 DrawCayleyGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawCayleyGraph</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawCayleyGraph</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function is a synonym of <code class="func">DrawRightCayleyGraph</code> (<a href="chap3.html#X7EB36DB07C6F58A0"><span class="RefLink">3.3-1</span></a>).</p>
 
 <p>For example, the command <code class="code">DrawCayleyGraph(b21);</code> would produce the following image (where state <code class="code">i</code> represents the element <code class="code">Elements(S)[i]</code>, the neutral element is coloured in "light blue" and all other idempotents are coloured in "light coral"): <br><center><img src="images/cgb21.png"></center><br></p>
@@ -245,7 +232,7 @@ edge [color=cornflowerblue,arrowhead=none];
 
 <h5>3.3-3 DotForDrawingRightCayleyGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingRightCayleyGraph</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingRightCayleyGraph</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function computes the dot code that is used by the previous function and can also be used by the reader in some independent way.</p>
 
 <p><a id="X79B26A588771144F" name="X79B26A588771144F"></a></p>
@@ -256,119 +243,77 @@ edge [color=cornflowerblue,arrowhead=none];
 
 <h5>3.4-1 DrawSchutzenbergerGraphs</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawSchutzenbergerGraphs</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawSchutzenbergerGraphs</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Draws the Schützenberger graphs of the inverse semigroup <var class="Arg">S</var>.</p>
 
 <p>For example, <code class="code">DrawSchutzenbergerGraphs(poi3);</code> would produce the following:</p>
 
 <p><br><center><img src="images/schutzenberger.png"></center><br></p>
 
-<p><a id="X7F5419527FFCD1DF" name="X7F5419527FFCD1DF"></a></p>
+<p><a id="X7884329D82F6C65B" name="X7884329D82F6C65B"></a></p>
 
-<h4>3.5 <span class="Heading">Drawings output formats</span></h4>
+<h5>3.4-2 DotForDrawingSchutzenbergerGraphs</h5>
 
-<p>By default, when a drawing is requested, it is outputted in pdf format. Since <code class="code">graphviz</code> allows other output formats (see <span class="URL"><a href="http://www.graphviz.org/doc/info/output.html">http://www.graphviz.org/doc/info/output.html</a></span>), it is possible to also request a drawing in a format other than pdf.</p>
-
-<p><a id="X844AA65E815BCFDF" name="X844AA65E815BCFDF"></a></p>
-
-<h5>3.5-1 DrawingsListOfExtraFormats</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawingsListOfExtraFormats</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>This is a global variable which holds the valid output formats for a drawing. It currently has the value: <code class="code">["dia", "fig", "gd", "gd2", "gif", "hpgl", "jpg", "mif", "mp", "pcl", "pic", "plain", "plain-ext", "png", "ps", "ps2", "svg", "svgz", "vrml", "vtx", "wbmp", "none"]</code> (see <span class="URL"><a href="http://www.graphviz.org/doc/info/output.html">http://www.graphviz.org/doc/info/output.html</a></span> for their description).</p>
-
-<p><a id="X7CE046CE786F76D5" name="X7CE046CE786F76D5"></a></p>
-
-<h5>3.5-2 DrawingsExtraFormat</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawingsExtraFormat</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>This is a global variable which holds the alternative output format for a drawing. By default its value is <code class="code">"none"</code> which indicates that just pdf will be used as the output format.</p>
-
-<p>If its value becomes one of those in <code class="func">DrawingsListOfExtraFormats</code> (<a href="chap3.html#X844AA65E815BCFDF"><span class="RefLink">3.5-1</span></a>), then besides the pdf file, it will also be created a file in the alternative format.</p>
-
-<p>To change this variable's value, please use <code class="func">SetDrawingsExtraFormat</code> (<a href="chap3.html#X87B43746819C55F3"><span class="RefLink">3.5-3</span></a>).</p>
-
-<p><a id="X87B43746819C55F3" name="X87B43746819C55F3"></a></p>
-
-<h5>3.5-3 SetDrawingsExtraFormat</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetDrawingsExtraFormat</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is used to set the value of <code class="func">DrawingsExtraFormat</code> (<a href="chap3.html#X7CE046CE786F76D5"><span class="RefLink">3.5-2</span></a>) to the format <var class="Arg">f</var> which is one of <code class="func">DrawingsListOfExtraFormats</code> (<a href="chap3.html#X844AA65E815BCFDF"><span class="RefLink">3.5-1</span></a>).</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotForDrawingSchutzenbergerGraphs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function computes the dot code that can be used to produce a drawing for the Schutzenberger Graphs of an inverse semigroup. This can be done by using the function <code class="func">DrawSchutzenbergerGraphs</code> (<a href="chap3.html#X7B7B58B77EA25719"><span class="RefLink">3.4-1</span></a>) (if the system is properly configured) or by the user in some independent way. The argument is an inverse semigroup.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraFormat;</span>
-"none"
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetDrawingsExtraFormat("jpg");</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraFormat;</span>
-"jpg"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DotForDrawingSchutzenbergerGraphs(poi3);</span>
+"digraph  SchutzenbergerGraphs{\ncompound=true;\nsubgraph cluster4{\n1 [shape=\
+circle];\n}\nsubgraph cluster3{\n2 -&gt; 4 [label=\"a\",color=red];\n3 -&gt; 2 [labe\
+l=\"c\",color=green];\n4 -&gt; 3 [label=\"b\",color=blue];\n2 [shape=circle];\n3 \
+[shape=circle];\n4 [shape=circle];\n}\nsubgraph cluster2{\n5 -&gt; 5 [label=\"b\"\
+,color=blue];\n5 -&gt; 6 [label=\"c\",color=green];\n6 -&gt; 5 [label=\"a\",color=re\
+d];\n6 -&gt; 7 [label=\"c\",color=green];\n7 -&gt; 7 [label=\"a\",color=red];\n7 -&gt; \
+6 [label=\"b\",color=blue];\n5 [shape=circle];\n6 [shape=circle];\n7 [shape=ci\
+rcle];\n}\nsubgraph cluster1{\n8 -&gt; 8 [label=\"a\",color=red];\n8 -&gt; 8 [label=\
+\"b\",color=blue];\n8 -&gt; 8 [label=\"c\",color=green];\n8 [shape=circle];\n}\n1\
+ -&gt; 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];\n2 -&gt; 5 [lhead=clu\
+ster2,ltail=cluster3,color=cornflowerblue];\n5 -&gt; 8 [lhead=cluster1,ltail=clus\
+ter2,color=cornflowerblue];\n}\n"
+      </pre></div>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawRightCayleyGraph(poi3);</span>
-Displaying file: /tmp/tmp.tpJqvI/cayleygraph.dot.ps
-The extra output format file: /tmp/tmp.tpJqvI/cayleygraph.dot.jpg
-has also been created.
-
-</pre></div>
-
-<p><a id="X795DD98D86A1A441" name="X795DD98D86A1A441"></a></p>
-
-<h4>3.6 <span class="Heading">Drawings extra graph attributes</span></h4>
-
-<p>The functions described in this subsection are intended to give the user a finer control over the final drawing. They allow to define the graph attributes described in <span class="URL"><a href="http://graphviz.org/doc/info/attrs.html">http://graphviz.org/doc/info/attrs.html</a></span>. (Note that only graph attributes are allowed to be defined, not edge nor node attributes are supported yet.)</p>
-
-<p><a id="X7A3895EB7C0573DD" name="X7A3895EB7C0573DD"></a></p>
-
-<h5>3.6-1 DrawingsExtraGraphAttributes</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawingsExtraGraphAttributes</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>This is a global variable which holds a list of strings, each of which defines a <em>dot</em> graph attribute. This variable is <em>not</em> intended to be modified by the user directly, but can be used to check which extra attributes are currently defined. To set the attributes, please use <code class="func">SetDrawingsExtraGraphAttributes</code> (<a href="chap3.html#X7B652A9179C45291"><span class="RefLink">3.6-2</span></a>). If <code class="code">DrawingsExtraGraphAttributes</code> holds the value <code class="code">"none"</code> then the default <em>dot</em> settings will be used. Use <code class="func">ClearDrawingsExtraGraphAttributes</code> (<a href="chap3.html#X7B915CC480D0ABF0"><span class="RefLink">3.6-3</span></a>) to set it to <code class="code">"none"</code>.</p>
-
-<p><a id="X7B652A9179C45291" name="X7B652A9179C45291"></a></p>
-
-<h5>3.6-2 SetDrawingsExtraGraphAttributes</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetDrawingsExtraGraphAttributes</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This is the function to define the drawing's graph attributes (see <span class="URL"><a href="http://graphviz.org/doc/info/attrs.html">http://graphviz.org/doc/info/attrs.html</a></span> for a list and explanation of them). the argument <var class="Arg">L</var> is a list of strings, each of which defines a <em>dot</em> graph attribute. For example, if we wanted to define the graph size to be 7x9 (in inches), we would call <code class="code">SetDrawingsExtraGraphAttributes(["size=7,9"]);</code>.</p>
-
-<p>If we also wanted to define the graph to be displayed in landscape mode we would call <code class="code">SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);</code>. If, in addition we wanted to define the background colour to be, for example, pink, we would call <code class="code">SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90", "bgcolor=pink"]);</code>.</p>
-
-<p>After defining the attributes, any command that creates a drawing will use the last defined attributes. To set them back to the defaults, please use <code class="func">ClearDrawingsExtraGraphAttributes</code> (<a href="chap3.html#X7B915CC480D0ABF0"><span class="RefLink">3.6-3</span></a>).</p>
+<p>By using Print (or PrinTo, if one wants to print to a file) the string is displayed as follows:</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraGraphAttributes;</span>
-"none"
-
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetDrawingsExtraGraphAttributes(["size=7,9"]);</span>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraGraphAttributes;</span>
-[ "size=7,9" ]
-
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);</span>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraGraphAttributes;</span>
-[ "size=7,9", "rotate=90" ]
-
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90", "bgcolor=pink"]);</span>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraGraphAttributes;</span>
-[ "size=7,9", "rotate=90", "bgcolor=pink" ]
-
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ClearDrawingsExtraGraphAttributes();</span>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DrawingsExtraGraphAttributes;</span>
-"none"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(last);</span>
+digraph  SchutzenbergerGraphs{
+compound=true;
+subgraph cluster4{
+1 [shape=circle];
+}
+subgraph cluster3{
+2 -&gt; 4 [label="a",color=red];
+3 -&gt; 2 [label="c",color=green];
+4 -&gt; 3 [label="b",color=blue];
+2 [shape=circle];
+3 [shape=circle];
+4 [shape=circle];
+}
+subgraph cluster2{
+5 -&gt; 5 [label="b",color=blue];
+5 -&gt; 6 [label="c",color=green];
+6 -&gt; 5 [label="a",color=red];
+6 -&gt; 7 [label="c",color=green];
+7 -&gt; 7 [label="a",color=red];
+7 -&gt; 6 [label="b",color=blue];
+5 [shape=circle];
+6 [shape=circle];
+7 [shape=circle];
+}
+subgraph cluster1{
+8 -&gt; 8 [label="a",color=red];
+8 -&gt; 8 [label="b",color=blue];
+8 -&gt; 8 [label="c",color=green];
+8 [shape=circle];
+}
+1 -&gt; 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];
+2 -&gt; 5 [lhead=cluster2,ltail=cluster3,color=cornflowerblue];
+5 -&gt; 8 [lhead=cluster1,ltail=cluster2,color=cornflowerblue];
+}
 </pre></div>
-
-<p><a id="X7B915CC480D0ABF0" name="X7B915CC480D0ABF0"></a></p>
-
-<h5>3.6-3 ClearDrawingsExtraGraphAttributes</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClearDrawingsExtraGraphAttributes</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function sets the graph drawing attributes back to <em>dot</em>'s defaults.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4.html">[Next Chapter]</a>&nbsp;  </div>
