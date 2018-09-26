@@ -1,6 +1,6 @@
 name: SgpViz
-version: 0.999.1
-date: 2017-09-13
+version: 0.999.2
+date: 2018-09-26
 description: |
     A package for semigroup visualization
 
@@ -21,12 +21,12 @@ needed-pkgs:
       url: "http://www.fc.up.pt/cmup/mdelgado/automata"
 
 www: https://gap-packages.github.io/sgpviz
-readme: README
+readme: README.md
 packageinfo: https://gap-packages.github.io/sgpviz/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/sgpviz/releases/download/v0.999.1/SgpViz-0.999.1.tar.gz
+      url: https://github.com/gap-packages/sgpviz/releases/download/v0.999.2/SgpViz-0.999.2.tar.gz
 
 abstract: |
     The <span class="pkgname">SgpViz</span> package, is a package with some visualization features for finite semigroups.

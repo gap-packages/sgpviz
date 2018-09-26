@@ -11,7 +11,7 @@
   
   [1X3.1-1 DrawDClassOfElement[101X
   
-  [29X[2XDrawDClassOfElement[102X( [3Xarg[103X ) [32X function
+  [33X[1;0Y[29X[2XDrawDClassOfElement[102X( [3Xarg[103X ) [32X function[133X
   
   [33X[0;0YThis  function  uses [2XDotForDrawingDClassOfElement[102X ([14X3.1-2[114X) to compute the dot
   code  to  produce  the image that is then displayed. It takes as arguments a
@@ -45,7 +45,7 @@
   
   [1X3.1-2 DotForDrawingDClassOfElement[101X
   
-  [29X[2XDotForDrawingDClassOfElement[102X( [3Xarg[103X ) [32X function
+  [33X[1;0Y[29X[2XDotForDrawingDClassOfElement[102X( [3Xarg[103X ) [32X function[133X
   
   [33X[0;0YThis  function  computes  the dot code that can be used to produce a drawing
   for  the D-class of an element of a semigroup. This can be done by using the
@@ -116,7 +116,7 @@
   
   [1X3.2-1 DrawDClasses[101X
   
-  [29X[2XDrawDClasses[102X( [3Xarg[103X ) [32X function
+  [33X[1;0Y[29X[2XDrawDClasses[102X( [3Xarg[103X ) [32X function[133X
   
   [33X[0;0YThis function is similar to the previous one, except that this one draws all
   the  D-classes  of  the semigroup given as the first argument. It then takes
@@ -145,7 +145,7 @@
   
   [1X3.2-2 DotForDrawingDClasses[101X
   
-  [29X[2XDotForDrawingDClasses[102X( [3Xarg[103X ) [32X function
+  [33X[1;0Y[29X[2XDotForDrawingDClasses[102X( [3Xarg[103X ) [32X function[133X
   
   [33X[0;0YThis  function  computes  the dot code that can be used to produce a drawing
   for  the D-class of an element of a semigroup. This can be done by using the
@@ -174,13 +174,13 @@
   
   [1X3.3-1 DrawRightCayleyGraph[101X
   
-  [29X[2XDrawRightCayleyGraph[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDrawRightCayleyGraph[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YDraws the right Cayley graph of a finite monoid or semigroup [3XS[103X.[133X
   
   [1X3.3-2 DrawCayleyGraph[101X
   
-  [29X[2XDrawCayleyGraph[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDrawCayleyGraph[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YThis function is a synonym of [2XDrawRightCayleyGraph[102X ([14X3.3-1[114X).[133X
   
@@ -191,7 +191,7 @@
   
   [1X3.3-3 DotForDrawingRightCayleyGraph[101X
   
-  [29X[2XDotForDrawingRightCayleyGraph[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDotForDrawingRightCayleyGraph[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YThis  function  computes  the dot code that is used by the previous function
   and can also be used by the reader in some independent way.[133X
@@ -201,138 +201,77 @@
   
   [1X3.4-1 DrawSchutzenbergerGraphs[101X
   
-  [29X[2XDrawSchutzenbergerGraphs[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDrawSchutzenbergerGraphs[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YDraws the Schützenberger graphs of the inverse semigroup [3XS[103X.[133X
   
   [33X[0;0YFor example, [10XDrawSchutzenbergerGraphs(poi3);[110X would produce the following:[133X
   
+  [1X3.4-2 DotForDrawingSchutzenbergerGraphs[101X
   
-  [1X3.5 [33X[0;0YDrawings output formats[133X[101X
+  [33X[1;0Y[29X[2XDotForDrawingSchutzenbergerGraphs[102X( [3Xarg[103X ) [32X function[133X
   
-  [33X[0;0YBy  default,  when  a  drawing  is requested, it is outputted in pdf format.
-  Since      [10Xgraphviz[110X      allows      other      output      formats     (see
-  [7Xhttp://www.graphviz.org/doc/info/output.html[107X),   it   is  possible  to  also
-  request a drawing in a format other than pdf.[133X
-  
-  [1X3.5-1 DrawingsListOfExtraFormats[101X
-  
-  [29X[2XDrawingsListOfExtraFormats[102X[32X global variable
-  
-  [33X[0;0YThis  is  a  global  variable  which  holds  the  valid output formats for a
-  drawing.  It  currently  has  the  value: [10X["dia", "fig", "gd", "gd2", "gif",
-  "hpgl", "jpg", "mif", "mp", "pcl", "pic", "plain", "plain-ext", "png", "ps",
-  "ps2",    "svg",    "svgz",    "vrml",    "vtx",    "wbmp",   "none"][110X   (see
-  [7Xhttp://www.graphviz.org/doc/info/output.html[107X for their description).[133X
-  
-  [1X3.5-2 DrawingsExtraFormat[101X
-  
-  [29X[2XDrawingsExtraFormat[102X[32X global variable
-  
-  [33X[0;0YThis  is  a  global variable which holds the alternative output format for a
-  drawing.  By  default its value is [10X"none"[110X which indicates that just pdf will
-  be used as the output format.[133X
-  
-  [33X[0;0YIf  its  value  becomes  one of those in [2XDrawingsListOfExtraFormats[102X ([14X3.5-1[114X),
-  then besides the pdf file, it will also be created a file in the alternative
-  format.[133X
-  
-  [33X[0;0YTo change this variable's value, please use [2XSetDrawingsExtraFormat[102X ([14X3.5-3[114X).[133X
-  
-  [1X3.5-3 SetDrawingsExtraFormat[101X
-  
-  [29X[2XSetDrawingsExtraFormat[102X( [3Xf[103X ) [32X function
-  
-  [33X[0;0YThis function is used to set the value of [2XDrawingsExtraFormat[102X ([14X3.5-2[114X) to the
-  format [3Xf[103X which is one of [2XDrawingsListOfExtraFormats[102X ([14X3.5-1[114X).[133X
+  [33X[0;0YThis  function  computes  the dot code that can be used to produce a drawing
+  for  the  Schutzenberger Graphs of an inverse semigroup. This can be done by
+  using  the  function  [2XDrawSchutzenbergerGraphs[102X  ([14X3.4-1[114X)  (if  the  system is
+  properly configured) or by the user in some independent way. The argument is
+  an inverse semigroup.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraFormat;[127X[104X
-    [4X[28X"none"[128X[104X
-    [4X[25Xgap>[125X [27XSetDrawingsExtraFormat("jpg");[127X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraFormat;[127X[104X
-    [4X[28X"jpg"[128X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XDrawRightCayleyGraph(poi3);[127X[104X
-    [4X[28XDisplaying file: /tmp/tmp.tpJqvI/cayleygraph.dot.ps[128X[104X
-    [4X[28XThe extra output format file: /tmp/tmp.tpJqvI/cayleygraph.dot.jpg[128X[104X
-    [4X[28Xhas also been created.[128X[104X
-    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDotForDrawingSchutzenbergerGraphs(poi3);[127X[104X
+    [4X[28X"digraph  SchutzenbergerGraphs{\ncompound=true;\nsubgraph cluster4{\n1 [shape=\[128X[104X
+    [4X[28Xcircle];\n}\nsubgraph cluster3{\n2 -> 4 [label=\"a\",color=red];\n3 -> 2 [labe\[128X[104X
+    [4X[28Xl=\"c\",color=green];\n4 -> 3 [label=\"b\",color=blue];\n2 [shape=circle];\n3 \[128X[104X
+    [4X[28X[shape=circle];\n4 [shape=circle];\n}\nsubgraph cluster2{\n5 -> 5 [label=\"b\"\[128X[104X
+    [4X[28X,color=blue];\n5 -> 6 [label=\"c\",color=green];\n6 -> 5 [label=\"a\",color=re\[128X[104X
+    [4X[28Xd];\n6 -> 7 [label=\"c\",color=green];\n7 -> 7 [label=\"a\",color=red];\n7 -> \[128X[104X
+    [4X[28X6 [label=\"b\",color=blue];\n5 [shape=circle];\n6 [shape=circle];\n7 [shape=ci\[128X[104X
+    [4X[28Xrcle];\n}\nsubgraph cluster1{\n8 -> 8 [label=\"a\",color=red];\n8 -> 8 [label=\[128X[104X
+    [4X[28X\"b\",color=blue];\n8 -> 8 [label=\"c\",color=green];\n8 [shape=circle];\n}\n1\[128X[104X
+    [4X[28X -> 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];\n2 -> 5 [lhead=clu\[128X[104X
+    [4X[28Xster2,ltail=cluster3,color=cornflowerblue];\n5 -> 8 [lhead=cluster1,ltail=clus\[128X[104X
+    [4X[28Xter2,color=cornflowerblue];\n}\n"[128X[104X
+    [4X[28X      [128X[104X
   [4X[32X[104X
   
-  
-  [1X3.6 [33X[0;0YDrawings extra graph attributes[133X[101X
-  
-  [33X[0;0YThe  functions  described in this subsection are intended to give the user a
-  finer  control  over  the  final  drawing.  They  allow  to define the graph
-  attributes  described in [7Xhttp://graphviz.org/doc/info/attrs.html[107X. (Note that
-  only  graph  attributes  are  allowed  to  be  defined,  not  edge  nor node
-  attributes are supported yet.)[133X
-  
-  [1X3.6-1 DrawingsExtraGraphAttributes[101X
-  
-  [29X[2XDrawingsExtraGraphAttributes[102X[32X global variable
-  
-  [33X[0;0YThis  is  a  global  variable  which  holds a list of strings, each of which
-  defines  a [13Xdot[113X graph attribute. This variable is [13Xnot[113X intended to be modified
-  by  the  user  directly, but can be used to check which extra attributes are
-  currently     defined.     To     set    the    attributes,    please    use
-  [2XSetDrawingsExtraGraphAttributes[102X   ([14X3.6-2[114X).  If  [10XDrawingsExtraGraphAttributes[110X
-  holds  the  value  [10X"none"[110X  then  the  default [13Xdot[113X settings will be used. Use
-  [2XClearDrawingsExtraGraphAttributes[102X ([14X3.6-3[114X) to set it to [10X"none"[110X.[133X
-  
-  [1X3.6-2 SetDrawingsExtraGraphAttributes[101X
-  
-  [29X[2XSetDrawingsExtraGraphAttributes[102X( [3XL[103X ) [32X function
-  
-  [33X[0;0YThis  is  the  function  to  define  the  drawing's  graph  attributes  (see
-  [7Xhttp://graphviz.org/doc/info/attrs.html[107X for a list and explanation of them).
-  the  argument  [3XL[103X  is  a  list  of strings, each of which defines a [13Xdot[113X graph
-  attribute.  For example, if we wanted to define the graph size to be 7x9 (in
-  inches), we would call [10XSetDrawingsExtraGraphAttributes(["size=7,9"]);[110X.[133X
-  
-  [33X[0;0YIf  we  also wanted to define the graph to be displayed in landscape mode we
-  would  call [10XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);[110X. If,
-  in  addition  we  wanted to define the background colour to be, for example,
-  pink,    we    would    call    [10XSetDrawingsExtraGraphAttributes(["size=7,9",
-  "rotate=90", "bgcolor=pink"]);[110X.[133X
-  
-  [33X[0;0YAfter  defining  the attributes, any command that creates a drawing will use
-  the  last  defined  attributes. To set them back to the defaults, please use
-  [2XClearDrawingsExtraGraphAttributes[102X ([14X3.6-3[114X).[133X
+  [33X[0;0YBy  using  Print  (or PrinTo, if one wants to print to a file) the string is
+  displayed as follows:[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
-    [4X[28X"none"[128X[104X
-    [4X[28X[128X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XSetDrawingsExtraGraphAttributes(["size=7,9"]);[127X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
-    [4X[28X[ "size=7,9" ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90"]);[127X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
-    [4X[28X[ "size=7,9", "rotate=90" ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XSetDrawingsExtraGraphAttributes(["size=7,9", "rotate=90", "bgcolor=pink"]);[127X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
-    [4X[28X[ "size=7,9", "rotate=90", "bgcolor=pink" ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XClearDrawingsExtraGraphAttributes();[127X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XDrawingsExtraGraphAttributes;[127X[104X
-    [4X[28X"none"[128X[104X
+    [4X[25Xgap>[125X [27XPrint(last);[127X[104X
+    [4X[28Xdigraph  SchutzenbergerGraphs{[128X[104X
+    [4X[28Xcompound=true;[128X[104X
+    [4X[28Xsubgraph cluster4{[128X[104X
+    [4X[28X1 [shape=circle];[128X[104X
+    [4X[28X}[128X[104X
+    [4X[28Xsubgraph cluster3{[128X[104X
+    [4X[28X2 -> 4 [label="a",color=red];[128X[104X
+    [4X[28X3 -> 2 [label="c",color=green];[128X[104X
+    [4X[28X4 -> 3 [label="b",color=blue];[128X[104X
+    [4X[28X2 [shape=circle];[128X[104X
+    [4X[28X3 [shape=circle];[128X[104X
+    [4X[28X4 [shape=circle];[128X[104X
+    [4X[28X}[128X[104X
+    [4X[28Xsubgraph cluster2{[128X[104X
+    [4X[28X5 -> 5 [label="b",color=blue];[128X[104X
+    [4X[28X5 -> 6 [label="c",color=green];[128X[104X
+    [4X[28X6 -> 5 [label="a",color=red];[128X[104X
+    [4X[28X6 -> 7 [label="c",color=green];[128X[104X
+    [4X[28X7 -> 7 [label="a",color=red];[128X[104X
+    [4X[28X7 -> 6 [label="b",color=blue];[128X[104X
+    [4X[28X5 [shape=circle];[128X[104X
+    [4X[28X6 [shape=circle];[128X[104X
+    [4X[28X7 [shape=circle];[128X[104X
+    [4X[28X}[128X[104X
+    [4X[28Xsubgraph cluster1{[128X[104X
+    [4X[28X8 -> 8 [label="a",color=red];[128X[104X
+    [4X[28X8 -> 8 [label="b",color=blue];[128X[104X
+    [4X[28X8 -> 8 [label="c",color=green];[128X[104X
+    [4X[28X8 [shape=circle];[128X[104X
+    [4X[28X}[128X[104X
+    [4X[28X1 -> 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];[128X[104X
+    [4X[28X2 -> 5 [lhead=cluster2,ltail=cluster3,color=cornflowerblue];[128X[104X
+    [4X[28X5 -> 8 [lhead=cluster1,ltail=cluster2,color=cornflowerblue];[128X[104X
+    [4X[28X}[128X[104X
   [4X[32X[104X
-  
-  [1X3.6-3 ClearDrawingsExtraGraphAttributes[101X
-  
-  [29X[2XClearDrawingsExtraGraphAttributes[102X(  ) [32X function
-  
-  [33X[0;0YThis function sets the graph drawing attributes back to [13Xdot[113X's defaults.[133X
   

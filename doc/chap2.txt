@@ -44,13 +44,13 @@
   
   [1X2.2-1 HasCommutingIdempotents[101X
   
-  [29X[2XHasCommutingIdempotents[102X( [3XM[103X ) [32X attribute
+  [33X[1;0Y[29X[2XHasCommutingIdempotents[102X( [3XM[103X ) [32X attribute[133X
   
   [33X[0;0YTests whether the idempotents of the semigroup [3XM [103Xcommute.[133X
   
   [1X2.2-2 IsInverseSemigroup[101X
   
-  [29X[2XIsInverseSemigroup[102X( [3XS[103X ) [32X attribute
+  [33X[1;0Y[29X[2XIsInverseSemigroup[102X( [3XS[103X ) [32X attribute[133X
   
   [33X[0;0YTests  whether  a  finite  semigroup  [3XS [103Xis inverse. It is well-known that it
   suffices  to test whether the idempotents of [3XS [103Xcommute and [3XS [103Xis regular. The
@@ -61,7 +61,7 @@
   
   [1X2.3-1 PartialTransformation[101X
   
-  [29X[2XPartialTransformation[102X( [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XPartialTransformation[102X( [3XL[103X ) [32X function[133X
   
   [33X[0;0YA  partial  transformation is a partial function of a set of integers of the
   form  [22X{1,dots,  n}[122X.  It  is  given by means of the list of images [3XL[103X. When an
@@ -76,14 +76,14 @@
   
   [1X2.3-2 ReduceNumberOfGenerators[101X
   
-  [29X[2XReduceNumberOfGenerators[102X( [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XReduceNumberOfGenerators[102X( [3XL[103X ) [32X function[133X
   
   [33X[0;0YGiven  a  subset  [3XL[103X  of  the  generators  of  a semigroup, returns a list of
   generators of the same semigroup but possibly with less elements than [3XL[103X.[133X
   
   [1X2.3-3 SemigroupFactorization[101X
   
-  [29X[2XSemigroupFactorization[102X( [3XS[103X, [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XSemigroupFactorization[102X( [3XS[103X, [3XL[103X ) [32X function[133X
   
   [33X[0;0Y[3XL[103X  is an element (or list of elements) of the semigroup [3XS[103X. Returns a minimal
   factorization  on the generators of [3XS[103X of the element(s) of [3XL[103X. Works only for
@@ -103,7 +103,7 @@
   
   [1X2.3-4 GrahamBlocks[101X
   
-  [29X[2XGrahamBlocks[102X( [3Xmat[103X ) [32X function
+  [33X[1;0Y[29X[2XGrahamBlocks[102X( [3Xmat[103X ) [32X function[133X
   
   [33X[0;0Y[3Xmat[103X  is  a  matrix  as  displayed  by [10XDisplayEggBoxOfDClass(D);[110X of a regular
   D-class  [10XD[110X.  This  function  outputs a list [10X[gmat, phi][110X where [10Xgmat[110X is [3Xmat[103X in
@@ -150,7 +150,7 @@
   
   [1X2.4-1 RightCayleyGraphAsAutomaton[101X
   
-  [29X[2XRightCayleyGraphAsAutomaton[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XRightCayleyGraphAsAutomaton[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YComputes  the  right Cayley graph of a finite monoid or semigroup [3XS[103X. It uses
   the  [5XGAP[105X  buit-in  function [10XCayleyGraphSemigroup[110X to compute the Cayley Graph
@@ -173,7 +173,7 @@
   
   [1X2.4-2 RightCayleyGraphMonoidAsAutomaton[101X
   
-  [29X[2XRightCayleyGraphMonoidAsAutomaton[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XRightCayleyGraphMonoidAsAutomaton[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YThis function is a synonym of [2XRightCayleyGraphAsAutomaton[102X ([14X2.4-1[114X).[133X
   
