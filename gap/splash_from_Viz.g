@@ -12,7 +12,7 @@ fi;
 # Splash ... 
 # the input is
 # * a record of options (may not be present) and
-# * a string (dot) or a function that applied to the ramaining argument produces a dot string
+# * a string (dot) or a function that applied to the remaining argument produces a dot string
 if not IsBound(VizViewers) then 
   if ARCH_IS_MAC_OS_X( ) then
     BindGlobal("VizViewers", ["xpdf","open","evince", "okular", "gv"]);
@@ -32,7 +32,7 @@ if not IsBound(Splash_sv) then #to avoid conflicts with slightly modified "splas
           latexstring, command;
 
     ##########
-    # there are global warnings concerning the avaiability of software
+    # there are global warnings concerning the availability of software
     # there is no need to put them here
     ###############
     opt := First(arg, k -> IsRecord(k));

@@ -133,8 +133,8 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   if not (IsBound(arg[1]) and IsBound(arg[2])) then
     Error("Two arguments must be given");
   fi;
-  
-  # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+
+  # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh object is created 
   if IsMonoid(arg[1]) then 
     S := Monoid(GeneratorsOfMonoid(arg[1]));
   elif IsSemigroup(arg[1]) then
@@ -142,7 +142,7 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   else
     Error("The first argument must be a semigroup");
   fi;  
-  
+
   if not arg[2] in arg[1] then
     Error("The second argument must be an element of the senigroup, which is given as first");
   else
@@ -167,19 +167,9 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   T := false;                          # Display as transformations
   trans_list := [];                    # the list of lists of elements
   # to draw in colors given by the user.
-  #siegen    fich is no longer needed: it is replaced by dotstring
-  #fich := "semigroup";                 # the name of the dot file
 
   for i in [3..Length(arg)] do
     if 
-      #siegen
-      # IsString(arg[i]) then
-      #     if arg[i] = "" then
-      #         fich := "semigroup";
-      #     else
-      #         fich := arg[i];
-      #     fi;
-      #   elif
       IsList(arg[i]) then
       if not ForAll(arg[i], e -> IsTransformation(e)) then
         Error("The list of elements must be a list of Transformations ", arg[i]);
@@ -216,7 +206,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   len_dclasses := Length(dclasses);
   dc_number := 1;
 
-  #siegen: in the future it should be adapted to make use of "Factorization" of the "semigroups" package
   if not T then
     retels := [Elements(dclasses[1]), SemigroupFactorization(S, Elements(dclasses[1])),[]];
   fi;
@@ -227,8 +216,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
 
   # For each d-class write the dot record node
   for dc in dclasses do
-    Error("..");
-
     eggbox := EggBoxOfDClass(dc);
     rows := Length(eggbox);
     cols := Length(eggbox[1]);
@@ -275,9 +262,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
 
     if IsRegularDClass(dc) then
       ret := GrahamBlocks(idegg);
-      ##      Print(ret[1]);
-
-      #            graham_eggbox := ret[1];
       phi := ret[2];
     fi;
 
@@ -317,7 +301,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
         if IsRegularDClass(dc) then
           # If we're displaying as transformations
           if T then
-            #                        bag[i][j] := List(Elements(eggbox[phi[i][j][1]][phi[i][j][2]]), x -> ImageListOfTransformation(x));
             bag[i][j] := List(Elements(eggbox[phi[i][j][1]][phi[i][j][2]]), x -> ImageListOfTransformation(x,tlen));
             if T__ = 1 then
               # if the transformations are partial
@@ -445,7 +428,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
           if T then
             # if it is not a regular d-class it has not been sorted by GrahamBlocks,
             # so pick the elements from eggbox in same (not mapped by phi) order
-            #                       bag[i][j] := List(Elements(eggbox[i][j]), x -> ImageListOfTransformation(x));
             bag[i][j] := List(Elements(eggbox[i][j]), x -> ImageListOfTransformation(x,tlen));
             if T__ = 1 then
               if is_partial then
@@ -670,9 +652,6 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
   Append(dotstring, "}\n");
 
   return dotstring;
-
-  # ================= Exec dot and display file =============
-  #siegen    CMUP__executeDotAndViewer(tdir, dot, gv, Concatenation(fich, ".dot"));
 end);
 
 
@@ -744,7 +723,7 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
         powerizeWord;
 
 
-
+  
   # ==========================================
 
   # if we're displaying as words this function
@@ -800,12 +779,12 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
               "sandybrown", "seagreen", "skyblue", "slateblue", "slategrey",
               "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "violetred",
               "wheat", "yellow", "yellowgreen" ];
-  
-  
+
+
   if not IsBound(arg[1]) or not IsSemigroup(arg[1]) then
     Error("The first argument must be a semigroup");
   fi;
-  # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+  # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh object is created 
   if IsMonoid(arg[1]) then
     S := Monoid(GeneratorsOfMonoid(arg[1]));
   elif IsSemigroup(arg[1]) then
@@ -818,13 +797,13 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
     S:= Range(IsomorphismTransformationSemigroup(S));
     S := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(S)));
   fi;
-  
+
   tlen := DegreeOfTransformationSemigroup(S);
 
   elms__ := Elements(S);
   idemps__ := Idempotents(S);
   idempots2 := List(idemps__, x -> ImageListOfTransformation(x,tlen));
-  
+
   T := false;                          # Display as transformations
   trans_list := [];                    # the list of lists of elements
   # to draw in colors given by
@@ -865,8 +844,6 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
   dclasses := GreensDClasses(S);
   len_dclasses := Length(dclasses);
   dc_number := 1;
-
-  #siegen: in the future it should be adapted to make use of "Factorization" of the "semigroups" package
 
   if not T then
     retels := [Elements(S), SemigroupFactorization(S, Elements(S)),[]];
@@ -924,8 +901,8 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
 
     if IsRegularDClass(dc) then
       ret := GrahamBlocks(idegg);
-  ##    Print(idegg,"\n",ret,"\n");
-      
+      ##    Print(idegg,"\n",ret,"\n");
+
       #            graham_eggbox := ret[1];
       phi := ret[2];
     fi;
@@ -1313,11 +1290,6 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
   Append(dotstring, "}\n");
   return dotstring;
 end);
-
-
-
-
-
 
 
 
