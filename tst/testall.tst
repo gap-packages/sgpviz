@@ -35,7 +35,7 @@ true
 #
 #############################################################################
 #############################################################################
-# Examples from the manual
+# Examples from the manual (slightly adapted)
 # (These examples use at least a function from each file)
 #basics
 gap> f := FreeMonoid("a","b");;
@@ -66,13 +66,14 @@ Transformation( [ 2, 5, 4, 5, 5 ] )
 #
 gap> el1 := Transformation( [ 2, 3, 4, 4 ] );;
 gap> el2 := Transformation( [ 2, 4, 3, 4 ] );;
-gap> f1 := SemigroupFactorization(poi3,el1);
-[ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ] ]
-gap> f1[1][1] * f1[1][2] = el1;
+gap> f1 := SemigroupFactorization(poi3,el1);;
+gap> Product(f1[1]) = el1;
 true
-gap> SemigroupFactorization(poi3,[el1,el2]);
-[ [ Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ) ], 
-  [ Transformation( [ 2, 4, 3, 4 ] ) ] ]
+gap> f2 := SemigroupFactorization(poi3,[el1,el2]);;
+gap> Product(f2[1]) = el1;
+true
+gap> Product(f2[2]) = el2;
+true
 
 #
 gap> p1 := PartialTransformation([6,2,0,0,2,6,0,0,10,10,0,0]);;
@@ -85,11 +86,6 @@ gap> el := Elements(css3)[8];;
 gap> D := GreensDClassOfElement(css3, el);;
 gap> IsRegularDClass(D);
 true
-gap> DisplayEggBoxOfDClass(D);
-[ [  1,  1,  0,  0 ],
-  [  1,  1,  0,  0 ],
-  [  0,  0,  1,  1 ],
-  [  0,  0,  1,  1 ] ]
 gap> mat := [ [  1,  0,  1,  0 ],
 >   [  0,  1,  0,  1 ],
 >   [  0,  1,  0,  1 ],
@@ -169,75 +165,10 @@ DER="0">*cab</TD></TR>
 }
 
 #
-gap> Print(DotForDrawingDClasses(poi3));
-digraph  DClasses {
-graph [center=yes,ordering=out];
-node [shape=plaintext];
-edge [color=cornflowerblue,arrowhead=none];
-1 [label=<
-<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0" PORT="1">
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">*\
-0</TD></TR>
-</TABLE></TD></TR>
-</TABLE>>];
-2 [label=<
-<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0" PORT="2">
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">*\
-a^2</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">a^2b</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">ba</TD></TR>
-</TABLE></TD></TR>
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">a\
-c^2</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">*ac</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">ab^2</TD></TR>
-</TABLE></TD></TR>
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">c\
-^2</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">b^2c</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">*b^2</TD></TR>
-</TABLE></TD></TR>
-</TABLE>>];
-3 [label=<
-<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0" PORT="3">
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">*\
-abc</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">a</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">ab</TD></TR>
-</TABLE></TD></TR>
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">b\
-c</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">*bca</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">b</TD></TR>
-</TABLE></TD></TR>
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">c\
-</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">ca</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">*cab</TD></TR>
-</TABLE></TD></TR>
-</TABLE>>];
-4 [label=<
-<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0" PORT="4">
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">*\
-1</TD></TR>
-</TABLE></TD></TR>
-</TABLE>>];
-4:4 -> 3:3;
-3:3 -> 2:2;
-2:2 -> 1:1;
-}
+gap> IsString(DotForDrawingDClasses(poi3));
+true
+gap> Number(DotForDrawingDClasses(poi3), x -> x=';');
+10
 
 #
 gap> DotForDrawingRightCayleyGraph(b21);
@@ -252,55 +183,22 @@ lled, fillcolor=lightcoral];\n5 [shape=circle, style=filled, fillcolor=lightco\
 ral];\n6 [shape=circle, style=filled, fillcolor=lightcoral];\n}\n"
 
 #
-gap> DotForDrawingSchutzenbergerGraphs(poi3);
-"digraph  SchutzenbergerGraphs{\ncompound=true;\nsubgraph cluster4{\n1 [shape=\
-circle];\n}\nsubgraph cluster3{\n2 -> 4 [label=\"a\",color=red];\n3 -> 2 [labe\
-l=\"c\",color=green];\n4 -> 3 [label=\"b\",color=blue];\n2 [shape=circle];\n3 \
-[shape=circle];\n4 [shape=circle];\n}\nsubgraph cluster2{\n5 -> 5 [label=\"b\"\
-,color=blue];\n5 -> 6 [label=\"c\",color=green];\n6 -> 5 [label=\"a\",color=re\
-d];\n6 -> 7 [label=\"c\",color=green];\n7 -> 7 [label=\"a\",color=red];\n7 -> \
-6 [label=\"b\",color=blue];\n5 [shape=circle];\n6 [shape=circle];\n7 [shape=ci\
-rcle];\n}\nsubgraph cluster1{\n8 -> 8 [label=\"a\",color=red];\n8 -> 8 [label=\
-\"b\",color=blue];\n8 -> 8 [label=\"c\",color=green];\n8 [shape=circle];\n}\n1\
- -> 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];\n2 -> 5 [lhead=clu\
-ster2,ltail=cluster3,color=cornflowerblue];\n5 -> 8 [lhead=cluster1,ltail=clus\
-ter2,color=cornflowerblue];\n}\n"
-gap> Print(last);
-digraph  SchutzenbergerGraphs{
-compound=true;
-subgraph cluster4{
-1 [shape=circle];
-}
-subgraph cluster3{
-2 -> 4 [label="a",color=red];
-3 -> 2 [label="c",color=green];
-4 -> 3 [label="b",color=blue];
-2 [shape=circle];
-3 [shape=circle];
-4 [shape=circle];
-}
-subgraph cluster2{
-5 -> 5 [label="b",color=blue];
-5 -> 6 [label="c",color=green];
-6 -> 5 [label="a",color=red];
-6 -> 7 [label="c",color=green];
-7 -> 7 [label="a",color=red];
-7 -> 6 [label="b",color=blue];
-5 [shape=circle];
-6 [shape=circle];
-7 [shape=circle];
-}
-subgraph cluster1{
-8 -> 8 [label="a",color=red];
-8 -> 8 [label="b",color=blue];
-8 -> 8 [label="c",color=green];
-8 [shape=circle];
-}
-1 -> 2 [lhead=cluster3,ltail=cluster4,color=cornflowerblue];
-2 -> 5 [lhead=cluster2,ltail=cluster3,color=cornflowerblue];
-5 -> 8 [lhead=cluster1,ltail=cluster2,color=cornflowerblue];
-}
+gap> IsString(DotForDrawingRightCayleyGraph(b21));
+true
+gap> Number(DotForDrawingRightCayleyGraph(b21), x -> x=';');
+18
 
+#
+gap> IsString(DotForDrawingRightCayleyGraph(poi3));
+true
+gap> Number(DotForDrawingRightCayleyGraph(poi3), x -> x=';');
+80
+
+#
+gap> IsString(DotForDrawingSchutzenbergerGraphs(poi3));
+true
+gap> Number(DotForDrawingSchutzenbergerGraphs(poi3), x -> x=';');
+24
 
 #
 gap> STOP_TEST( "testall.tst" );
