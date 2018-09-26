@@ -1,1 +1,2 @@
 DeclareGlobalFunction("SgpVizTest");
+DeclareGlobalFunction("SgpVizInfo");

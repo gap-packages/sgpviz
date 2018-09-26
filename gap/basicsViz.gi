@@ -93,12 +93,27 @@ InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(sgp)
     
     if not IsSemigroup(sgp) then
         Error("the argument must be a semigroup");
-    fi;
-        # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh created object is created 
+      fi;      
+      
+        # to face the fact that semigroups behave differently depending on the use or not of the "semigroups" package, a fresh object is created 
   if IsMonoid(sgp) then 
-    M := Monoid(GeneratorsOfMonoid(sgp));
+    if not (IsTransformationMonoid(sgp)) then
+      Info(InfoSgpViz,1,"I will work with an isomorphic transformation semigroup instead\n");
+      M:= Range(IsomorphismTransformationMonoid(sgp));
+      M := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(M)));
+    else
+      M := Monoid(GeneratorsOfMonoid(sgp));
+    fi;
   elif IsSemigroup(sgp) then
-    M := Semigroup(GeneratorsOfSemigroup(sgp));
+    if not (IsTransformationSemigroup(sgp)) then
+      Info(InfoSgpViz,1,"I will work with an isomorphic transformation semigroup instead\n");
+      M:= Range(IsomorphismTransformationSemigroup(sgp));
+      M := Monoid(ReduceNumberOfGenerators(GeneratorsOfSemigroup(M)));
+    else
+      M := Monoid(GeneratorsOfMonoid(sgp));
+      M := Semigroup(GeneratorsOfSemigroup(sgp));
+    fi;
+
   fi;  
    if IsFpSemigroup(M) or IsFpMonoid(M) then
        cg := CayleyGraphSemigroup(Range(IsomorphismTransformationSemigroup(M)));

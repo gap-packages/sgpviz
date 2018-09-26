@@ -26,7 +26,7 @@ It opens a window like the following:
     <P />
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xaut.png}
+        \includegraphics[width=0.5\textwidth]{images/xaut.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -46,7 +46,7 @@ The <E>i</E>th row of the matrix describes the action of the
 <E>i</E>th letter on the states.
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xautoma.png}
+        \includegraphics[width=0.5\textwidth]{images/xautoma.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -55,7 +55,7 @@ The <E>i</E>th row of the matrix describes the action of the
 A non deterministic automaton may be given as follows:
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xndAUT.png}
+        \includegraphics[width=0.5\textwidth]{images/xndAUT.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -70,7 +70,7 @@ representing the same language or the transition semigroup of the automaton,
 may be done directly after pressing the <B> Functions</B> button.
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xndAUTok.png}
+        \includegraphics[width=0.5\textwidth]{images/xndAUTok.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -81,7 +81,7 @@ By pressing the button <B> View </B> an image representing the automaton is
 displayed in a new window.
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/ndAutImage.png}
+        \includegraphics[width=0.5\textwidth]{images/ndAutImage.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -120,7 +120,7 @@ It opens a window like the following:
     <P />
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xautgiven.png}
+        \includegraphics[width=0.5\textwidth]{images/xautgiven.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -146,7 +146,7 @@ gap> XSemigroup();
 It opens a window like the following:
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xsgp.png}
+        \includegraphics[width=0.5\textwidth]{images/xsgp.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -165,7 +165,7 @@ In the window opened by <C>XSemigroup</C>, by pressing the button
     <P />
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xb211.png}
+        \includegraphics[width=0.5\textwidth]{images/xb211.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -177,7 +177,7 @@ and whether one wants to produce a monoid or a semigroup.
 Pressing the <B>Proceed</B> button one gets:
     <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xb212.png}
+        \includegraphics[width=0.5\textwidth]{images/xb212.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -186,7 +186,7 @@ Pressing the <B>Proceed</B> button one gets:
 
      <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/xb21.png}
+        \includegraphics[width=0.5\textwidth]{images/xb21.png}
         \end{center}
     </Alt>
     <Alt Only="HTML">
@@ -281,7 +281,7 @@ Semigroups given by partial transformations
 
      <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/Xsemigroup1.png}
+        \includegraphics[width=0.5\textwidth]{images/Xsemigroup1.png}
         \end{center}
     </Alt>
 <Alt Only="HTML">
@@ -303,7 +303,7 @@ by pressing one of those buttons:
 
      <Alt Only="LaTeX">
         \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/Xsemigroup2.png}
+        \includegraphics[width=0.5\textwidth]{images/Xsemigroup2.png}
         \end{center}
     </Alt>
 <Alt Only="HTML">

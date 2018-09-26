@@ -1,5 +1,6 @@
 0.999.1 -> 0.999.2
-Schutzenberger graphs are now produced in two steps, as the remaining drawings (see 0.998 -> 0.999.1)
+- Schutzenberger graphs are now produced in two steps, as the remaining drawings (see 0.998 -> 0.999.1)
+- several changes to fix a strange behavior when the semigroups package is loaded (and a semigroup is entered before)
 
 0.998 -> 0.999.1
 -Removed the SuperFail (thanks Max H.)

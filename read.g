@@ -12,7 +12,7 @@
 ##
 DeclareInfoClass("InfoViz");
 DeclareInfoClass("InfoSgpViz");
-ReadPackage( "sgpviz/gap/infolevelsgpviz" );
+#ReadPackage( "sgpviz/gap/infolevelsgpviz" );
 ReadPackage( "sgpviz/gap/splash_from_Viz.g" );
 
 ReadPackage( "sgpviz/gap/basicsViz.gi" );

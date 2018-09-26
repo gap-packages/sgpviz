@@ -1,4 +1,4 @@
-infosgpviz := function(n)
+Infosgpviz := function(n)
   
     SetInfoLevel(InfoSgpViz, n);
      

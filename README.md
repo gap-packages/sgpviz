@@ -4,7 +4,7 @@ SgpViz is a GAP package for (finite) semigroup visualisation
 Introduction
 ------------
 
-This is release 0.999.1 of  the package `SgpViz'.
+This is release 0.999.2 of  the package `SgpViz'.
 
 The features of this package include
 

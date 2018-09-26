@@ -34,7 +34,7 @@
       <P/>
       Since Version 0.998 (released in 2008), the package is maintained by the first author.
       <P/>
-      The present package is supersede by the &GAP; package <E>semigroups</E>, by James Mitchel, in what concerns some aspects of semigroup visualisation. We strongly recommend the usage of that package, unless you find useful specific tools available in &SgpViz; but not in <E>semigroups</E>. 
+      The present package is superseded by the &GAP; package <E>semigroups</E>, by James Mitchel, in what concerns some aspects of semigroup visualisation. We strongly recommend the usage of that package, unless you find useful specific tools available in &SgpViz; but not in <E>semigroups</E>. 
 <P/>
 Bug reports, suggestions and comments are, of course, welcome. Please use the
 email address <Email>mdelgado@fc.up.pt</Email> to this effect.
