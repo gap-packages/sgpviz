@@ -1,10 +1,15 @@
-# sgpviz
-SgpViz is a GAP package for (finite) semigroup visualisation
-============================================================
+[![Build Status](https://travis-ci.org/gap-packages/sgpviz.svg?branch=master)](https://travis-ci.org/gap-packages/sgpviz)
+[![Code Coverage](https://codecov.io/github/gap-packages/sgpviz/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/sgpviz)
+
+SgpViz
+======
+
+`SgpViz` is a GAP package for (finite) semigroup visualisation.
+
 Introduction
 ------------
 
-This is release 0.999.2 of  the package `SgpViz'.
+This is release 0.999.2 of  the package `SgpViz`.
 
 The features of this package include
 
@@ -12,7 +17,7 @@ The features of this package include
 - drawing the Schutzenberger graphs of an inverse semigroup;
 - a Tcl/Tk interface to specify a semigroup;
 
-There is a manual in the sub-directory 'doc' written using the GAP package
+There is a manual in the sub-directory `doc` written using the GAP package
 gapdoc which describes the available functions in detail. The pdf, html
 versions of the manual are also available there.
 
@@ -55,7 +60,7 @@ with the main GAP archive, check the package Web page
 
 For the development version, please visit the repository in GitHub (https://github.com/gap-packages/sgpviz/)
 
-You may get `SgpViz' as a compressed tar archive (file name ends with
+You may get `SgpViz` as a compressed tar archive (file name ends with
 .tar.gz). Use the appropriate command on your system to unpack the
 archive.
 
@@ -68,42 +73,40 @@ or, if tar on your system does not understand the option z, by
     gunzip sgpviz-<version>.tar.gz
     tar xf sgpviz-<version>.tar
 
-which will in each case unpack the code into a directory 'sgpviz'
+which will in each case unpack the code into a directory `sgpviz`
 in the current directory. We assume that the current directory is the
 directory /usr/local/lib/gap-4.x.x/pkg/.
 
 Installation
 ------------
 
-Important:
-----------
+### Important:
 
-This package needs the package `Automata' (http://www.gap-system.org/~gap/Packages/automata.html).
------------------------------------------
+This package needs the package `Automata` (http://www.gap-system.org/~gap/Packages/automata.html).
 
 
 You may have to start GAP with the -l option, for instance,
 
-gap -l "/usr/local/lib/gap-4.x.x"
+    gap -l "/usr/local/lib/gap-4.x.x"
 
 Then try the following
 
-gap> LoadPackage( "sgpviz" ); 
-true
-gap>
+    gap> LoadPackage( "sgpviz" ); 
+    true
+    gap>
 
 Good luck!
 
 If you use a LINUX system, you may have to, in order to save typing, write
 aliases: 
 
-in the file `.bash_aliases' (or something equivalent, maybe with another syntax): 
+in the file `.bash_aliases` (or something equivalent, maybe with another syntax): 
 
-alias gap='gap -l "/usr/local/lib/gap-4.x.x;"'
+    alias gap='gap -l "/usr/local/lib/gap-4.x.x;"'
 
-and in the file `.gap/gaprc'
+and in the file `.gap/gaprc`
 
-LoadPackage( "sgpviz" ); 
+    LoadPackage( "sgpviz" ); 
 
 In order to have automatic visualisations and not just to produce the dot code to be visualised by any other means, GraphViz (http://www.graphviz.org/) should be installed.
 
@@ -115,5 +118,5 @@ In other systems, there are equivalent ways to do the same.
 SgpViz is free software you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 2 of the License, or (at your
-option) any later version. For details, see the file 'GPL' in the
-'etc' directory of the GAP distribution or see the FSF's own site.
+option) any later version. For details, see the file `GPL` distributed
+as part of this package or see the FSF's own site.
