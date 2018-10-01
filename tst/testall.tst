@@ -115,60 +115,28 @@ Accepting state: [  ]
 
 #
 #drawings
-gap> DotForDrawingDClassOfElement(poi3,Transformation([1,4,3,4]));
-"digraph  DClassOfElement {\ngraph [center=yes,ordering=out];\nnode [shape=pla\
-intext];\nedge [color=cornflowerblue,arrowhead=none];\n1 [label=<\n<TABLE BORD\
-ER=\"0\" CELLBORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" PORT=\"1\">\n<TR\
-><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"\
-0\">*abc</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR\
-><TD BGCOLOR=\"white\" BORDER=\"0\">a</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"\
-><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"0\">ab</TD></TR>\
-\n</TABLE></TD></TR>\n<TR><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BG\
-COLOR=\"white\" BORDER=\"0\">bc</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"><TABL\
-E CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"0\">*bca</TD></TR>\n</T\
-ABLE></TD><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" \
-BORDER=\"0\">b</TD></TR>\n</TABLE></TD></TR>\n<TR><TD BORDER=\"0\"><TABLE CELL\
-SPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"0\">c</TD></TR>\n</TABLE></TD\
-><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><TD BGCOLOR=\"white\" BORDER=\"\
-0\">ca</TD></TR>\n</TABLE></TD><TD BORDER=\"0\"><TABLE CELLSPACING=\"0\"><TR><\
-TD BGCOLOR=\"white\" BORDER=\"0\">*cab</TD></TR>\n</TABLE></TD></TR>\n</TABLE>\
->];\n}\n"
-gap> Print(last);
-digraph  DClassOfElement {
-graph [center=yes,ordering=out];
-node [shape=plaintext];
-edge [color=cornflowerblue,arrowhead=none];
-1 [label=<
-<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0" CELLSPACING="0" PORT="1">
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">*\
-abc</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">a</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">ab</TD></TR>
-</TABLE></TD></TR>
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">b\
-c</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">*bca</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">b</TD></TR>
-</TABLE></TD></TR>
-<TR><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BORDER="0">c\
-</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">ca</TD></TR>
-</TABLE></TD><TD BORDER="0"><TABLE CELLSPACING="0"><TR><TD BGCOLOR="white" BOR\
-DER="0">*cab</TD></TR>
-</TABLE></TD></TR>
-</TABLE>>];
-}
+gap> dclasselementpoi3 := DotForDrawingDClassOfElement(poi3,Transformation([1,4,3,4]),1);;
+gap> Number(dclasselementpoi3, x -> x='*');
+3
+gap> Number(dclasselementpoi3, x -> x='w');
+11
+gap> Number(dclasselementpoi3, x -> x=']');
+13
+gap> Number(dclasselementpoi3, x -> x='[') = Number(dclasselementpoi3, x -> x=']');
+true
 
 #
-gap> IsString(DotForDrawingDClasses(poi3));
-true
-gap> Number(DotForDrawingDClasses(poi3), x -> x=';');
+gap> dclasspoi3 := DotForDrawingDClasses(poi3);;
+gap> Number(dclasspoi3, x -> x=';');
 10
+gap> Number(dclasspoi3, x -> x='*');
+8
+gap> Number(dclasspoi3, x -> x='w');
+22
+gap> Number(dclasspoi3, x -> x=']');
+7
+gap> Number(dclasspoi3, x -> x='[') = Number(dclasspoi3, x -> x=']');
+true
 
 #
 gap> DotForDrawingRightCayleyGraph(b21);
