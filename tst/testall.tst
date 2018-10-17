@@ -168,17 +168,19 @@ true
 gap> Number(DotForDrawingSchutzenbergerGraphs(poi3), x -> x=';');
 24
 
-
-#############################################################################
+#
 #############################################################################
 # Simple examples aiming for a better code coverage
+#############################################################################
 
+#
 gap> s := Semigroup(Transformation( [ 4, 1, 2, 4 ] ),
 > Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ));
 <transformation semigroup of degree 4 with 3 generators>
 gap> RightCayleyGraphAsAutomaton(s);
 < deterministic automaton on 3 letters with 19 states >
 
+#
 gap> t1 := Transformation([2,3,1,4,5,5]);
 Transformation( [ 2, 3, 1, 4, 5, 5 ] )
 gap> t2 := Transformation([1,3,4,2,5,5]);
@@ -197,6 +199,7 @@ gap> Number(dclassesa5, x -> x='w');
 gap> Number(dclassesa5, x -> x='[') = Number(dclassesa5, x -> x=']');
 true
 
+#
 gap> u1:=Transformation([2,2,3]);
 Transformation( [ 2, 2 ] )
 gap> g:=Transformation([2,3,1]);
@@ -213,6 +216,7 @@ gap> Number(dclassesop3, x -> x='w');
 gap> Number(dclassesop3, x -> x='[') = Number(dclassesop3, x -> x=']');
 true
 
+#
 gap> u1:=Transformation([2,2,3,4,5]);
 Transformation( [ 2, 2 ] )
 gap> g:=Transformation([2,3,4,5,1]);
@@ -229,6 +233,7 @@ gap> Number(dclassesop5, x -> x='w');
 gap> Number(dclassesop5, x -> x='[') = Number(dclassesop5, x -> x=']');
 true
 
+#
 gap> p1 := Transformation([2,1,3,4,5]);
 Transformation( [ 2, 1 ] )
 gap> p2 := Transformation([2,3,4,5,1]);
@@ -245,6 +250,7 @@ gap> Number(dclassesS5, x -> x='w');
 gap> Number(dclassesS5, x -> x='[') = Number(dclassesS5, x -> x=']');
 true
 
+#
 gap> kkkpori4 := Semigroup([ Transformation( [ 1 .. 5 ] ), 
 > Transformation( [ 1, 2, 3, 5, 5 ] ),
 >   Transformation( [ 1, 2, 5, 4, 5 ] ), Transformation( [ 1, 5, 3, 4, 5 ] ),
