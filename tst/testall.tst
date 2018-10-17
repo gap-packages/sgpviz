@@ -207,10 +207,6 @@ Transformation( [ 2, 3, 1 ] )
 gap> op3:= Monoid(g,u1);
 <transformation monoid of degree 3 with 2 generators>
 gap> dclassesop3 := DotForDrawingDClasses(op3);;
-<<<<<<< HEAD
-gap> dclassesop3 := DotForDrawingDClasses(op3);;
-=======
->>>>>>> 0a31e985599c5151e36bcddec8d504e57d3602cc
 gap> Number(dclassesop3, x -> x=';');
 8
 gap> Number(dclassesop3, x -> x='*');
@@ -262,19 +258,11 @@ gap> kkkpori4 := Semigroup([ Transformation( [ 1 .. 5 ] ),
 <transformation monoid of degree 5 with 4 generators>
 gap> dclasseskkkpori4 := DotForDrawingDClasses(kkkpori4);;
 gap> Number(dclasseskkkpori4, x -> x=';');
-<<<<<<< HEAD
 51
 gap> Number(dclasseskkkpori4, x -> x='*');
 16
 gap> Number(dclasseskkkpori4, x -> x='w');
 18
-=======
-12
-gap> Number(dclasseskkkpori4, x -> x='*');
-16
-gap> Number(dclasseskkkpori4, x -> x='w');
-195
->>>>>>> 0a31e985599c5151e36bcddec8d504e57d3602cc
 gap> Number(dclasseskkkpori4, x -> x='[') = Number(dclasseskkkpori4, x -> x=']');
 true
 
