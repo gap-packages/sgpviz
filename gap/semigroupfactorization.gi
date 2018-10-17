@@ -15,7 +15,7 @@ InstallGlobalFunction(SemigroupFactorization, function(S, elements)
   # main function below...
 
   ## local functions
-
+  
   semigroupFactorization_with_semigroups_pkg := function()
     local  gens, L, list, l, fact;
 
@@ -29,7 +29,14 @@ InstallGlobalFunction(SemigroupFactorization, function(S, elements)
 
     list := [];
     for l in L do
+#      fact := MinimalFactorization(sgp, l);
       fact := Factorization(sgp, l);
+      ## the problem caused by having the identity transformation as a factor does not occur using MinimalFactorization, but this function had to be declared (unless the semigroups package had already been read)
+      if (Length(fact)) > 1 and (1 in fact) then
+        Unbind(fact[Position(fact,1)]);
+        fact := Compacted(fact);
+      fi;
+      ##
       Add(list,List(fact, g -> gens[g]));
     od;
     return list;

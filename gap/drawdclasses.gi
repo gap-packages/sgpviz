@@ -1037,6 +1037,8 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
                 str1 := "0";
                 retels[3][Position(retels[1], el)] := "0";
               else
+##                    Error("..");
+                    
                 px := Position(retels[1], el);
                 ret := retels[2][px];
                 str1 := [];

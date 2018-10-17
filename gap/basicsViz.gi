@@ -100,7 +100,7 @@ InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(sgp)
     if not (IsTransformationMonoid(sgp)) then
       Info(InfoSgpViz,1,"I will work with an isomorphic transformation semigroup instead\n");
       M:= Range(IsomorphismTransformationMonoid(sgp));
-      M := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(M)));
+      M := Monoid(ReduceNumberOfGenerators(GeneratorsOfSemigroup(M)));
     else
       M := Monoid(GeneratorsOfMonoid(sgp));
     fi;
@@ -108,9 +108,8 @@ InstallGlobalFunction(RightCayleyGraphAsAutomaton, function(sgp)
     if not (IsTransformationSemigroup(sgp)) then
       Info(InfoSgpViz,1,"I will work with an isomorphic transformation semigroup instead\n");
       M:= Range(IsomorphismTransformationSemigroup(sgp));
-      M := Monoid(ReduceNumberOfGenerators(GeneratorsOfSemigroup(M)));
+      M := Semigroup(ReduceNumberOfGenerators(GeneratorsOfSemigroup(M)));
     else
-      M := Monoid(GeneratorsOfMonoid(sgp));
       M := Semigroup(GeneratorsOfSemigroup(sgp));
     fi;
 

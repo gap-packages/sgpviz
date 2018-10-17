@@ -126,16 +126,16 @@ gap> Number(dclasselementpoi3, x -> x='[') = Number(dclasselementpoi3, x -> x=']
 true
 
 #
-gap> dclasspoi3 := DotForDrawingDClasses(poi3);;
-gap> Number(dclasspoi3, x -> x=';');
+gap> dclassespoi3 := DotForDrawingDClasses(poi3);;
+gap> Number(dclassespoi3, x -> x=';');
 10
-gap> Number(dclasspoi3, x -> x='*');
+gap> Number(dclassespoi3, x -> x='*');
 8
-gap> Number(dclasspoi3, x -> x='w');
+gap> Number(dclassespoi3, x -> x='w');
 22
-gap> Number(dclasspoi3, x -> x=']');
+gap> Number(dclassespoi3, x -> x=']');
 7
-gap> Number(dclasspoi3, x -> x='[') = Number(dclasspoi3, x -> x=']');
+gap> Number(dclassespoi3, x -> x='[') = Number(dclassespoi3, x -> x=']');
 true
 
 #
@@ -167,6 +167,98 @@ gap> IsString(DotForDrawingSchutzenbergerGraphs(poi3));
 true
 gap> Number(DotForDrawingSchutzenbergerGraphs(poi3), x -> x=';');
 24
+
+
+#############################################################################
+#############################################################################
+# Simple examples aiming for a better code coverage
+
+gap> s := Semigroup(Transformation( [ 4, 1, 2, 4 ] ),
+> Transformation( [ 1, 3, 4, 4 ] ), Transformation( [ 2, 4, 3, 4 ] ));
+<transformation semigroup of degree 4 with 3 generators>
+gap> RightCayleyGraphAsAutomaton(s);
+< deterministic automaton on 3 letters with 19 states >
+
+gap> t1 := Transformation([2,3,1,4,5,5]);
+Transformation( [ 2, 3, 1, 4, 5, 5 ] )
+gap> t2 := Transformation([1,3,4,2,5,5]);
+Transformation( [ 1, 3, 4, 2, 5, 5 ] )
+gap> t3 := Transformation([1,5,3,2,4,4]);
+Transformation( [ 1, 5, 3, 2, 4, 4 ] )
+gap> a5 := Semigroup(t1,t2,t3);
+<transformation semigroup of degree 6 with 3 generators>
+gap> dclassesa5 := DotForDrawingDClasses(a5);;
+gap> Number(dclassesa5, x -> x=';');
+4
+gap> Number(dclassesa5, x -> x='*');
+1
+gap> Number(dclassesa5, x -> x='w');
+62
+gap> Number(dclassesa5, x -> x='[') = Number(dclassesa5, x -> x=']');
+true
+
+gap> u1:=Transformation([2,2,3]);
+Transformation( [ 2, 2 ] )
+gap> g:=Transformation([2,3,1]);
+Transformation( [ 2, 3, 1 ] )
+gap> op3:= Monoid(g,u1);
+<transformation monoid of degree 3 with 2 generators>
+gap> dclassesop3 := DotForDrawingDClasses(op5);;
+gap> Number(dclassesop3, x -> x=';');
+12
+gap> Number(dclassesop3, x -> x='*');
+101
+gap> Number(dclassesop3, x -> x='w');
+612
+gap> Number(dclassesop3, x -> x='[') = Number(dclassesop3, x -> x=']');
+true
+
+gap> u1:=Transformation([2,2,3,4,5]);
+Transformation( [ 2, 2 ] )
+gap> g:=Transformation([2,3,4,5,1]);
+Transformation( [ 2, 3, 4, 5, 1 ] )
+gap> op5:= Monoid(g,u1);
+<transformation monoid of degree 5 with 2 generators>
+gap> dclassesop5 := DotForDrawingDClasses(op5);;
+gap> Number(dclassesop5, x -> x=';');
+12
+gap> Number(dclassesop5, x -> x='*');
+101
+gap> Number(dclassesop5, x -> x='w');
+612
+gap> Number(dclassesop5, x -> x='[') = Number(dclassesop5, x -> x=']');
+true
+
+gap> p1 := Transformation([2,1,3,4,5]);
+Transformation( [ 2, 1 ] )
+gap> p2 := Transformation([2,3,4,5,1]);
+Transformation( [ 2, 3, 4, 5, 1 ] )
+gap> S5 := Monoid(p1,p2);
+<transformation monoid of degree 5 with 2 generators>
+gap> dclassesS5 := DotForDrawingDClasses(S5);;
+gap> Number(dclassesS5, x -> x=';');
+4
+gap> Number(dclassesS5, x -> x='*');
+1
+gap> Number(dclassesS5, x -> x='w');
+122
+gap> Number(dclassesS5, x -> x='[') = Number(dclassesS5, x -> x=']');
+true
+
+gap> kkkpori4 := Semigroup([ Transformation( [ 1 .. 5 ] ), 
+> Transformation( [ 1, 2, 3, 5, 5 ] ),
+>   Transformation( [ 1, 2, 5, 4, 5 ] ), Transformation( [ 1, 5, 3, 4, 5 ] ),
+>   Transformation( [ 5, 2, 3, 4, 5 ] ) ] );
+<transformation monoid of degree 5 with 4 generators>
+gap> dclassespori4 := DotForDrawingDClasses(pori4);;
+gap> Number(dclassespori4, x -> x=';');
+12
+gap> Number(dclassespori4, x -> x='*');
+16
+gap> Number(dclassespori4, x -> x='w');
+195
+gap> Number(dclassespori4, x -> x='[') = Number(dclassespori4, x -> x=']');
+true
 
 #
 gap> STOP_TEST( "testall.tst" );
