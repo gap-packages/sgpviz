@@ -9,7 +9,7 @@ SgpViz
 Introduction
 ------------
 
-This is release 0.999.3 of  the package `SgpViz`.
+This is release 0.999.4 of  the package `SgpViz`.
 
 The features of this package include
 
