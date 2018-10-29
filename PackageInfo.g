@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "SgpViz",
 Subtitle := "A package for semigroup visualization",
-Version := "0.999.2",
-Date := "26/09/2018",
+Version := "0.999.4",
+Date := "29/10/2018",
 #Version := "0.999.1 dev",
 #Date := "> 13/09/2017",
 
@@ -66,7 +66,7 @@ PackageDoc := rec(
                    
 Dependencies := rec(
   GAP := ">=4.4",
-  NeededOtherPackages := [["Automata", ">= 1.11"]],
+  NeededOtherPackages := [["Automata", ">= 1.14"]],
 ##  NeededOtherPackages := [["semigroups", ">= 3"]],
   SuggestedOtherPackages := [],
 ##  ExternalConditions := [["Evince","http://www.gnome.org/projects/evince/"],["Graphviz","http://www.graphviz.org/"]]
