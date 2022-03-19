@@ -82,7 +82,7 @@ Installation
 
 ### Important:
 
-This package needs the package `Automata` (http://www.gap-system.org/~gap/Packages/automata.html).
+This package needs the package `Automata` (https://www.gap-system.org/~gap/Packages/automata.html).
 
 
 You may have to start GAP with the -l option, for instance,
@@ -108,7 +108,7 @@ and in the file `.gap/gaprc`
 
     LoadPackage( "sgpviz" ); 
 
-In order to have automatic visualisations and not just to produce the dot code to be visualised by any other means, GraphViz (http://www.graphviz.org/) should be installed.
+In order to have automatic visualisations and not just to produce the dot code to be visualised by any other means, GraphViz (https://www.graphviz.org/) should be installed.
 
 In order to be able to use a GUI to give automata or semigroups, Tcl/Tk should also be installed.
 

@@ -21,7 +21,7 @@ It requires the usage of external programs as is the case of
       </Alt>
     </Alt>
     T Labs, that can be obtained at
-    <URL>http://www.graphviz.org/</URL>.
+    <URL>https://www.graphviz.org/</URL>.
 It is used not only to draw right Cayley graphs of finite semigroups and Schüzenberger graphs of finite inverse semigroups but also to visualise in the usual way the egg-box picture of a D-classe of a finite semigroup. 
 
 <Alt Only="LaTeX">

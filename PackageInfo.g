@@ -70,7 +70,7 @@ Dependencies := rec(
   NeededOtherPackages := [["Automata", ">= 1.14"]],
 ##  NeededOtherPackages := [["semigroups", ">= 3"]],
   SuggestedOtherPackages := [],
-##  ExternalConditions := [["Evince","http://www.gnome.org/projects/evince/"],["Graphviz","http://www.graphviz.org/"]]
+##  ExternalConditions := [["Evince","http://www.gnome.org/projects/evince/"],["Graphviz","https://www.graphviz.org/"]]
                       
 ),
                   

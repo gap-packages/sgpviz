@@ -16,7 +16,7 @@
   </Version>
   <Author> Manuel Delgado
     <Email>mdelgado@fc.up.pt</Email>
-    <Homepage>http://www.fc.up.pt/cmup/mdelgado</Homepage>
+    <Homepage>https://www.fc.up.pt/cmup/mdelgado</Homepage>
   </Author>
   <Author> José João Morais
   </Author>
@@ -25,7 +25,7 @@
     &copyright; 2005 by Manuel Delgado and José João Morais <P/>
       <Alt Only="LaTeX">\noindent</Alt> &SgpViz; package is free software; 
       you can redistribute it and/or modify it under the terms of the 
-      <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
+      <URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL> 
       as published by the Free Software Foundation; either version 2 of the
       License, or (at your option) any later version. For details, see the file 'GPL' included in the package or see the FSF's own site.
     </Copyright>
@@ -41,7 +41,7 @@ email address <Email>mdelgado@fc.up.pt</Email> to this effect.
 <P/>
 
 If you have benefited from the use of the &SgpViz; &GAP; package in your research, please cite it in addition to &GAP; itself, following the scheme proposed in
-<URL>http://www.gap-system.org/Contacts/cite.html</URL>.
+<URL>https://www.gap-system.org/Contacts/cite.html</URL>.
 
 </Colophon>
 
