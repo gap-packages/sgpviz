@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gap-packages/sgpviz.svg?branch=master)](https://travis-ci.org/gap-packages/sgpviz)
+[![Build Status](https://github.com/gap-packages/sgpviz/workflows/CI/badge.svg?branch=master)](https://github.com/gap-packages/sgpviz/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Coverage](https://codecov.io/github/gap-packages/sgpviz/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/sgpviz)
 
 SgpViz
@@ -9,7 +9,7 @@ SgpViz
 Introduction
 ------------
 
-This is release 0.999.4 of  the package `SgpViz`.
+This is release 0.999.5 of  the package `SgpViz`.
 
 The features of this package include
 
@@ -82,7 +82,7 @@ Installation
 
 ### Important:
 
-This package needs the package `Automata` (http://www.gap-system.org/~gap/Packages/automata.html).
+This package needs the package `Automata` (https://www.gap-system.org/~gap/Packages/automata.html).
 
 
 You may have to start GAP with the -l option, for instance,
@@ -108,7 +108,7 @@ and in the file `.gap/gaprc`
 
     LoadPackage( "sgpviz" ); 
 
-In order to have automatic visualisations and not just to produce the dot code to be visualised by any other means, GraphViz (http://www.graphviz.org/) should be installed.
+In order to have automatic visualisations and not just to produce the dot code to be visualised by any other means, GraphViz (https://www.graphviz.org/) should be installed.
 
 In order to be able to use a GUI to give automata or semigroups, Tcl/Tk should also be installed.
 

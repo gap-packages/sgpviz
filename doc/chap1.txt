@@ -4,7 +4,7 @@
   [33X[0;0YThe  aim  of  this package is to turn [5X GAP [105X more user-friendly, at least for
   semigroup  theorists.  It  requires the usage of external programs as is the
   case of [10Xgraphviz[110X [DEG+02], a software for drawing graphs developed at AT & T
-  Labs,  that can be obtained at [7Xhttp://www.graphviz.org/[107X. It is used not only
+  Labs, that can be obtained at [7Xhttps://www.graphviz.org/[107X. It is used not only
   to draw right Cayley graphs of finite semigroups and Schüzenberger graphs of
   finite inverse semigroups but also to visualise in the usual way the egg-box
   picture  of a D-classe of a finite semigroup. [12XImportant note[112X: The version of
