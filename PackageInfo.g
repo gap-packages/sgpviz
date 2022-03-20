@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "SgpViz",
 Subtitle := "A package for semigroup visualization",
-Version := "0.999.4",
-Date := "29/10/2018", # dd/mm/yyyy format
+Version := "0.999.5",
+Date := "20/03/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 #Version := "0.999.1 dev",
 #Date := "> 13/09/2017",

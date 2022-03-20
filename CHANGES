@@ -1,3 +1,11 @@
+                     -----------------------------------
+                     | CHANGES of the SgpViz package |
+                     -----------------------------------
+0.999.4 -> 0.999.5
+- Switch CI to use GitHub Actions (Thanks Max)
+- Add Travis & Codecov support (Thanks Max)
+- Test file updated
+
 0.999.3 -> 0.999.4
 nothing really changed (the process of release failed due to not saving the Packageinfo.g file)
 0.999.2 -> 0.999.3
