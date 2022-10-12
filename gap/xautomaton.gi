@@ -3,8 +3,6 @@
 #W  xautomaton.gi                       Manuel Delgado <mdelgado@fc.up.pt>
 #W                                      Jose Morais    <josejoao@fc.up.pt>
 ##
-#H  @(#)$Id: xautomaton.gi,v 0.998 $
-##
 #Y  Copyright (C)  2005,  CMUP, Universidade do Porto, Portugal
 ##
 ##
