@@ -62,7 +62,7 @@ A non deterministic automaton may be given as follows:
       &#60;br&#62;&#60;center&#62;&#60;img src=&#34;images/xndAUT.png&#34;&#62;&#60;/center&#62;&#60;br&#62;
     </Alt>
 <P/>
-By pressing the button <B> Ok </B> the &GAP; shell aquires the aspect shown
+By pressing the button <B> Ok </B> the &GAP; shell acquires the aspect shown
 in the following picture and the automaton <C> ndAUT </C> may be used to do
 computations. Some computations such as getting a rational expression
 representing the language of the automaton, the (complete) minimal automaton
@@ -132,7 +132,7 @@ It opens a window like the following:
     <Heading> Finite semigroups </Heading>
 The most common ways to give a semigroup to are through generators and
 relations, a set of (partial) transformations as generating set and as
-syntactic semigroups of automata or rational languages. 
+syntatic semigroups of automata or rational languages. 
       <ManSection>
         <Func Arg="[S]" Name="XSemigroup" />
         <Description>

@@ -84,7 +84,7 @@ end);
 ## buit-in function CayleyGraphSemigroup to compute the Cayley Graph 
 ## and returns it as an automaton without initial and final states.
 ##
-## Warning: since the GAP function "CayleyGraphSemigroup" behaves diferently acording to whether
+## Warning: since the GAP function "CayleyGraphSemigroup" behaves differently according to whether
 ## the package "semigroups" is loaded or not, this function may have different (but equivalent)
 ## results
 ##
@@ -150,7 +150,7 @@ end);
 ##
 #F DotForDrawingRightCayleyGraph
 ##
-## ouputs a string consisting of dot code the right Cayley graph of a finite monoid or semigroup.
+## outputs a string consisting of dot code the right Cayley graph of a finite monoid or semigroup.
 ##
 InstallGlobalFunction(DotForDrawingRightCayleyGraph, function(M)
   local  aut, letters, au, i, j, colors, l2, array, s, arr, max, xs, xout, k, 
@@ -226,7 +226,7 @@ InstallGlobalFunction(DotForDrawingRightCayleyGraph, function(M)
         od;
     od;
       arr := List( array, x -> List( x, String ) );
-  #siegen: in the folowing, "AppendTo(name," was replaced by "Append(dotstring,"
+  #siegen: in the following, "AppendTo(name," was replaced by "Append(dotstring,"
     dotstring :=  "digraph  CayleyGraph {\n";
     for l  in [ 1 .. Length( arr ) ]  do
         for k  in [ 1 .. Length( arr[ l ] ) ]  do

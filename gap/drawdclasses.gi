@@ -275,7 +275,7 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
       od;
     od;
 
-    #siegen: in the folowing, "AppendTo(file," was replaced by "Append(dotstring,"
+    #siegen: in the following, "AppendTo(file," was replaced by "Append(dotstring,"
 
 
     # Write the dot node definition of the current
