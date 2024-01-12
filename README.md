@@ -23,7 +23,7 @@ versions of the manual are also available there.
 
 The current maintainer of the package is Manuel Delgado <mdelgado@fc.up.pt>.
 
-In many aspects the present package was superseeded by the package "semigroups" by James Mitchel. I encourage you to use it instead of SgpViz. While there are some features not covered by the "semigroups" package, an effort will be made for keeping SgpViz working.
+In many aspects the present package was superseded by the package "semigroups" by James Mitchel. I encourage you to use it instead of SgpViz. While there are some features not covered by the "semigroups" package, an effort will be made for keeping SgpViz working.
 If you  have found important features missing or if there is a bug, I would appreciate it very much if you send me an email.
 
 Contents

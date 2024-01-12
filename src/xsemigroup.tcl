@@ -1530,7 +1530,7 @@ proc doneRE [] {
     if {$c != "("} {
 	set p [lsearch -exact $generators $c]
 	if {$p == -1} {
-	    error "Ilegal first character"
+	    error "Illegal first character"
 	} else {
 	    set last $c
 	}
@@ -1555,7 +1555,7 @@ proc doneRE [] {
     }
 
     if {$last == "U"} {
-	error "Ilegal last character"
+	error "Illegal last character"
     }
 
     puts "rexsgp:=RationalExpression(\"$S\");"

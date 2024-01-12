@@ -2,7 +2,7 @@
 ##
 #A  testall.tst        SgpViz package                   Manuel Delgado
 ##                                                    
-##  (based on the cooresponding file of the 'example' package, 
+##  (based on the corresponding file of the 'example' package, 
 ##   by Alexander Konovalov) 
 ##
 ##  To create a test file, place GAP prompts, input and output exactly as

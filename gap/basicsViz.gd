@@ -37,6 +37,6 @@ DeclareSynonym( "RightCayleyGraphMonoidAsAutomaton", RightCayleyGraphAsAutomaton
 ##
 #F DotForDrawingRightCayleyGraph
 ##
-## ouputs a string consisting of dot code the right Cayley graph of a finite monoid or semigroup.
+## outputs a string consisting of dot code the right Cayley graph of a finite monoid or semigroup.
 ##
 DeclareGlobalFunction( "DotForDrawingRightCayleyGraph" );
