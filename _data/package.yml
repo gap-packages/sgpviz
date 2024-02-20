@@ -1,5 +1,6 @@
 name: SgpViz
-version: 0.999.5
+version: "0.999.5"
+license: "GPL-2.0-or-later"
 date: 2022-03-20
 description: |
     A package for semigroup visualization
@@ -34,3 +35,32 @@ abstract: |
 status: deposited
 doc-html: doc/chap0.html
 doc-pdf: doc/manual.pdf
+keywords: |
+    Semigroup, D-Class, Schutzenberger graphs, Cayley graphs.
+citeas: |
+    <p class='BibEntry'>
+    [<span class='BibKey'>DM22</span>]   <b class='BibAuthor'>Delgado, M. and Morais, J.</b>,
+     <i class='BibTitle'>SgpViz, A package for semigroup visualization,
+             Version 0.999.5</i>
+     (<span class='BibYear'>2022</span>)<br />
+    (<span class='BibNote'>GAP package</span>),
+    <span class='BibHowpublished'><a href="https://gap-packages.github.io/sgpviz">https://gap-packages.github.io/sgpviz</a></span>.
+    </p>
+    
+
+bibtex: |
+    @misc{ SgpViz0.999.5,
+      author =           {Delgado, M. and Morais, J.},
+      title =            {{SgpViz},   A  package  for  semigroup  visualization,
+                          {V}ersion 0.999.5},
+      month =            {Mar},
+      year =             {2022},
+      note =             {GAP package},
+      howpublished =     {\href          {https://gap-packages.github.io/sgpviz}
+                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {}{}{}\texttt{sgpviz}}},
+      keywords =         {Semigroup;   D-Class;  Schutzenberger  graphs;  Cayley
+                          graphs},
+      printedkey =       {DM22}
+    }
+

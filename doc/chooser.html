@@ -12,11 +12,11 @@
 <script src="manual.js" type="text/javascript"></script>
 <script type="text/javascript">
 
-<!-- find current value of name nam in form -->
-function currval(nam) {
+<!-- find current value of name name in form -->
+function currval(name) {
   var chform = document.forms[0].elements;
   for (var i=0; chform.length > i; i++) {
-    if (chform[i].name == nam && chform[i].type == "radio" &&
+    if (chform[i].name == name && chform[i].type == "radio" &&
         chform[i].checked == true)
       return chform[i].value;
   }

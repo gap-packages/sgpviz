@@ -29,16 +29,16 @@
 */
 
 /* generic helper function */
-function deleteCookie(nam) {
-  document.cookie = nam+"=;Path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+function deleteCookie(name) {
+  document.cookie = name+"=;Path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT";
 }
 
 /* read a value from a "nam1=val1;nam2=val2;..." string (e.g., the search
    part of an URL or a cookie                                             */
-function valueString(str,nam) {
+function valueString(str,name) {
   var cs = str.split(";");
   for (var i=0; i < cs.length; i++) {
-    var pos = cs[i].search(nam+"=");
+    var pos = cs[i].search(name+"=");
     if (pos > -1) {
       pos = cs[i].indexOf("=");
       return cs[i].slice(pos+1);
