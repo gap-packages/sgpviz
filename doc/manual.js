@@ -29,16 +29,16 @@
 */
 
 /* generic helper function */
-function deleteCookie(name) {
-  document.cookie = name+"=;Path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+function deleteCookie(nam) {
+  document.cookie = nam+"=;Path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT";
 }
 
 /* read a value from a "nam1=val1;nam2=val2;..." string (e.g., the search
    part of an URL or a cookie                                             */
-function valueString(str,name) {
+function valueString(str,nam) {
   var cs = str.split(";");
   for (var i=0; i < cs.length; i++) {
-    var pos = cs[i].search(name+"=");
+    var pos = cs[i].search(nam+"=");
     if (pos > -1) {
       pos = cs[i].indexOf("=");
       return cs[i].slice(pos+1);
@@ -86,7 +86,8 @@ function addStyleLink() {
   var el = document.createElement("a");
   var oncl = document.createAttribute("href");
   var back = window.location.protocol+"//"
-  if (window.location.protocol == "http:") {
+  if (window.location.protocol == "http:" || 
+      window.location.protocol == "https:") {
     back = back+window.location.host;
     if (window.location.port != "") {
       back = back+":"+window.location.port;

@@ -34,7 +34,7 @@
   action of the [13Xi[113Xth letter on the states. A non deterministic automaton may be
   given as follows:[133X
   
-  [33X[0;0YBy  pressing  the  button [12X Ok [112X the [5XGAP[105X shell acquires the aspect shown in the
+  [33X[0;0YBy  pressing  the button [12X Ok [112X the [5XGAP[105X shell acquires the aspect shown in the
   following  picture and the automaton [10X ndAUT [110X may be used to do computations.
   Some  computations  such  as  getting a rational expression representing the
   language of the automaton, the (complete) minimal automaton representing the
@@ -66,7 +66,7 @@
   
   [33X[0;0YThe  most  common  ways  to  give  a semigroup to are through generators and
   relations,  a  set  of  (partial)  transformations  as generating set and as
-  syntactic semigroups of automata or rational languages.[133X
+  syntatic semigroups of automata or rational languages.[133X
   
   [1X4.2-1 XSemigroup[101X
   
@@ -106,7 +106,7 @@
   [1X4.2-4 [33X[0;0YSyntatic semigroups[133X[101X
   
   [33X[0;0Y[10XXSemigroup();[110X  would  pop  up  the  following  window, where we would select
-  "Syntactic  semigroup",  press  the  [12XProceed[112X button and then choose either to
+  "Syntatic  semigroup",  press  the  [12XProceed[112X button and then choose either to
   give  a  "Rational  expression"  or  an "Automaton" by pressing one of those
   buttons:  If "Rational expression" is chosen, a new window pops up where the
   expression  can  be specified: After pressing the [12XOk[112X button, notice that the

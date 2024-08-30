@@ -4,7 +4,7 @@
   
   [[20XDEG+02[120X]  [16XDobkin, D., Ellson, J., Gansner, E., Koutsofios, E., North, S. and
   Woodhull,  G.[116X,  [17XGraphviz - Graph Drawing Programs[117X, AT\&T Research and Lucent
-  Bell Labs (2002), ((https://www.graphviz.org/)).
+  Bell Labs (2002), (https://www.graphviz.org/).
   
   
   

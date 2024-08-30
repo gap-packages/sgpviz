@@ -14,7 +14,7 @@
   [2XGrahamBlocks[102X 2.3-4 
   [2XHasCommutingIdempotents[102X 2.2-1 
   [2XIsInverseSemigroup[102X 2.2-2 
-  License .-1 
+  License 0.0-1 
   [2XPartialTransformation[102X 2.3-1 
   [2XReduceNumberOfGenerators[102X 2.3-2 
   [2XRightCayleyGraphAsAutomaton[102X 2.4-1 
