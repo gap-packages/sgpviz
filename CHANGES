@@ -1,6 +1,12 @@
                      -----------------------------------
                      | CHANGES of the SgpViz package |
                      -----------------------------------
+0.999.5 -> 0.999.6
+- Updates related to CI and Codecov (Thanks, Max)
+- Simplify-splash (Thanks, Max)
+- Removing CSV leftovers (Thanks, Max)
+- updating makedoc (Thanks, Max)
+
 0.999.4 -> 0.999.5
 - Switch CI to use GitHub Actions (Thanks Max)
 - Add Travis & Codecov support (Thanks Max)

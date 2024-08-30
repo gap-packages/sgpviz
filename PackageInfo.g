@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "SgpViz",
 Subtitle := "A package for semigroup visualization",
-Version := "0.999.5",
-Date := "20/03/2022", # dd/mm/yyyy format
+Version := "0.999.6",
+Date := "30/08/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 #Version := "0.999.1 dev",
 #Date := "> 13/09/2017",
@@ -23,8 +23,10 @@ Persons := [
     Email         := "mdelgado@fc.up.pt",
     WWWHome       := "http://www.fc.up.pt/cmup/mdelgado/",
     PostalAddress := Concatenation( [
-                   "Departamento de Matemática - Faculdade de Ciências\n",
-                   "Porto\n",
+                   "CMUP, Departamento de Matemática\n",
+                   "Faculdade de Ciências, Universidade do Porto\n",
+                   "Rua do Campo Alegre s/n\n",
+                   "4169-007 Porto\n",
                    "Portugal" ] ),
     Place         := "Porto",
     Institution   := "Faculdade de Ciências"
