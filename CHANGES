@@ -1,6 +1,10 @@
                      -----------------------------------
                      | CHANGES of the SgpViz package |
                      -----------------------------------
+0.999.6 -> 0.999.7
+- Updates related to CI and Codecov (Thanks, Max)
+- Fixed a bug in displaying color of some elements in D-classes (Thanks Vitor H. Fernandes for pointing out the bug.)
+
 0.999.5 -> 0.999.6
 - Updates related to CI and Codecov (Thanks, Max)
 - Simplify-splash (Thanks, Max)

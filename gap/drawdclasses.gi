@@ -528,7 +528,7 @@ InstallGlobalFunction(DotForDrawingDClassOfElement, function(arg)
           el := bag[i][j][k];
           k2 := len_trans_list;
           while k2 > 0 do
-            if el in trans_list[k2] then
+            if ImageListOfTransformation(Transformation(el)) in trans_list[k2] then
               color := colors[k2];
               break;
             fi;
@@ -1168,7 +1168,7 @@ InstallGlobalFunction(DotForDrawingDClasses, function(arg)
           el := bag[i][j][k];
           k2 := len_trans_list;
           while k2 > 0 do
-            if el in trans_list[k2] then
+            if ImageListOfTransformation(Transformation(el)) in trans_list[k2] then
               color := colors[k2];
               break;
             fi;
