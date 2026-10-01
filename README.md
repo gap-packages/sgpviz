@@ -34,7 +34,7 @@ With this version you should have obtained the following files and directories:
 |:-----|:------|
 |README.md|   this file|
 |EXAMPLES|	some examples|
-|CHANGES|	changelog|
+|CHANGES.md|	changelog|
 |LICENSE|	Licensing information|
 |doc  |	the manual|
 |gap  |the GAP code|
